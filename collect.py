@@ -8,7 +8,7 @@ Usage:
     gpu_monitor_collect.py --cluster bcc
 
 Env vars required:
-    GPU_MONITOR_TOKEN  - GitHub Personal Access Token (fine-grained, contents read/write)
+    GPU_MONITOR_TOKEN  - GitHub Personal Access Token
 """
 
 import argparse
@@ -46,12 +46,25 @@ def run_cmd(cmd):
         return ""
 
 
+def parse_gpu_count(gres_str):
+    """Parse GPU count from gres string like 'gres/gpu:a100:2' or 'gres/gpu:1'."""
+    if not gres_str:
+        return 0
+    m = re.search(r"(\d+)$", gres_str)
+    if m:
+        return int(m.group(1))
+    # If no number at end (e.g. "gres/gpu:a100"), assume 1
+    if "gpu" in gres_str:
+        return 1
+    return 0
+
+
 def collect_gpu_status(cluster):
     """Collect GPU allocation status from Slurm."""
     cfg = CLUSTER_CONFIG[cluster]
     partitions = cfg["partitions"]
 
-    # Get unique node list
+    # ---- Node-level GPU info ----
     nodes_raw = run_cmd(f'sinfo -N -p "{partitions}" -h -o "%N" | sort -u')
     if not nodes_raw:
         print("ERROR: sinfo returned no nodes", file=sys.stderr)
@@ -65,15 +78,12 @@ def collect_gpu_status(cluster):
         if not node:
             continue
 
-        # Get GRES info: gpu:a100:8, gpu:p100:2, etc.
         gres = run_cmd(
             f'sinfo -N -p "{partitions}" -n "{node}" -h -o "%G" | head -1'
         )
-
         if not gres or gres == "(null)":
             continue
 
-        # Extract total GPU count (last number)
         total_match = re.search(r"(\d+)$", gres)
         if not total_match:
             continue
@@ -81,39 +91,91 @@ def collect_gpu_status(cluster):
         if total == 0:
             continue
 
-        # Extract GPU model
         parts = gres.split(":")
         gpu_model = parts[1].upper() if len(parts) >= 3 else "GPU"
 
-        # Check node state
         state = run_cmd(f'sinfo -n "{node}" -h -o "%t" | head -1')
         if "down" in state or "drain" in state:
             node_data.append({
-                "name": node,
-                "gpu_model": gpu_model,
-                "total": total,
-                "used": 0,
-                "state": "down",
+                "name": node, "gpu_model": gpu_model,
+                "total": total, "used": 0, "state": "down", "jobs": [],
             })
             continue
 
-        # Count used GPUs from running jobs
-        used_raw = run_cmd(
-            f'squeue -w "{node}" -h -t R -o "%b" '
-            "| awk -F: '{n=$NF; if(n~/^[0-9]+$/) sum+=n; else sum+=1} END{print sum+0}'"
+        # Get per-job detail on this node
+        jobs_raw = run_cmd(
+            f'squeue -w "{node}" -h -t R -o "%u|%b|%j|%M|%l"'
         )
-        used = int(used_raw) if used_raw.isdigit() else 0
+        node_jobs = []
+        used = 0
+        for line in jobs_raw.split("\n"):
+            if not line.strip():
+                continue
+            fields = line.split("|")
+            if len(fields) < 5:
+                continue
+            user, gres_req, jobname, elapsed, timelimit = fields[:5]
+            gpus = parse_gpu_count(gres_req)
+            used += gpus
+            node_jobs.append({
+                "user": user,
+                "gpus": gpus,
+                "job_name": jobname,
+                "elapsed": elapsed,
+                "time_limit": timelimit,
+            })
 
         node_data.append({
-            "name": node,
-            "gpu_model": gpu_model,
-            "total": total,
-            "used": used,
-            "state": "active",
+            "name": node, "gpu_model": gpu_model,
+            "total": total, "used": used, "state": "active",
+            "jobs": node_jobs,
         })
 
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    # ---- Pending (queued) jobs ----
+    pending_raw = run_cmd(
+        f'squeue -p "{partitions}" -t PD -h -o "%u|%b|%j|%V|%r"'
+    )
+    pending_jobs = []
+    for line in pending_raw.split("\n"):
+        if not line.strip():
+            continue
+        fields = line.split("|")
+        if len(fields) < 5:
+            continue
+        user, gres_req, jobname, submit_time, reason = fields[:5]
+        gpus = parse_gpu_count(gres_req)
+        pending_jobs.append({
+            "user": user,
+            "gpus": gpus,
+            "job_name": jobname,
+            "submit_time": submit_time,
+            "reason": reason,
+        })
 
+    # ---- Per-user summary ----
+    user_gpus = {}  # user -> {"running_gpus": N, "running_jobs": N, "pending_jobs": N}
+    for nd in node_data:
+        for job in nd.get("jobs", []):
+            u = job["user"]
+            if u not in user_gpus:
+                user_gpus[u] = {"running_gpus": 0, "running_jobs": 0, "pending_jobs": 0}
+            user_gpus[u]["running_gpus"] += job["gpus"]
+            user_gpus[u]["running_jobs"] += 1
+
+    for pj in pending_jobs:
+        u = pj["user"]
+        if u not in user_gpus:
+            user_gpus[u] = {"running_gpus": 0, "running_jobs": 0, "pending_jobs": 0}
+        user_gpus[u]["pending_jobs"] += 1
+
+    # Sort by running_gpus descending
+    users = [
+        {"user": u, **stats}
+        for u, stats in sorted(user_gpus.items(), key=lambda x: x[1]["running_gpus"], reverse=True)
+    ]
+
+    # ---- Summary ----
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     total_gpus = sum(n["total"] for n in node_data)
     used_gpus = sum(n["used"] for n in node_data if n["state"] == "active")
     down_gpus = sum(n["total"] for n in node_data if n["state"] == "down")
@@ -122,11 +184,16 @@ def collect_gpu_status(cluster):
         "cluster": cluster,
         "timestamp": now,
         "nodes": node_data,
+        "pending_jobs": pending_jobs,
+        "users": users,
         "summary": {
             "total": total_gpus,
             "used": used_gpus,
             "free": total_gpus - used_gpus - down_gpus,
             "down": down_gpus,
+            "pending_jobs": len(pending_jobs),
+            "pending_gpus": sum(pj["gpus"] for pj in pending_jobs),
+            "active_users": sum(1 for u in users if u["running_gpus"] > 0),
         },
     }
     return snapshot
@@ -156,7 +223,6 @@ def push_to_github(snapshot, cluster, token):
     file_path = f"{DATA_DIR}/{cluster}.json"
     api_path = f"/repos/{REPO}/contents/{file_path}"
 
-    # Fetch existing file
     existing = github_api("GET", api_path, token)
     sha = existing.get("sha")
 
@@ -168,22 +234,23 @@ def push_to_github(snapshot, cluster, token):
         except Exception:
             pass
 
-    # Append new history point
+    # Append history point (compact, no per-user detail)
     history.append({
         "timestamp": snapshot["timestamp"],
         "total": snapshot["summary"]["total"],
         "used": snapshot["summary"]["used"],
         "free": snapshot["summary"]["free"],
         "down": snapshot["summary"]["down"],
+        "pending_jobs": snapshot["summary"]["pending_jobs"],
+        "pending_gpus": snapshot["summary"]["pending_gpus"],
+        "active_users": snapshot["summary"]["active_users"],
     })
 
-    # Trim history
     if len(history) > MAX_HISTORY:
         history = history[-MAX_HISTORY:]
 
     snapshot["history"] = history
 
-    # Push to GitHub
     content_b64 = base64.b64encode(
         json.dumps(snapshot, indent=2).encode()
     ).decode()
