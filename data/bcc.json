@@ -1,12 +1,73 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-03-31T23:47:34Z",
+  "timestamp": "2026-03-31T23:49:03Z",
   "nodes": [],
+  "pending_jobs": [
+    {
+      "user": "myan035",
+      "gpus": 2,
+      "job_name": "rg-eval",
+      "submit_time": "2026-03-31T16:29:27",
+      "reason": "Dependency"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "cap4_coco",
+      "submit_time": "2026-03-31T14:35:53",
+      "reason": "JobHeldUser"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "cap4_ocr",
+      "submit_time": "2026-03-31T14:35:53",
+      "reason": "JobHeldUser"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "cap4_tvqa",
+      "submit_time": "2026-03-31T14:35:53",
+      "reason": "JobHeldUser"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "cap4_vg2",
+      "submit_time": "2026-03-31T14:35:53",
+      "reason": "JobHeldUser"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "cap4_vg",
+      "submit_time": "2026-03-31T14:35:53",
+      "reason": "JobHeldUser"
+    }
+  ],
+  "users": [
+    {
+      "user": "myan035",
+      "running_gpus": 0,
+      "running_jobs": 0,
+      "pending_jobs": 1
+    },
+    {
+      "user": "rmose009",
+      "running_gpus": 0,
+      "running_jobs": 0,
+      "pending_jobs": 5
+    }
+  ],
   "summary": {
     "total": 0,
     "used": 0,
     "free": 0,
-    "down": 0
+    "down": 0,
+    "pending_jobs": 6,
+    "pending_gpus": 7,
+    "active_users": 0
   },
   "history": [
     {
@@ -680,6 +741,16 @@
       "used": 0,
       "free": 0,
       "down": 0
+    },
+    {
+      "timestamp": "2026-03-31T23:49:03Z",
+      "total": 0,
+      "used": 0,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 6,
+      "pending_gpus": 7,
+      "active_users": 0
     }
   ]
 }
