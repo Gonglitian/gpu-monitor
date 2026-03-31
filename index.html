@@ -8,10 +8,10 @@
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3"></script>
 <style>
   :root {
-    --bg: #0f172a; --surface: #1e293b; --border: #334155;
-    --text: #f1f5f9; --text-muted: #94a3b8;
+    --bg: #0f172a; --surface: #1e293b; --surface2: #263348; --border: #334155;
+    --text: #f1f5f9; --text-muted: #94a3b8; --text-dim: #64748b;
     --green: #22c55e; --red: #ef4444; --yellow: #eab308; --blue: #3b82f6;
-    --gray: #64748b;
+    --purple: #a855f7; --orange: #f97316; --gray: #64748b; --cyan: #06b6d4;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -19,111 +19,159 @@
     background: var(--bg); color: var(--text);
     min-height: 100vh; padding: 1.5rem;
   }
-  .header {
-    text-align: center; margin-bottom: 2rem;
-  }
+
+  /* Header */
+  .header { text-align: center; margin-bottom: 1.5rem; }
   .header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
   .header .subtitle { color: var(--text-muted); font-size: 0.875rem; }
-  .header .updated { color: var(--text-muted); font-size: 0.75rem; margin-top: 0.5rem; }
+  .header .updated { color: var(--text-dim); font-size: 0.75rem; margin-top: 0.5rem; }
 
-  .tabs {
-    display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem;
-  }
+  /* Tabs */
+  .tabs { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; }
   .tab {
     padding: 0.5rem 1.5rem; border-radius: 0.5rem; cursor: pointer;
     background: var(--surface); border: 1px solid var(--border);
-    color: var(--text-muted); font-size: 0.875rem; font-weight: 500;
-    transition: all 0.2s;
+    color: var(--text-muted); font-size: 0.875rem; font-weight: 500; transition: all 0.2s;
   }
   .tab:hover { border-color: var(--blue); }
   .tab.active { background: var(--blue); color: white; border-color: var(--blue); }
 
+  /* Summary cards */
   .summary {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem; margin-bottom: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto;
   }
   .stat {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 0.75rem; padding: 1rem; text-align: center;
+    border-radius: 0.75rem; padding: 0.875rem; text-align: center;
   }
-  .stat .value { font-size: 2rem; font-weight: 700; }
-  .stat .label { color: var(--text-muted); font-size: 0.75rem; margin-top: 0.25rem; }
+  .stat .value { font-size: 1.75rem; font-weight: 700; }
+  .stat .label { color: var(--text-muted); font-size: 0.7rem; margin-top: 0.15rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .stat.used .value { color: var(--red); }
   .stat.free .value { color: var(--green); }
   .stat.down .value { color: var(--gray); }
   .stat.total .value { color: var(--blue); }
+  .stat.pending .value { color: var(--yellow); }
+  .stat.users .value { color: var(--purple); }
 
+  /* Section header */
+  .section-title {
+    font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.75rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+
+  /* Two-column layout */
+  .two-col {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    margin-bottom: 1.5rem; max-width: 1200px; margin-left: auto; margin-right: auto;
+  }
+  @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* Node cards grid */
   .grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1rem; margin-bottom: 2rem;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 0.75rem; margin-bottom: 1.5rem;
   }
   .node-card {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: 0.75rem; padding: 1rem;
   }
-  .node-card.down { opacity: 0.5; }
-  .node-header {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 0.75rem;
-  }
+  .node-card.down { opacity: 0.45; }
+  .node-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
   .node-name { font-weight: 600; font-size: 1rem; }
   .node-model {
-    font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 9999px;
-    background: var(--border); color: var(--text-muted);
+    font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 9999px;
+    background: var(--border); color: var(--text-muted); font-weight: 600;
   }
   .node-model.A100 { background: #1e3a5f; color: #60a5fa; }
   .node-model.H100 { background: #3b1f5e; color: #c084fc; }
   .node-model.ADA6000 { background: #1a3a2a; color: #4ade80; }
   .node-model.P100 { background: #3b3a1f; color: #fbbf24; }
-
-  .gpu-slots { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .gpu-slots { display: flex; flex-wrap: wrap; gap: 0.3rem; }
   .gpu-slot {
-    width: 2rem; height: 2rem; border-radius: 0.375rem;
+    width: 1.85rem; height: 1.85rem; border-radius: 0.35rem;
     display: flex; align-items: center; justify-content: center;
-    font-size: 0.65rem; font-weight: 700;
+    font-size: 0.6rem; font-weight: 700;
   }
   .gpu-slot.used { background: var(--red); color: white; }
   .gpu-slot.free { background: #166534; color: #4ade80; }
   .gpu-slot.down { background: var(--border); color: var(--gray); }
+  .node-footer { margin-top: 0.5rem; font-size: 0.7rem; color: var(--text-dim); }
+  /* Jobs in node card */
+  .node-jobs { margin-top: 0.5rem; border-top: 1px solid var(--border); padding-top: 0.4rem; }
+  .node-job {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.7rem; padding: 0.2rem 0; color: var(--text-muted);
+  }
+  .node-job .nj-user { font-weight: 600; color: var(--text); min-width: 80px; }
+  .node-job .nj-gpus { color: var(--red); font-weight: 600; min-width: 35px; text-align: center; }
+  .node-job .nj-name { color: var(--text-dim); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin: 0 0.4rem; }
+  .node-job .nj-time { color: var(--text-dim); min-width: 70px; text-align: right; font-family: monospace; font-size: 0.65rem; }
 
-  .node-footer {
-    margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);
+  /* User table */
+  .panel {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 0.75rem; padding: 1rem; overflow: hidden;
+  }
+  .panel h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .user-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+  .user-table th {
+    text-align: left; color: var(--text-dim); font-weight: 600;
+    padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border);
+    text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.05em;
+  }
+  .user-table td { padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border); }
+  .user-table tr:last-child td { border-bottom: none; }
+  .user-table tr:hover { background: var(--surface2); }
+  .gpu-bar {
+    height: 6px; border-radius: 3px; background: var(--red); display: inline-block;
+    min-width: 3px; vertical-align: middle; margin-right: 0.4rem;
   }
 
+  /* Queue table */
+  .queue-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+  .queue-table th {
+    text-align: left; color: var(--text-dim); font-weight: 600;
+    padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border);
+    text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.05em;
+  }
+  .queue-table td { padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--border); }
+  .queue-table tr:last-child td { border-bottom: none; }
+  .queue-table tr:hover { background: var(--surface2); }
+  .reason-badge {
+    font-size: 0.6rem; padding: 0.1rem 0.4rem; border-radius: 4px;
+    background: #422006; color: var(--yellow);
+  }
+  .scrollable { max-height: 320px; overflow-y: auto; }
+  .scrollable::-webkit-scrollbar { width: 4px; }
+  .scrollable::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  /* Charts */
   .chart-container {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;
-    max-width: 900px; margin-left: auto; margin-right: auto;
+    border-radius: 0.75rem; padding: 1.25rem;
   }
-  .chart-container h3 {
-    font-size: 1rem; margin-bottom: 1rem; font-weight: 600;
-  }
-  .chart-wrap { position: relative; height: 280px; }
+  .chart-container h3 { font-size: 0.9rem; margin-bottom: 0.75rem; font-weight: 600; }
+  .chart-wrap { position: relative; height: 240px; }
 
-  .loading {
-    text-align: center; padding: 4rem; color: var(--text-muted);
-  }
-  .error {
-    text-align: center; padding: 2rem; color: var(--red);
-    background: #2d1b1b; border-radius: 0.75rem; margin: 1rem 0;
-  }
-
+  /* Refresh button */
   .refresh-btn {
     position: fixed; bottom: 1.5rem; right: 1.5rem;
     background: var(--blue); color: white; border: none;
-    width: 3rem; height: 3rem; border-radius: 50%;
-    cursor: pointer; font-size: 1.25rem; display: flex;
-    align-items: center; justify-content: center;
+    width: 3rem; height: 3rem; border-radius: 50%; cursor: pointer;
+    font-size: 1.25rem; display: flex; align-items: center; justify-content: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: transform 0.3s;
   }
   .refresh-btn:hover { transform: scale(1.1); }
   .refresh-btn.spinning { animation: spin 1s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
+  .loading { text-align: center; padding: 4rem; color: var(--text-muted); }
+
   @media (max-width: 640px) {
-    body { padding: 1rem; }
+    body { padding: 0.75rem; }
     .grid { grid-template-columns: 1fr; }
-    .summary { grid-template-columns: repeat(2, 1fr); }
+    .summary { grid-template-columns: repeat(3, 1fr); }
   }
 </style>
 </head>
@@ -131,29 +179,24 @@
 
 <div class="header">
   <h1>GPU Monitor</h1>
-  <div class="subtitle">JLI Lab - Cluster GPU Allocation Dashboard</div>
+  <div class="subtitle">JLI Lab - Cluster GPU Dashboard</div>
   <div class="updated" id="last-updated"></div>
 </div>
 
 <div class="tabs" id="cluster-tabs"></div>
-
-<div id="content">
-  <div class="loading">Loading GPU data...</div>
-</div>
-
+<div id="content"><div class="loading">Loading GPU data...</div></div>
 <button class="refresh-btn" id="refresh-btn" title="Refresh">&#x21bb;</button>
 
 <script>
 const REPO = 'Gonglitian/gpu-monitor';
 const DATA_DIR = 'data';
 const CLUSTERS = ['hpcc', 'bcc'];
-const CACHE_BUST = () => `&_t=${Date.now()}`;
 
 let currentCluster = 'hpcc';
 let clusterData = {};
 let historyChart = null;
+let queueChart = null;
 
-// --- Data fetching ---
 async function fetchClusterData(cluster) {
   const url = `https://raw.githubusercontent.com/${REPO}/main/${DATA_DIR}/${cluster}.json?${Date.now()}`;
   const resp = await fetch(url);
@@ -164,13 +207,10 @@ async function fetchClusterData(cluster) {
 async function loadAllData() {
   const results = await Promise.allSettled(CLUSTERS.map(c => fetchClusterData(c)));
   CLUSTERS.forEach((c, i) => {
-    if (results[i].status === 'fulfilled') {
-      clusterData[c] = results[i].value;
-    }
+    if (results[i].status === 'fulfilled') clusterData[c] = results[i].value;
   });
 }
 
-// --- Rendering ---
 function renderTabs() {
   const container = document.getElementById('cluster-tabs');
   container.innerHTML = CLUSTERS.map(c => {
@@ -190,17 +230,26 @@ function switchCluster(cluster) {
   renderDashboard();
 }
 
+function shortReason(r) {
+  if (!r) return '';
+  if (r.includes('Priority')) return 'Priority';
+  if (r.includes('Resources')) return 'Resources';
+  if (r.includes('DOWN')) return 'Node Down';
+  if (r.includes('Dependency')) return 'Dependency';
+  return r.length > 20 ? r.slice(0, 20) + '...' : r;
+}
+
 function renderDashboard() {
   const data = clusterData[currentCluster];
   if (!data) {
-    document.getElementById('content').innerHTML = '<div class="error">No data available for this cluster.</div>';
+    document.getElementById('content').innerHTML = '<div class="loading">No data available.</div>';
     return;
   }
 
   const s = data.summary;
   const activeTotal = s.total - s.down;
 
-  // Update timestamp
+  // Timestamp
   const ts = new Date(data.timestamp);
   const ago = Math.round((Date.now() - ts) / 60000);
   const agoText = ago < 1 ? 'just now' : ago < 60 ? `${ago}m ago` : `${Math.round(ago/60)}h ago`;
@@ -208,15 +257,57 @@ function renderDashboard() {
 
   let html = '';
 
-  // Summary cards
+  // ---- Summary cards ----
   html += `<div class="summary">
     <div class="stat used"><div class="value">${s.used}</div><div class="label">In Use</div></div>
     <div class="stat free"><div class="value">${s.free}</div><div class="label">Available</div></div>
     <div class="stat down"><div class="value">${s.down}</div><div class="label">Down</div></div>
     <div class="stat total"><div class="value">${activeTotal}</div><div class="label">Active Total</div></div>
+    <div class="stat pending"><div class="value">${s.pending_jobs || 0}</div><div class="label">Queued Jobs</div></div>
+    <div class="stat users"><div class="value">${s.active_users || 0}</div><div class="label">Active Users</div></div>
   </div>`;
 
-  // Node cards
+  // ---- Two-column: Users + Queue ----
+  const users = data.users || [];
+  const pending = data.pending_jobs || [];
+  const maxGpus = users.length > 0 ? Math.max(...users.map(u => u.running_gpus)) : 1;
+
+  html += '<div class="two-col">';
+
+  // User leaderboard
+  html += '<div class="panel"><h3>Active Users</h3><div class="scrollable"><table class="user-table">';
+  html += '<tr><th>User</th><th>GPUs</th><th></th><th>Jobs</th><th>Pending</th></tr>';
+  users.forEach(u => {
+    if (u.running_gpus === 0 && u.pending_jobs === 0) return;
+    const barW = maxGpus > 0 ? Math.max(3, (u.running_gpus / maxGpus) * 80) : 0;
+    html += `<tr>
+      <td style="font-weight:600">${u.user}</td>
+      <td style="color:var(--red);font-weight:700">${u.running_gpus}</td>
+      <td><span class="gpu-bar" style="width:${barW}px"></span></td>
+      <td style="text-align:center">${u.running_jobs}</td>
+      <td style="text-align:center;color:${u.pending_jobs > 0 ? 'var(--yellow)' : 'var(--text-dim)'}">${u.pending_jobs}</td>
+    </tr>`;
+  });
+  html += '</table></div></div>';
+
+  // Queue
+  html += '<div class="panel"><h3>Pending Queue (' + pending.length + ' jobs, ' + (s.pending_gpus || 0) + ' GPUs requested)</h3><div class="scrollable"><table class="queue-table">';
+  html += '<tr><th>User</th><th>GPUs</th><th>Job Name</th><th>Reason</th></tr>';
+  pending.forEach(p => {
+    html += `<tr>
+      <td style="font-weight:600">${p.user}</td>
+      <td style="color:var(--yellow);font-weight:700">${p.gpus}</td>
+      <td style="color:var(--text-muted);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${p.job_name}">${p.job_name}</td>
+      <td><span class="reason-badge">${shortReason(p.reason)}</span></td>
+    </tr>`;
+  });
+  if (pending.length === 0) html += '<tr><td colspan="4" style="text-align:center;color:var(--text-dim);padding:1rem">No pending jobs</td></tr>';
+  html += '</table></div></div>';
+
+  html += '</div>'; // end two-col
+
+  // ---- Node cards ----
+  html += '<div class="section-title">Nodes</div>';
   html += '<div class="grid">';
   const activeNodes = data.nodes.filter(n => n.state === 'active');
   const downNodes = data.nodes.filter(n => n.state === 'down');
@@ -226,14 +317,25 @@ function renderDashboard() {
     const free = node.total - node.used;
     let slots = '';
     for (let i = 0; i < node.total; i++) {
-      if (isDown) {
-        slots += '<div class="gpu-slot down">-</div>';
-      } else if (i < node.used) {
-        slots += '<div class="gpu-slot used">X</div>';
-      } else {
-        slots += '<div class="gpu-slot free">O</div>';
-      }
+      if (isDown) slots += '<div class="gpu-slot down">-</div>';
+      else if (i < node.used) slots += '<div class="gpu-slot used">X</div>';
+      else slots += '<div class="gpu-slot free">O</div>';
     }
+
+    let jobsHtml = '';
+    if (node.jobs && node.jobs.length > 0) {
+      jobsHtml = '<div class="node-jobs">';
+      node.jobs.forEach(j => {
+        jobsHtml += `<div class="node-job">
+          <span class="nj-user">${j.user}</span>
+          <span class="nj-gpus">${j.gpus}G</span>
+          <span class="nj-name" title="${j.job_name}">${j.job_name}</span>
+          <span class="nj-time">${j.elapsed}</span>
+        </div>`;
+      });
+      jobsHtml += '</div>';
+    }
+
     html += `<div class="node-card ${isDown ? 'down' : ''}">
       <div class="node-header">
         <span class="node-name">${node.name}</span>
@@ -241,85 +343,83 @@ function renderDashboard() {
       </div>
       <div class="gpu-slots">${slots}</div>
       <div class="node-footer">${isDown ? 'Node is DOWN' : `${free}/${node.total} free`}</div>
+      ${jobsHtml}
     </div>`;
   });
   html += '</div>';
 
-  // History chart
-  html += `<div class="chart-container">
-    <h3>Usage History (${currentCluster.toUpperCase()})</h3>
-    <div class="chart-wrap"><canvas id="history-chart"></canvas></div>
-  </div>`;
+  // ---- Charts ----
+  html += '<div class="two-col">';
+  html += '<div class="chart-container"><h3>GPU Usage History</h3><div class="chart-wrap"><canvas id="history-chart"></canvas></div></div>';
+  html += '<div class="chart-container"><h3>Queue & Users History</h3><div class="chart-wrap"><canvas id="queue-chart"></canvas></div></div>';
+  html += '</div>';
 
   document.getElementById('content').innerHTML = html;
-  renderChart(data.history || []);
+  renderCharts(data.history || []);
 }
 
-function renderChart(history) {
+function renderCharts(history) {
   if (historyChart) { historyChart.destroy(); historyChart = null; }
-  const canvas = document.getElementById('history-chart');
-  if (!canvas || history.length === 0) return;
+  if (queueChart) { queueChart.destroy(); queueChart = null; }
+  if (history.length === 0) return;
 
   const labels = history.map(h => new Date(h.timestamp));
-  historyChart = new Chart(canvas, {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [
-        {
-          label: 'Used',
-          data: history.map(h => h.used),
-          borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.1)',
-          fill: true, tension: 0.3, pointRadius: 0,
-        },
-        {
-          label: 'Free',
-          data: history.map(h => h.free),
-          borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)',
-          fill: true, tension: 0.3, pointRadius: 0,
-        },
-        {
-          label: 'Down',
-          data: history.map(h => h.down),
-          borderColor: '#64748b', backgroundColor: 'rgba(100,116,139,0.1)',
-          fill: true, tension: 0.3, pointRadius: 0,
-        },
-      ],
+  const chartDefaults = {
+    responsive: true, maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { labels: { color: '#f1f5f9', usePointStyle: true, pointStyle: 'circle', boxWidth: 6, font: { size: 11 } } },
+      tooltip: { backgroundColor: '#1e293b', borderColor: '#334155', borderWidth: 1, titleColor: '#f1f5f9', bodyColor: '#94a3b8' },
     },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      interaction: { mode: 'index', intersect: false },
-      scales: {
-        x: {
-          type: 'time',
-          time: { tooltipFormat: 'MMM d, HH:mm' },
-          grid: { color: 'rgba(51,65,85,0.5)' },
-          ticks: { color: '#94a3b8', maxTicksLimit: 8 },
-        },
-        y: {
-          beginAtZero: true,
-          grid: { color: 'rgba(51,65,85,0.5)' },
-          ticks: { color: '#94a3b8', stepSize: 4 },
+    scales: {
+      x: { type: 'time', time: { tooltipFormat: 'MMM d, HH:mm' }, grid: { color: 'rgba(51,65,85,0.5)' }, ticks: { color: '#94a3b8', maxTicksLimit: 8, font: { size: 10 } } },
+      y: { beginAtZero: true, grid: { color: 'rgba(51,65,85,0.5)' }, ticks: { color: '#94a3b8', font: { size: 10 } } },
+    },
+  };
+
+  const canvas1 = document.getElementById('history-chart');
+  if (canvas1) {
+    historyChart = new Chart(canvas1, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          { label: 'Used', data: history.map(h => h.used), borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.1)', fill: true, tension: 0.3, pointRadius: 0, borderWidth: 2 },
+          { label: 'Free', data: history.map(h => h.free), borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)', fill: true, tension: 0.3, pointRadius: 0, borderWidth: 2 },
+          { label: 'Down', data: history.map(h => h.down), borderColor: '#64748b', backgroundColor: 'rgba(100,116,139,0.1)', fill: true, tension: 0.3, pointRadius: 0, borderWidth: 1 },
+        ],
+      },
+      options: chartDefaults,
+    });
+  }
+
+  const canvas2 = document.getElementById('queue-chart');
+  if (canvas2) {
+    queueChart = new Chart(canvas2, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          { label: 'Queued Jobs', data: history.map(h => h.pending_jobs || 0), borderColor: '#eab308', backgroundColor: 'rgba(234,179,8,0.1)', fill: true, tension: 0.3, pointRadius: 0, borderWidth: 2, yAxisID: 'y' },
+          { label: 'Active Users', data: history.map(h => h.active_users || 0), borderColor: '#a855f7', backgroundColor: 'rgba(168,85,247,0.1)', fill: true, tension: 0.3, pointRadius: 0, borderWidth: 2, yAxisID: 'y1' },
+        ],
+      },
+      options: {
+        ...chartDefaults,
+        scales: {
+          ...chartDefaults.scales,
+          y: { ...chartDefaults.scales.y, position: 'left', title: { display: true, text: 'Queued Jobs', color: '#eab308', font: { size: 10 } } },
+          y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false }, ticks: { color: '#a855f7', font: { size: 10 } }, title: { display: true, text: 'Active Users', color: '#a855f7', font: { size: 10 } } },
         },
       },
-      plugins: {
-        legend: { labels: { color: '#f1f5f9', usePointStyle: true, pointStyle: 'circle' } },
-        tooltip: {
-          backgroundColor: '#1e293b', borderColor: '#334155', borderWidth: 1,
-          titleColor: '#f1f5f9', bodyColor: '#94a3b8',
-        },
-      },
-    },
-  });
+    });
+  }
 }
 
-// --- Init & auto-refresh ---
+// ---- Init & refresh ----
 async function init() {
   await loadAllData();
-  // Default to first available cluster
-  if (!clusterData[currentCluster]) {
-    currentCluster = CLUSTERS.find(c => clusterData[c]) || 'hpcc';
-  }
+  if (!clusterData[currentCluster]) currentCluster = CLUSTERS.find(c => clusterData[c]) || 'hpcc';
   renderTabs();
   renderDashboard();
 }
@@ -332,12 +432,7 @@ document.getElementById('refresh-btn').addEventListener('click', async function(
   this.classList.remove('spinning');
 });
 
-// Auto-refresh every 5 minutes
-setInterval(async () => {
-  await loadAllData();
-  renderTabs();
-  renderDashboard();
-}, 5 * 60 * 1000);
+setInterval(async () => { await loadAllData(); renderTabs(); renderDashboard(); }, 60 * 1000);
 
 window.switchCluster = switchCluster;
 init();
