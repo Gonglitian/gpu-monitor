@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPU Monitor - Lab Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3"></script>
+<style>
+  :root {
+    --bg: #0f172a; --surface: #1e293b; --border: #334155;
+    --text: #f1f5f9; --text-muted: #94a3b8;
+    --green: #22c55e; --red: #ef4444; --yellow: #eab308; --blue: #3b82f6;
+    --gray: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg); color: var(--text);
+    min-height: 100vh; padding: 1.5rem;
+  }
+  .header {
+    text-align: center; margin-bottom: 2rem;
+  }
+  .header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .header .subtitle { color: var(--text-muted); font-size: 0.875rem; }
+  .header .updated { color: var(--text-muted); font-size: 0.75rem; margin-top: 0.5rem; }
+
+  .tabs {
+    display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem;
+  }
+  .tab {
+    padding: 0.5rem 1.5rem; border-radius: 0.5rem; cursor: pointer;
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); font-size: 0.875rem; font-weight: 500;
+    transition: all 0.2s;
+  }
+  .tab:hover { border-color: var(--blue); }
+  .tab.active { background: var(--blue); color: white; border-color: var(--blue); }
+
+  .summary {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;
+  }
+  .stat {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 0.75rem; padding: 1rem; text-align: center;
+  }
+  .stat .value { font-size: 2rem; font-weight: 700; }
+  .stat .label { color: var(--text-muted); font-size: 0.75rem; margin-top: 0.25rem; }
+  .stat.used .value { color: var(--red); }
+  .stat.free .value { color: var(--green); }
+  .stat.down .value { color: var(--gray); }
+  .stat.total .value { color: var(--blue); }
+
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem; margin-bottom: 2rem;
+  }
+  .node-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 0.75rem; padding: 1rem;
+  }
+  .node-card.down { opacity: 0.5; }
+  .node-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  .node-name { font-weight: 600; font-size: 1rem; }
+  .node-model {
+    font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 9999px;
+    background: var(--border); color: var(--text-muted);
+  }
+  .node-model.A100 { background: #1e3a5f; color: #60a5fa; }
+  .node-model.H100 { background: #3b1f5e; color: #c084fc; }
+  .node-model.ADA6000 { background: #1a3a2a; color: #4ade80; }
+  .node-model.P100 { background: #3b3a1f; color: #fbbf24; }
+
+  .gpu-slots { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .gpu-slot {
+    width: 2rem; height: 2rem; border-radius: 0.375rem;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem; font-weight: 700;
+  }
+  .gpu-slot.used { background: var(--red); color: white; }
+  .gpu-slot.free { background: #166534; color: #4ade80; }
+  .gpu-slot.down { background: var(--border); color: var(--gray); }
+
+  .node-footer {
+    margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);
+  }
+
+  .chart-container {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem;
+    max-width: 900px; margin-left: auto; margin-right: auto;
+  }
+  .chart-container h3 {
+    font-size: 1rem; margin-bottom: 1rem; font-weight: 600;
+  }
+  .chart-wrap { position: relative; height: 280px; }
+
+  .loading {
+    text-align: center; padding: 4rem; color: var(--text-muted);
+  }
+  .error {
+    text-align: center; padding: 2rem; color: var(--red);
+    background: #2d1b1b; border-radius: 0.75rem; margin: 1rem 0;
+  }
+
+  .refresh-btn {
+    position: fixed; bottom: 1.5rem; right: 1.5rem;
+    background: var(--blue); color: white; border: none;
+    width: 3rem; height: 3rem; border-radius: 50%;
+    cursor: pointer; font-size: 1.25rem; display: flex;
+    align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: transform 0.3s;
+  }
+  .refresh-btn:hover { transform: scale(1.1); }
+  .refresh-btn.spinning { animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (max-width: 640px) {
+    body { padding: 1rem; }
+    .grid { grid-template-columns: 1fr; }
+    .summary { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>GPU Monitor</h1>
+  <div class="subtitle">JLI Lab - Cluster GPU Allocation Dashboard</div>
+  <div class="updated" id="last-updated"></div>
+</div>
+
+<div class="tabs" id="cluster-tabs"></div>
+
+<div id="content">
+  <div class="loading">Loading GPU data...</div>
+</div>
+
+<button class="refresh-btn" id="refresh-btn" title="Refresh">&#x21bb;</button>
+
+<script>
+const REPO = 'Gonglitian/Gonglitian.github.io';
+const DATA_DIR = 'public/gpu-data';
+const CLUSTERS = ['hpcc', 'bcc'];
+const CACHE_BUST = () => `&_t=${Date.now()}`;
+
+let currentCluster = 'hpcc';
+let clusterData = {};
+let historyChart = null;
+
+// --- Data fetching ---
+async function fetchClusterData(cluster) {
+  const url = `https://raw.githubusercontent.com/${REPO}/main/${DATA_DIR}/${cluster}.json?${Date.now()}`;
+  const resp = await fetch(url);
+  if (!resp.ok) throw new Error(`${cluster}: ${resp.status}`);
+  return resp.json();
+}
+
+async function loadAllData() {
+  const results = await Promise.allSettled(CLUSTERS.map(c => fetchClusterData(c)));
+  CLUSTERS.forEach((c, i) => {
+    if (results[i].status === 'fulfilled') {
+      clusterData[c] = results[i].value;
+    }
+  });
+}
+
+// --- Rendering ---
+function renderTabs() {
+  const container = document.getElementById('cluster-tabs');
+  container.innerHTML = CLUSTERS.map(c => {
+    const data = clusterData[c];
+    const label = c.toUpperCase();
+    const badge = data ? ` (${data.summary.used}/${data.summary.total - data.summary.down})` : ' (offline)';
+    const active = c === currentCluster ? 'active' : '';
+    const disabled = !data ? 'style="opacity:0.4;cursor:not-allowed"' : '';
+    return `<div class="tab ${active}" ${disabled} onclick="switchCluster('${c}')">${label}${badge}</div>`;
+  }).join('');
+}
+
+function switchCluster(cluster) {
+  if (!clusterData[cluster]) return;
+  currentCluster = cluster;
+  renderTabs();
+  renderDashboard();
+}
+
+function renderDashboard() {
+  const data = clusterData[currentCluster];
+  if (!data) {
+    document.getElementById('content').innerHTML = '<div class="error">No data available for this cluster.</div>';
+    return;
+  }
+
+  const s = data.summary;
+  const activeTotal = s.total - s.down;
+
+  // Update timestamp
+  const ts = new Date(data.timestamp);
+  const ago = Math.round((Date.now() - ts) / 60000);
+  const agoText = ago < 1 ? 'just now' : ago < 60 ? `${ago}m ago` : `${Math.round(ago/60)}h ago`;
+  document.getElementById('last-updated').textContent = `Last updated: ${ts.toLocaleString()} (${agoText})`;
+
+  let html = '';
+
+  // Summary cards
+  html += `<div class="summary">
+    <div class="stat used"><div class="value">${s.used}</div><div class="label">In Use</div></div>
+    <div class="stat free"><div class="value">${s.free}</div><div class="label">Available</div></div>
+    <div class="stat down"><div class="value">${s.down}</div><div class="label">Down</div></div>
+    <div class="stat total"><div class="value">${activeTotal}</div><div class="label">Active Total</div></div>
+  </div>`;
+
+  // Node cards
+  html += '<div class="grid">';
+  const activeNodes = data.nodes.filter(n => n.state === 'active');
+  const downNodes = data.nodes.filter(n => n.state === 'down');
+
+  [...activeNodes, ...downNodes].forEach(node => {
+    const isDown = node.state === 'down';
+    const free = node.total - node.used;
+    let slots = '';
+    for (let i = 0; i < node.total; i++) {
+      if (isDown) {
+        slots += '<div class="gpu-slot down">-</div>';
+      } else if (i < node.used) {
+        slots += '<div class="gpu-slot used">X</div>';
+      } else {
+        slots += '<div class="gpu-slot free">O</div>';
+      }
+    }
+    html += `<div class="node-card ${isDown ? 'down' : ''}">
+      <div class="node-header">
+        <span class="node-name">${node.name}</span>
+        <span class="node-model ${node.gpu_model}">${node.gpu_model}</span>
+      </div>
+      <div class="gpu-slots">${slots}</div>
+      <div class="node-footer">${isDown ? 'Node is DOWN' : `${free}/${node.total} free`}</div>
+    </div>`;
+  });
+  html += '</div>';
+
+  // History chart
+  html += `<div class="chart-container">
+    <h3>Usage History (${currentCluster.toUpperCase()})</h3>
+    <div class="chart-wrap"><canvas id="history-chart"></canvas></div>
+  </div>`;
+
+  document.getElementById('content').innerHTML = html;
+  renderChart(data.history || []);
+}
+
+function renderChart(history) {
+  if (historyChart) { historyChart.destroy(); historyChart = null; }
+  const canvas = document.getElementById('history-chart');
+  if (!canvas || history.length === 0) return;
+
+  const labels = history.map(h => new Date(h.timestamp));
+  historyChart = new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Used',
+          data: history.map(h => h.used),
+          borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.1)',
+          fill: true, tension: 0.3, pointRadius: 0,
+        },
+        {
+          label: 'Free',
+          data: history.map(h => h.free),
+          borderColor: '#22c55e', backgroundColor: 'rgba(34,197,94,0.1)',
+          fill: true, tension: 0.3, pointRadius: 0,
+        },
+        {
+          label: 'Down',
+          data: history.map(h => h.down),
+          borderColor: '#64748b', backgroundColor: 'rgba(100,116,139,0.1)',
+          fill: true, tension: 0.3, pointRadius: 0,
+        },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: {
+          type: 'time',
+          time: { tooltipFormat: 'MMM d, HH:mm' },
+          grid: { color: 'rgba(51,65,85,0.5)' },
+          ticks: { color: '#94a3b8', maxTicksLimit: 8 },
+        },
+        y: {
+          beginAtZero: true,
+          grid: { color: 'rgba(51,65,85,0.5)' },
+          ticks: { color: '#94a3b8', stepSize: 4 },
+        },
+      },
+      plugins: {
+        legend: { labels: { color: '#f1f5f9', usePointStyle: true, pointStyle: 'circle' } },
+        tooltip: {
+          backgroundColor: '#1e293b', borderColor: '#334155', borderWidth: 1,
+          titleColor: '#f1f5f9', bodyColor: '#94a3b8',
+        },
+      },
+    },
+  });
+}
+
+// --- Init & auto-refresh ---
+async function init() {
+  await loadAllData();
+  // Default to first available cluster
+  if (!clusterData[currentCluster]) {
+    currentCluster = CLUSTERS.find(c => clusterData[c]) || 'hpcc';
+  }
+  renderTabs();
+  renderDashboard();
+}
+
+document.getElementById('refresh-btn').addEventListener('click', async function() {
+  this.classList.add('spinning');
+  await loadAllData();
+  renderTabs();
+  renderDashboard();
+  this.classList.remove('spinning');
+});
+
+// Auto-refresh every 5 minutes
+setInterval(async () => {
+  await loadAllData();
+  renderTabs();
+  renderDashboard();
+}, 5 * 60 * 1000);
+
+window.switchCluster = switchCluster;
+init();
+</script>
+</body>
+</html>
