@@ -12,9 +12,7 @@ DIR="$HOME/.gpu-monitor"
 if [ -d "$DIR" ]; then
     cd "$DIR" && git pull --quiet
 else
-    git clone --depth 1 --sparse https://github.com/Gonglitian/Gonglitian.github.io.git "$DIR"
-    cd "$DIR"
-    git sparse-checkout set gpu-monitor
+    git clone --depth 1 https://github.com/Gonglitian/gpu-monitor.git "$DIR"
 fi
 
 # Save token
@@ -22,12 +20,12 @@ echo "export GPU_MONITOR_TOKEN=\"$TOKEN\"" > "$HOME/.gpu_monitor_env"
 chmod 600 "$HOME/.gpu_monitor_env"
 
 # Make executable
-chmod +x "$DIR/gpu-monitor/daemon.sh" "$DIR/gpu-monitor/collect.py"
+chmod +x "$DIR/daemon.sh" "$DIR/collect.py"
 
 # Restart screen session
 screen -S gpu-monitor -X quit 2>/dev/null || true
 sleep 1
-screen -dmS gpu-monitor "$DIR/gpu-monitor/daemon.sh" "$CLUSTER"
+screen -dmS gpu-monitor "$DIR/daemon.sh" "$CLUSTER"
 
 echo "Done! '$CLUSTER' monitor running (1-min interval)"
 echo "  View:   screen -r gpu-monitor"
