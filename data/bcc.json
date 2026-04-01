@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-01T00:19:48Z",
+  "timestamp": "2026-04-01T00:20:50Z",
   "nodes": [],
   "pending_jobs": [
     {
@@ -9,6 +9,13 @@
       "job_name": "rg-eval",
       "submit_time": "2026-03-31T16:29:27",
       "reason": "DependencyNeverSatisfied"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "cap4_avqa",
+      "submit_time": "2026-03-31T17:20:21",
+      "reason": "QOSMaxGRESPerUser"
     },
     {
       "user": "rmose009",
@@ -57,7 +64,7 @@
       "user": "rmose009",
       "running_gpus": 0,
       "running_jobs": 0,
-      "pending_jobs": 5
+      "pending_jobs": 6
     }
   ],
   "summary": {
@@ -65,8 +72,8 @@
     "used": 0,
     "free": 0,
     "down": 0,
-    "pending_jobs": 6,
-    "pending_gpus": 7,
+    "pending_jobs": 7,
+    "pending_gpus": 8,
     "active_users": 0
   },
   "history": [
@@ -1050,6 +1057,16 @@
       "down": 0,
       "pending_jobs": 6,
       "pending_gpus": 7,
+      "active_users": 0
+    },
+    {
+      "timestamp": "2026-04-01T00:20:50Z",
+      "total": 0,
+      "used": 0,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 7,
+      "pending_gpus": 8,
       "active_users": 0
     }
   ]
