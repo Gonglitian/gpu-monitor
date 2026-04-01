@@ -1,6 +1,6 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-01T20:18:40Z",
+  "timestamp": "2026-04-01T20:19:46Z",
   "nodes": [
     {
       "name": "TASL",
@@ -13,7 +13,14 @@
           "user": "xzhan006",
           "gpus": 8,
           "job_name": "python",
-          "elapsed": "7-01:01:06",
+          "elapsed": "7-01:02:12",
+          "time_limit": ""
+        },
+        {
+          "user": "vla-reasoning",
+          "gpus": 1,
+          "job_name": "python",
+          "elapsed": "00:07",
           "time_limit": ""
         }
       ],
@@ -36,10 +43,11 @@
         },
         {
           "index": 2,
-          "mem_used": 14156,
+          "mem_used": 14257,
           "mem_total": 49140,
           "users": [
-            "xzhan006"
+            "xzhan006",
+            "vla-reasoning"
           ]
         },
         {
@@ -92,6 +100,12 @@
       "running_gpus": 8,
       "running_jobs": 1,
       "pending_jobs": 0
+    },
+    {
+      "user": "vla-reasoning",
+      "running_gpus": 1,
+      "running_jobs": 1,
+      "pending_jobs": 0
     }
   ],
   "summary": {
@@ -101,7 +115,7 @@
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
-    "active_users": 1
+    "active_users": 2
   },
   "history": [
     {
@@ -7633,6 +7647,16 @@
       "pending_jobs": 0,
       "pending_gpus": 0,
       "active_users": 1
+    },
+    {
+      "timestamp": "2026-04-01T20:19:46Z",
+      "total": 8,
+      "used": 8,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 2
     }
   ]
 }
