@@ -266,13 +266,55 @@ body {
 .fab.spin { animation: spin .7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ===== Overview ===== */
+.ov-strip {
+  display: flex; gap: var(--s6); padding: var(--s4) 0;
+  margin-bottom: var(--s6); border-bottom: 1px solid var(--border-0);
+}
+.ov-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: var(--s4); }
+.ov-card {
+  background: var(--bg-1); border: 1px solid var(--border-0); border-radius: 10px;
+  padding: var(--s5); cursor: pointer;
+  transition: border-color var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+.ov-card:hover { border-color: var(--border-1); transform: translateY(-1px); }
+.ov-card.is-off { opacity: .35; pointer-events: none; }
+.ov-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--s3); }
+.ov-card-name { font-family: var(--mono); font-weight: 800; font-size: 1rem; letter-spacing: 0.02em; }
+.ov-card-ts { font-family: var(--mono); font-size: 0.5625rem; color: var(--text-2); }
+.ov-card-nums { display: flex; gap: var(--s5); align-items: baseline; margin-bottom: var(--s3); }
+.ov-big { font-family: var(--mono); font-size: 2rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.ov-big.free { color: var(--color-free); }
+.ov-big.full { color: var(--color-used); }
+.ov-sub { font-family: var(--mono); font-size: 0.6875rem; color: var(--text-2); display: flex; flex-direction: column; gap: 2px; }
+.ov-sub span { white-space: nowrap; }
+.ov-seg-bar { display: flex; height: 6px; border-radius: 3px; overflow: hidden; gap: 1px; margin-bottom: var(--s3); }
+.ov-seg { transition: width var(--med) var(--ease); }
+.ov-seg.used { background: var(--color-used); }
+.ov-seg.free { background: var(--color-free); }
+.ov-seg.down { background: var(--color-down); }
+.ov-slots { display: flex; flex-wrap: wrap; gap: 2px; }
+.ov-sl {
+  width: 16px; height: 16px; border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 0.4375rem; font-weight: 700;
+}
+.ov-sl.u { background: var(--color-used-dim); color: var(--color-used); }
+.ov-sl.f { background: var(--color-free-dim); color: var(--color-free); }
+.ov-sl.d { background: var(--bg-3); color: var(--text-2); }
+.ov-nd-label {
+  font-family: var(--mono); font-size: 0.5rem; color: var(--text-2);
+  margin-right: 4px; align-self: center;
+}
+.ov-nd-group { display: flex; flex-wrap: wrap; gap: 2px; align-items: center; margin-bottom: 3px; }
+
 /* ===== Responsive ===== */
 @media (max-width:900px) { .cols { grid-template-columns: 1fr; } }
 @media (max-width:640px) {
   .page { padding: var(--s4); }
   .hdr { flex-direction: column; gap: var(--s3); }
-  .strip { flex-wrap: wrap; gap: var(--s4); }
-  .nodes { grid-template-columns: 1fr; }
+  .strip, .ov-strip { flex-wrap: wrap; gap: var(--s4); }
+  .nodes, .ov-cards { grid-template-columns: 1fr; }
   .kpi-sep { display: none; }
 }
 </style>
@@ -298,7 +340,7 @@ body {
 <script>
 const REPO='Gonglitian/gpu-monitor', DIR='data', CL=['hpcc','bcc','tasl'];
 const NO_SLURM=new Set(['tasl']); // clusters without job scheduler
-let cur='hpcc', D={}, CH={u:null,q:null};
+let cur='overview', D={}, CH={u:null,q:null};
 
 async function load(){
   const r=await Promise.allSettled(CL.map(c=>fetch(`https://raw.githubusercontent.com/${REPO}/main/${DIR}/${c}.json?${Date.now()}`).then(r=>{if(!r.ok)throw 0;return r.json()})));
@@ -306,13 +348,16 @@ async function load(){
 }
 
 function tabs(){
-  document.getElementById('tabs').innerHTML=CL.map(c=>{
+  const ovCls=cur==='overview'?'on':'';
+  let html=`<button class="tab-btn ${ovCls}" onclick="sw('overview')">ALL</button>`;
+  html+=CL.map(c=>{
     const s=D[c]?.summary, info=s?`${s.used}/${s.total-s.down}`:'--';
     const cls=c===cur?'on':(!D[c]?'off':'');
     return `<button class="tab-btn ${cls}" onclick="sw('${c}')">${c.toUpperCase()} ${info}</button>`;
   }).join('');
+  document.getElementById('tabs').innerHTML=html;
 }
-function sw(c){if(D[c]){cur=c;tabs();render()}} window.sw=sw;
+function sw(c){if(c==='overview'||D[c]){cur=c;tabs();render()}} window.sw=sw;
 
 function shortR(r){
   if(!r)return'';
@@ -322,7 +367,68 @@ function shortR(r){
   return r.length>14?r.slice(0,14)+'…':r;
 }
 
+function renderOverview(){
+  // Aggregate stats
+  let tUsed=0,tFree=0,tDown=0,tTotal=0,tUsers=new Set();
+  CL.forEach(c=>{const s=D[c]?.summary;if(!s)return;tUsed+=s.used;tFree+=s.free;tDown+=s.down;tTotal+=s.total;
+    (D[c].users||[]).forEach(u=>{if(u.running_gpus>0)tUsers.add(u.user)})});
+  const tAt=tTotal-tDown;
+
+  let h='';
+  // Global stats strip
+  h+=`<div class="ov-strip">
+    <div class="kpi used"><span class="kpi-val">${tUsed}</span><span class="kpi-lbl">used</span></div><div class="kpi-sep"></div>
+    <div class="kpi free"><span class="kpi-val">${tFree}</span><span class="kpi-lbl">free</span></div><div class="kpi-sep"></div>
+    ${tDown?`<div class="kpi down"><span class="kpi-val">${tDown}</span><span class="kpi-lbl">down</span></div><div class="kpi-sep"></div>`:''}
+    <div class="kpi"><span class="kpi-val">${tAt}</span><span class="kpi-lbl">total</span></div><div class="kpi-sep"></div>
+    <div class="kpi users"><span class="kpi-val">${tUsers.size}</span><span class="kpi-lbl">users</span></div>
+  </div>`;
+
+  // Per-cluster cards
+  h+='<div class="ov-cards">';
+  CL.forEach(c=>{
+    const d=D[c];
+    if(!d){h+=`<div class="ov-card is-off"><div class="ov-card-top"><span class="ov-card-name">${c.toUpperCase()}</span></div><div class="empty-msg">Offline</div></div>`;return}
+    const s=d.summary, at=s.total-s.down;
+    const t=new Date(d.timestamp), ago=Math.round((Date.now()-t)/60000);
+    const agoS=ago<1?'now':ago<60?ago+'m':Math.floor(ago/60)+'h '+ago%60+'m';
+
+    // Mini GPU slots per node
+    let slots='';
+    const on=d.nodes.filter(n=>n.state==='active'), off=d.nodes.filter(n=>n.state==='down');
+    [...on,...off].forEach(n=>{
+      const dn=n.state==='down';
+      slots+=`<div class="ov-nd-group"><span class="ov-nd-label">${n.name}</span>`;
+      for(let i=0;i<n.total;i++){
+        if(dn)slots+='<div class="ov-sl d">–</div>';
+        else if(i<n.used)slots+='<div class="ov-sl u">×</div>';
+        else slots+='<div class="ov-sl f">○</div>';
+      }
+      slots+='</div>';
+    });
+
+    h+=`<div class="ov-card" onclick="sw('${c}')">
+      <div class="ov-card-top"><span class="ov-card-name">${c.toUpperCase()}</span><span class="ov-card-ts">${agoS} ago</span></div>
+      <div class="ov-card-nums">
+        <span class="ov-big ${s.free>0?'free':'full'}">${s.free}</span>
+        <div class="ov-sub"><span style="color:var(--color-free)">free</span><span>${s.used} used${s.down?' · '+s.down+' down':''} / ${at}</span></div>
+      </div>
+      <div class="ov-seg-bar">
+        ${s.used?`<div class="ov-seg used" style="width:${(s.used/s.total*100).toFixed(1)}%"></div>`:''}
+        ${s.free?`<div class="ov-seg free" style="width:${(s.free/s.total*100).toFixed(1)}%"></div>`:''}
+        ${s.down?`<div class="ov-seg down" style="width:${(s.down/s.total*100).toFixed(1)}%"></div>`:''}
+      </div>
+      ${slots}
+    </div>`;
+  });
+  h+='</div>';
+
+  document.getElementById('ts').textContent='Overview';
+  document.getElementById('app').innerHTML=h;
+}
+
 function render(){
+  if(cur==='overview'){renderOverview();return}
   const d=D[cur];
   if(!d){document.getElementById('app').innerHTML='<div class="empty-msg">No data.</div>';return}
   const s=d.summary, at=s.total-s.down, isLocal=NO_SLURM.has(cur);
@@ -448,7 +554,7 @@ function charts(hist){
     y1:{beginAtZero:true,position:'right',grid:{drawOnChartArea:false},ticks:{color:'#9b8acd',font:{size:9,family:'JetBrains Mono'}}}}}});
 }
 
-async function init(){await load();if(!D[cur])cur=CL.find(c=>D[c])||'hpcc';tabs();render()}
+async function init(){await load();if(cur!=='overview'&&!D[cur])cur='overview';tabs();render()}
 document.getElementById('fab').onclick=async function(){this.classList.add('spin');await load();tabs();render();this.classList.remove('spin')};
 setInterval(async()=>{await load();tabs();render()},60000);
 init();
