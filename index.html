@@ -265,7 +265,8 @@ body {
 <button class="fab" id="fab" title="Refresh">&#x21bb;</button>
 
 <script>
-const REPO='Gonglitian/gpu-monitor', DIR='data', CL=['hpcc','bcc'];
+const REPO='Gonglitian/gpu-monitor', DIR='data', CL=['hpcc','bcc','tasl'];
+const NO_SLURM=new Set(['tasl']); // clusters without job scheduler
 let cur='hpcc', D={}, CH={u:null,q:null};
 
 async function load(){
@@ -293,7 +294,7 @@ function shortR(r){
 function render(){
   const d=D[cur];
   if(!d){document.getElementById('app').innerHTML='<div class="empty-msg">No data.</div>';return}
-  const s=d.summary, at=s.total-s.down;
+  const s=d.summary, at=s.total-s.down, isLocal=NO_SLURM.has(cur);
 
   // Timestamp
   const t=new Date(d.timestamp), ago=Math.round((Date.now()-t)/60000);
@@ -306,10 +307,10 @@ function render(){
   h+=`<div class="strip">
     <div class="kpi used"><span class="kpi-val">${s.used}</span><span class="kpi-lbl">used</span></div><div class="kpi-sep"></div>
     <div class="kpi free"><span class="kpi-val">${s.free}</span><span class="kpi-lbl">free</span></div><div class="kpi-sep"></div>
-    <div class="kpi down"><span class="kpi-val">${s.down}</span><span class="kpi-lbl">down</span></div><div class="kpi-sep"></div>
-    <div class="kpi"><span class="kpi-val">${at}</span><span class="kpi-lbl">total</span></div><div class="kpi-sep"></div>
-    <div class="kpi queue"><span class="kpi-val">${s.pending_jobs||0}</span><span class="kpi-lbl">queued</span></div><div class="kpi-sep"></div>
-    <div class="kpi users"><span class="kpi-val">${s.active_users||0}</span><span class="kpi-lbl">users</span></div>
+    ${s.down?`<div class="kpi down"><span class="kpi-val">${s.down}</span><span class="kpi-lbl">down</span></div><div class="kpi-sep"></div>`:''}
+    <div class="kpi"><span class="kpi-val">${at}</span><span class="kpi-lbl">total</span></div>
+    ${!isLocal?`<div class="kpi-sep"></div><div class="kpi queue"><span class="kpi-val">${s.pending_jobs||0}</span><span class="kpi-lbl">queued</span></div>`:''}
+    <div class="kpi-sep"></div><div class="kpi users"><span class="kpi-val">${s.active_users||0}</span><span class="kpi-lbl">users</span></div>
   </div>`;
 
   // NODES FIRST
@@ -342,26 +343,28 @@ function render(){
 
   // Users + Queue
   const us=d.users||[], pq=d.pending_jobs||[], mx=Math.max(1,...us.map(u=>u.running_gpus));
-  h+='<div class="cols">';
+  h+=isLocal?'<div class="cols" style="grid-template-columns:1fr">':'<div class="cols">';
 
   h+=`<div class="pnl">
     <div class="pnl-head"><span class="pnl-title">Users</span><span class="pnl-tag" style="background:var(--color-users-dim);color:var(--color-users)">${us.filter(u=>u.running_gpus>0).length} active</span></div>
-    <div class="pnl-scroll"><table class="tbl"><tr><th>User</th><th class="c">GPUs</th><th></th><th class="c">Jobs</th><th class="c">Queue</th></tr>`;
+    <div class="pnl-scroll"><table class="tbl"><tr><th>User</th><th class="c">GPUs</th><th></th><th class="c">Jobs</th>${isLocal?'':'<th class="c">Queue</th>'}</tr>`;
   us.forEach(u=>{
     if(!u.running_gpus&&!u.pending_jobs)return;
     const p=(u.running_gpus/mx*100).toFixed(0);
-    h+=`<tr><td class="mono">${u.user}</td><td class="mono c" style="color:var(--color-used)">${u.running_gpus}</td><td><div class="bar-track"><div class="bar-fill" style="width:${p}%"></div></div></td><td class="mono c">${u.running_jobs}</td><td class="mono c" style="color:${u.pending_jobs?'var(--color-queue)':'var(--text-2)'}">${u.pending_jobs}</td></tr>`;
+    h+=`<tr><td class="mono">${u.user}</td><td class="mono c" style="color:var(--color-used)">${u.running_gpus}</td><td><div class="bar-track"><div class="bar-fill" style="width:${p}%"></div></div></td><td class="mono c">${u.running_jobs}</td>${isLocal?'':`<td class="mono c" style="color:${u.pending_jobs?'var(--color-queue)':'var(--text-2)'}">${u.pending_jobs}</td>`}</tr>`;
   });
   h+='</table></div></div>';
 
-  h+=`<div class="pnl">
-    <div class="pnl-head"><span class="pnl-title">Queue</span><span class="pnl-tag" style="background:var(--color-queue-dim);color:var(--color-queue)">${pq.length} jobs · ${s.pending_gpus||0} GPUs</span></div>
-    <div class="pnl-scroll"><table class="tbl"><tr><th>User</th><th class="c">GPUs</th><th>Job</th><th>Reason</th></tr>`;
-  if(!pq.length)h+='<tr><td colspan="4" class="empty-msg">No pending jobs</td></tr>';
-  else pq.forEach(p=>{
-    h+=`<tr><td class="mono">${p.user}</td><td class="mono c" style="color:var(--color-queue)">${p.gpus}</td><td class="dim" style="max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${p.job_name}">${p.job_name}</td><td><span class="reason-tag">${shortR(p.reason)}</span></td></tr>`;
-  });
-  h+='</table></div></div>';
+  if(!isLocal){
+    h+=`<div class="pnl">
+      <div class="pnl-head"><span class="pnl-title">Queue</span><span class="pnl-tag" style="background:var(--color-queue-dim);color:var(--color-queue)">${pq.length} jobs · ${s.pending_gpus||0} GPUs</span></div>
+      <div class="pnl-scroll"><table class="tbl"><tr><th>User</th><th class="c">GPUs</th><th>Job</th><th>Reason</th></tr>`;
+    if(!pq.length)h+='<tr><td colspan="4" class="empty-msg">No pending jobs</td></tr>';
+    else pq.forEach(p=>{
+      h+=`<tr><td class="mono">${p.user}</td><td class="mono c" style="color:var(--color-queue)">${p.gpus}</td><td class="dim" style="max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${p.job_name}">${p.job_name}</td><td><span class="reason-tag">${shortR(p.reason)}</span></td></tr>`;
+    });
+    h+='</table></div></div>';
+  }
   h+='</div>';
 
   // Charts

@@ -17,12 +17,16 @@ fi
 echo "GPU Monitor daemon started: cluster=$CLUSTER, interval=${INTERVAL}s"
 echo "Stop with: tmux kill-session -t gpu-monitor  OR  touch /tmp/gpu_monitor_stop"
 
+# Local (non-Slurm) clusters use collect_local.py
+LOCAL_CLUSTERS="tasl"
+
 while true; do
     [ -f /tmp/gpu_monitor_stop ] && echo "Stop file found, exiting." && rm /tmp/gpu_monitor_stop && break
 
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Collecting $CLUSTER data..."
-    # Support both local (gpu_monitor_collect.py) and repo (collect.py) naming
-    if [ -f "$SCRIPT_DIR/collect.py" ]; then
+    if echo "$LOCAL_CLUSTERS" | grep -qw "$CLUSTER"; then
+        python3 "$SCRIPT_DIR/collect_local.py" --cluster "$CLUSTER" 2>&1
+    elif [ -f "$SCRIPT_DIR/collect.py" ]; then
         python3 "$SCRIPT_DIR/collect.py" --cluster "$CLUSTER" 2>&1
     else
         python3 "$SCRIPT_DIR/gpu_monitor_collect.py" --cluster "$CLUSTER" 2>&1
