@@ -213,10 +213,13 @@ def github_api(method, path, token, data=None):
         "-H", "X-GitHub-Api-Version: 2022-11-28",
         url,
     ]
+    stdin_data = None
     if data is not None:
-        cmd += ["-d", json.dumps(data)]
+        cmd += ["-d", "@-"]
+        stdin_data = json.dumps(data)
 
-    r = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=30,
+                       input=stdin_data)
     if r.stdout:
         return json.loads(r.stdout)
     return {}
