@@ -1,18 +1,18 @@
 #!/bin/bash
-#SBATCH -p epyc
+#SBATCH -p batch
 #SBATCH -c 1
 #SBATCH --mem=512M
-#SBATCH -t 30-00:00:00
+#SBATCH -t 7-00:00:00
 #SBATCH -J gpu-monitor
-#SBATCH -o /rhome/lgong024/.gpu_monitor_slurm.log
+#SBATCH -o /home/eegrad/lgong024/.gpu_monitor_slurm.log
 #SBATCH --requeue
 
-# GPU Monitor as a Slurm job - runs up to 30 days on a compute node
+# GPU Monitor as a Slurm job - runs up to 7 days on BCC compute node
 # Resubmits itself before expiring
 
-CLUSTER="${1:-hpcc}"
+CLUSTER="${1:-bcc}"
 INTERVAL=60
-SCRIPT_DIR="/rhome/lgong024/shared/bin"
+SCRIPT_DIR="/home/eegrad/lgong024/proj/gpu-monitor"
 ENV_FILE="$HOME/.gpu_monitor_env"
 
 source "$ENV_FILE" 2>/dev/null
@@ -21,8 +21,8 @@ if [ -z "$GPU_MONITOR_TOKEN" ]; then
     exit 1
 fi
 
-# Auto-resubmit before job ends (29 days 23 hours)
-RESUBMIT_AFTER=$((29 * 24 * 3600 + 23 * 3600))
+# Auto-resubmit before job ends (6 days 23 hours)
+RESUBMIT_AFTER=$((6 * 24 * 3600 + 23 * 3600))
 START_TIME=$(date +%s)
 
 echo "[$(date)] GPU Monitor job started: cluster=$CLUSTER, node=$(hostname)"

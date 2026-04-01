@@ -47,10 +47,12 @@ def run_cmd(cmd):
 
 
 def parse_gpu_count(gres_str):
-    """Parse GPU count from gres string like 'gres/gpu:a100:2' or 'gres/gpu:1'."""
+    """Parse GPU count from gres string like 'gres/gpu:a100:2', 'gpu:7(S:0-1)', 'gres/gpu:1'."""
     if not gres_str:
         return 0
-    m = re.search(r"(\d+)$", gres_str)
+    # Strip trailing socket info like (S:0-1)
+    clean = re.sub(r"\(.*?\)", "", gres_str)
+    m = re.search(r"(\d+)$", clean)
     if m:
         return int(m.group(1))
     # If no number at end (e.g. "gres/gpu:a100"), assume 1
@@ -84,14 +86,16 @@ def collect_gpu_status(cluster):
         if not gres or gres == "(null)":
             continue
 
-        total_match = re.search(r"(\d+)$", gres)
+        # Strip socket info like (S:0-1) before parsing
+        gres_clean = re.sub(r"\(.*?\)", "", gres)
+        total_match = re.search(r"(\d+)$", gres_clean)
         if not total_match:
             continue
         total = int(total_match.group(1))
         if total == 0:
             continue
 
-        parts = gres.split(":")
+        parts = gres_clean.split(":")
         gpu_model = parts[1].upper() if len(parts) >= 3 else "GPU"
 
         state = run_cmd(f'sinfo -n "{node}" -h -o "%t" | head -1')
