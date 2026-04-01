@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-01T00:06:33Z",
+  "timestamp": "2026-04-01T00:07:34Z",
   "nodes": [],
   "pending_jobs": [
     {
@@ -15,6 +15,13 @@
       "gpus": 1,
       "job_name": "bash",
       "submit_time": "2026-03-31T16:54:36",
+      "reason": "QOSMaxGRESPerUser"
+    },
+    {
+      "user": "nyismaw",
+      "gpus": 1,
+      "job_name": "SVAR",
+      "submit_time": "2026-03-31T17:07:26",
       "reason": "QOSMaxGRESPerUser"
     },
     {
@@ -64,7 +71,7 @@
       "user": "nyismaw",
       "running_gpus": 0,
       "running_jobs": 0,
-      "pending_jobs": 1
+      "pending_jobs": 2
     },
     {
       "user": "rmose009",
@@ -78,8 +85,8 @@
     "used": 0,
     "free": 0,
     "down": 0,
-    "pending_jobs": 7,
-    "pending_gpus": 8,
+    "pending_jobs": 8,
+    "pending_gpus": 9,
     "active_users": 0
   },
   "history": [
@@ -933,6 +940,16 @@
       "down": 0,
       "pending_jobs": 7,
       "pending_gpus": 8,
+      "active_users": 0
+    },
+    {
+      "timestamp": "2026-04-01T00:07:34Z",
+      "total": 0,
+      "used": 0,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 8,
+      "pending_gpus": 9,
       "active_users": 0
     }
   ]
