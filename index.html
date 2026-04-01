@@ -159,6 +159,37 @@ body {
 .sl.u { background: var(--color-used-dim); color: var(--color-used); }
 .sl.f { background: var(--color-free-dim); color: var(--color-free); }
 .sl.d { background: var(--bg-3); color: var(--text-2); }
+
+/* GPU memory slots — wider bars for local clusters */
+.slots-mem { display: flex; flex-direction: column; gap: 3px; }
+.sl-mem {
+  display: flex; align-items: center; gap: var(--s2); height: 22px;
+  font-family: var(--mono); font-size: 0.5625rem;
+}
+.sl-mem-idx { color: var(--text-2); width: 18px; text-align: right; flex-shrink: 0; }
+.sl-mem-bar {
+  flex: 1; height: 100%; border-radius: 4px; position: relative;
+  background: var(--bg-3); overflow: hidden;
+}
+.sl-mem-fill {
+  position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px;
+  transition: width var(--med) var(--ease);
+}
+.sl-mem-fill.hot { background: rgba(229,115,110,0.25); }
+.sl-mem-fill.warm { background: rgba(212,160,60,0.2); }
+.sl-mem-fill.cool { background: rgba(94,196,158,0.15); }
+.sl-mem-fill.idle { background: transparent; }
+.sl-mem-text {
+  position: relative; z-index: 1; padding: 0 var(--s2);
+  display: flex; justify-content: space-between; align-items: center;
+  width: 100%; height: 100%;
+}
+.sl-mem-val { font-weight: 600; }
+.sl-mem-fill.hot + .sl-mem-text .sl-mem-val { color: var(--color-used); }
+.sl-mem-fill.warm + .sl-mem-text .sl-mem-val { color: var(--color-queue); }
+.sl-mem-fill.cool + .sl-mem-text .sl-mem-val { color: var(--color-free); }
+.sl-mem-fill.idle + .sl-mem-text .sl-mem-val { color: var(--text-2); }
+.sl-mem-users { color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 50%; text-align: right; }
 .nd-meta { font-family: var(--mono); font-size: 0.625rem; color: var(--text-2); margin-top: var(--s2); }
 
 /* Node job list */
@@ -318,11 +349,23 @@ function render(){
   const on=d.nodes.filter(n=>n.state==='active'), off=d.nodes.filter(n=>n.state==='down');
   [...on,...off].forEach(n=>{
     const dn=n.state==='down', fr=n.total-n.used;
-    let sl='';
-    for(let i=0;i<n.total;i++){
-      if(dn)sl+='<div class="sl d">–</div>';
-      else if(i<n.used)sl+='<div class="sl u">×</div>';
-      else sl+='<div class="sl f">○</div>';
+    let sl='', hasMem=isLocal&&n.gpu_details?.length;
+    if(hasMem){
+      sl='<div class="slots-mem">';
+      n.gpu_details.forEach(g=>{
+        const pct=g.mem_total?((g.mem_used/g.mem_total)*100).toFixed(0):0;
+        const uG=(g.mem_used/1024).toFixed(0), tG=(g.mem_total/1024).toFixed(0);
+        const heat=+pct>=80?'hot':+pct>=30?'warm':+pct>0?'cool':'idle';
+        const usr=g.users?.length?g.users.join(', '):'';
+        sl+=`<div class="sl-mem"><span class="sl-mem-idx">${g.index}</span><div class="sl-mem-bar"><div class="sl-mem-fill ${heat}" style="width:${pct}%"></div><div class="sl-mem-text"><span class="sl-mem-val">${uG}/${tG}G</span><span class="sl-mem-users">${usr}</span></div></div></div>`;
+      });
+      sl+='</div>';
+    } else {
+      for(let i=0;i<n.total;i++){
+        if(dn)sl+='<div class="sl d">–</div>';
+        else if(i<n.used)sl+='<div class="sl u">×</div>';
+        else sl+='<div class="sl f">○</div>';
+      }
     }
     let jobs='';
     if(n.jobs?.length){
@@ -334,7 +377,7 @@ function render(){
     }
     h+=`<div class="nd ${dn?'is-down':''}">
       <div class="nd-top"><span class="nd-name">${n.name}</span><span class="nd-badge ${n.gpu_model}">${n.gpu_model}</span></div>
-      <div class="slots">${sl}</div>
+      ${hasMem?sl:`<div class="slots">${sl}</div>`}
       <div class="nd-meta">${dn?'offline':fr+'/'+n.total+' free'}</div>
       ${jobs}
     </div>`;

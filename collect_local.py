@@ -54,9 +54,9 @@ def collect_gpu_status(cluster):
     cfg = CLUSTER_CONFIG[cluster]
     node_name = cfg["node_name"]
 
-    # Query GPU info: index, uuid, name
+    # Query GPU info: index, uuid, name, memory
     gpu_info_raw = run_cmd(
-        'nvidia-smi --query-gpu=index,uuid,name --format=csv,noheader'
+        'nvidia-smi --query-gpu=index,uuid,name,memory.used,memory.total --format=csv,noheader,nounits'
     )
     if not gpu_info_raw:
         print("ERROR: nvidia-smi returned no GPUs", file=sys.stderr)
@@ -66,12 +66,14 @@ def collect_gpu_status(cluster):
     gpus = []
     for line in gpu_info_raw.split("\n"):
         parts = [p.strip() for p in line.split(",")]
-        if len(parts) < 3:
+        if len(parts) < 5:
             continue
         gpus.append({
             "index": int(parts[0]),
             "uuid": parts[1],
             "name": parts[2],
+            "mem_used": int(parts[3]),
+            "mem_total": int(parts[4]),
         })
 
     if not gpus:
@@ -169,6 +171,18 @@ def collect_gpu_status(cluster):
             "time_limit": "",
         })
 
+    # Per-GPU detail (memory)
+    gpu_details = []
+    for g in gpus:
+        idx = g["index"]
+        users_on_gpu = list({p["user"] for p in gpu_procs.get(idx, [])})
+        gpu_details.append({
+            "index": idx,
+            "mem_used": g["mem_used"],
+            "mem_total": g["mem_total"],
+            "users": users_on_gpu,
+        })
+
     node_data = [{
         "name": node_name,
         "gpu_model": gpu_model,
@@ -176,6 +190,7 @@ def collect_gpu_status(cluster):
         "used": used,
         "state": "active",
         "jobs": node_jobs,
+        "gpu_details": gpu_details,
     }]
 
     # Per-user summary
