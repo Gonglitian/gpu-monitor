@@ -19,8 +19,9 @@ Real-time GPU allocation dashboard for Slurm clusters, deployed on GitHub Pages.
 ```
 Slurm Cluster (compute node, sbatch job, every 1 min)
   └─ collect.py: sinfo/squeue → JSON → GitHub API PUT
-  └─ gpu_monitor_job.sh: 30-day Slurm job, auto-resubmits before expiry
+  └─ gpu_monitor_job.sh: Slurm job with per-cluster config, auto-resubmits before expiry
   └─ .bashrc auto-recovery: resubmits if job dies on next login
+  └─ Duplicate prevention: new job auto-exits if one is already running
 
 GitHub Pages (static HTML)
   └─ index.html: fetch JSON from raw.githubusercontent.com → Chart.js render
@@ -28,24 +29,39 @@ GitHub Pages (static HTML)
 
 No build step. No backend server. Data flows through GitHub as storage.
 
+## Cluster Deployments
+
+Each cluster has different Slurm configurations and monitoring methods. The job script (`gpu_monitor_job.sh`) contains a per-cluster `case` block that handles these differences automatically.
+
+| Cluster | GPU Partition | Job Partition | Max Walltime | Resubmit Cycle | Script Path |
+|---------|--------------|---------------|-------------|----------------|-------------|
+| HPCC | `gpu,short_gpu,preempt_gpu` | `epyc` | 30 days | 29d 23h | `/rhome/lgong024/shared/bin/` |
+| BCC | `gpu` | `batch` | 7 days | 6d 23h | `/home/eegrad/lgong024/proj/gpu-monitor/` |
+
+**Key differences:**
+- **HPCC** has multiple GPU partitions (`gpu`, `short_gpu`, `preempt_gpu`) and uses the `epyc` CPU partition for the monitor job (30-day walltime).
+- **BCC** has a single `gpu` partition with socket-aware GRES format (`gpu:7(S:0-1)`). The monitor runs on the `batch` partition (7-day walltime, requiring more frequent auto-resubmission).
+- Both clusters use the same `collect.py` collector — cluster-specific parsing (e.g., socket suffix stripping) is handled transparently.
+
 ## Deployment Methods
 
 ### Method 1: Slurm Job (recommended for HPCC/BCC)
 
-Runs as a lightweight CPU job on a compute node. Survives login node restarts, no screen/tmux needed.
+Runs as a lightweight CPU job on a compute node. Survives login node restarts, no screen/tmux needed. The script auto-detects cluster settings (partition, walltime, paths) and includes duplicate job prevention — if another `gpu-monitor` job is already running, new submissions exit gracefully.
 
 ```bash
 # 1. Save token
 echo 'export GPU_MONITOR_TOKEN="ghp_YOUR_TOKEN"' > ~/.gpu_monitor_env && chmod 600 ~/.gpu_monitor_env
 
-# 2. Submit as Slurm job (30-day walltime, auto-resubmits)
-sbatch /path/to/gpu_monitor_job.sh hpcc
+# 2. Submit (auto-selects partition/walltime based on cluster)
+bash /path/to/gpu_monitor_job.sh hpcc   # or: bcc
+# Or directly: sbatch --partition=epyc --time=30-00:00:00 gpu_monitor_job.sh hpcc
 
 # 3. (Optional) Add auto-recovery to .bashrc
 cat >> ~/.bashrc << 'EOF'
-# GPU Monitor Auto-Recovery
+# GPU Monitor Auto-Recovery (duplicate-safe: job script exits if already running)
 if ! squeue -u "$USER" -n gpu-monitor -h 2>/dev/null | grep -q gpu-monitor; then
-    sbatch /path/to/gpu_monitor_job.sh hpcc >/dev/null 2>&1
+    bash /path/to/gpu_monitor_job.sh hpcc >/dev/null 2>&1
 fi
 EOF
 ```

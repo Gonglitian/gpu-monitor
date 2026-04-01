@@ -10,16 +10,28 @@ This skill automates deploying the GPU monitor collector on a Slurm cluster. The
 ## Architecture Overview
 
 ```
-Slurm compute node (sbatch, epyc/batch partition, 30-day walltime)
-  └─ gpu_monitor_job.sh → while loop, 60s interval
-       └─ gpu_monitor_collect.py → sinfo/squeue → JSON → GitHub API PUT
+Slurm compute node (sbatch, per-cluster partition & walltime)
+  └─ gpu_monitor_job.sh → unified script with per-cluster config (case block)
+       ├─ Auto-selects partition/walltime/paths based on cluster arg
+       ├─ Duplicate prevention: exits if another gpu-monitor job already running
+       ├─ Auto-resubmits before walltime expires
+       └─ collect.py → sinfo/squeue → JSON → GitHub API PUT (via stdin, not cmdline)
 
 GitHub repo (Gonglitian/gpu-monitor)
   ├─ data/<cluster>.json  ← pushed by collector
   └─ index.html           ← GitHub Pages dashboard
 
-.bashrc auto-recovery: if job dies, resubmits on next login
+.bashrc auto-recovery: if job dies, resubmits on next login (duplicate-safe)
 ```
+
+### Per-cluster differences
+
+| Cluster | GPU Partition(s) | Job Partition | Walltime | GRES Format | Notes |
+|---------|-----------------|---------------|----------|-------------|-------|
+| HPCC | `gpu,short_gpu,preempt_gpu` | `epyc` | 30 days | `gres/gpu:a100:2` | Multiple GPU partitions |
+| BCC | `gpu` | `batch` | 7 days | `gpu:7(S:0-1)` | Socket-aware GRES, shorter walltime |
+
+Both clusters use the same `collect.py` — BCC's socket suffix `(S:0-1)` is stripped transparently during parsing.
 
 ## When to Use
 
@@ -96,15 +108,30 @@ scp gpu_monitor_collect.py gpu_monitor_job.sh user@cluster:/path/to/shared/bin/
 git clone https://github.com/Gonglitian/gpu-monitor.git ~/.gpu-monitor
 ```
 
-### Step 6: Customize gpu_monitor_job.sh
+### Step 6: Add cluster config to gpu_monitor_job.sh
 
-Edit these lines for the target cluster:
+Add a new `case` entry in the per-cluster configuration block:
 
 ```bash
-#SBATCH -p epyc              # ← change to the cluster's long-walltime partition
-#SBATCH -o /path/to/.gpu_monitor_slurm.log  # ← user's home dir
-SCRIPT_DIR="/path/to/scripts"  # ← absolute path to where collect.py lives
+case "$CLUSTER" in
+    hpcc)
+        PARTITION="epyc"
+        WALLTIME="30-00:00:00"
+        RESUBMIT_AFTER=$((29 * 24 * 3600 + 23 * 3600))
+        SCRIPT_DIR="/rhome/lgong024/shared/bin"
+        LOG_FILE="/rhome/lgong024/.gpu_monitor_slurm.log"
+        ;;
+    newcluster)   # ← add this block
+        PARTITION="the_cpu_partition"
+        WALLTIME="7-00:00:00"
+        RESUBMIT_AFTER=$((6 * 24 * 3600 + 23 * 3600))
+        SCRIPT_DIR="/path/to/scripts"
+        LOG_FILE="/path/to/.gpu_monitor_slurm.log"
+        ;;
+esac
 ```
+
+The script auto-selects partition/walltime/paths based on the cluster argument. It also prevents duplicate jobs — if another `gpu-monitor` job is already running, new submissions exit gracefully.
 
 ### Step 7: Test
 
@@ -121,10 +148,17 @@ python3 /path/to/gpu_monitor_collect.py --cluster newcluster
 ### Step 8: Submit Slurm job
 
 ```bash
-sbatch /path/to/gpu_monitor_job.sh newcluster
+# Option A: auto-submit (detects partition/walltime from cluster config)
+bash /path/to/gpu_monitor_job.sh newcluster
+
+# Option B: manual sbatch
+sbatch --partition=the_cpu_partition --time=7-00:00:00 /path/to/gpu_monitor_job.sh newcluster
+
 squeue -u $USER -n gpu-monitor   # verify running
 tail -f ~/.gpu_monitor_slurm.log  # check logs
 ```
+
+The script includes duplicate prevention — safe to call multiple times (e.g., from `.bashrc`).
 
 ### Step 9: Auto-recovery in .bashrc
 
@@ -164,9 +198,28 @@ scancel -n gpu-monitor             # Stop collector
 sbatch /path/to/gpu_monitor_job.sh cluster  # Restart
 ```
 
+## Setup Methods
+
+### Method 1: Slurm Job (recommended)
+Runs as a lightweight CPU job on a compute node. Survives login node restarts. The job script is unified — just pass the cluster name:
+
+```bash
+# Auto-submit (detects partition/walltime from cluster config)
+bash /path/to/gpu_monitor_job.sh <cluster>
+```
+
+Features: auto-resubmit before walltime expires, duplicate job prevention, per-cluster config.
+
+### Method 2: Screen Daemon (fallback for non-Slurm or restricted networks)
+```bash
+bash setup.sh <cluster> <token>
+```
+
+Runs on login node via `screen`. Manual restart required if daemon dies.
+
 ## Current Deployments
 
-| Cluster | Partition | Script path | Auto-recovery |
-|---------|-----------|-------------|---------------|
-| HPCC | epyc (30d) | `/rhome/lgong024/shared/bin/` | Yes (.bashrc) |
-| BCC | — | — | Not yet deployed |
+| Cluster | Job Partition | Walltime | Script Path | Auto-recovery | Status |
+|---------|--------------|----------|-------------|---------------|--------|
+| HPCC | epyc | 30 days | `/rhome/lgong024/shared/bin/` | Yes (.bashrc) | Active |
+| BCC | batch | 7 days | `/home/eegrad/lgong024/proj/gpu-monitor/` | Yes (.bashrc) | Active |

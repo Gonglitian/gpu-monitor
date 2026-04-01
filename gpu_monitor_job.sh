@@ -1,20 +1,51 @@
 #!/bin/bash
-#SBATCH -p batch
 #SBATCH -c 1
 #SBATCH --mem=512M
-#SBATCH -t 7-00:00:00
 #SBATCH -J gpu-monitor
-#SBATCH -o /home/eegrad/lgong024/.gpu_monitor_slurm.log
 #SBATCH --requeue
 
-# GPU Monitor as a Slurm job - runs up to 7 days on BCC compute node
-# Resubmits itself before expiring
+# GPU Monitor Slurm Job — universal for all clusters
+# Usage:
+#   sbatch gpu_monitor_job.sh <cluster>    (submits with default partition/walltime)
+#   bash  gpu_monitor_job.sh <cluster>     (auto-submits via sbatch with correct flags)
 
-CLUSTER="${1:-bcc}"
+CLUSTER="${1:?Usage: sbatch gpu_monitor_job.sh <cluster>}"
 INTERVAL=60
-SCRIPT_DIR="/home/eegrad/lgong024/proj/gpu-monitor"
-ENV_FILE="$HOME/.gpu_monitor_env"
 
+# --- Per-cluster configuration ---
+case "$CLUSTER" in
+    hpcc)
+        PARTITION="epyc"
+        WALLTIME="30-00:00:00"
+        RESUBMIT_AFTER=$((29 * 24 * 3600 + 23 * 3600))  # 29d 23h
+        SCRIPT_DIR="/rhome/lgong024/shared/bin"
+        LOG_FILE="/rhome/lgong024/.gpu_monitor_slurm.log"
+        ;;
+    bcc)
+        PARTITION="batch"
+        WALLTIME="7-00:00:00"
+        RESUBMIT_AFTER=$((6 * 24 * 3600 + 23 * 3600))   # 6d 23h
+        SCRIPT_DIR="/home/eegrad/lgong024/proj/gpu-monitor"
+        LOG_FILE="/home/eegrad/lgong024/.gpu_monitor_slurm.log"
+        ;;
+    *)
+        echo "ERROR: Unknown cluster '$CLUSTER'. Add config in gpu_monitor_job.sh."
+        exit 1
+        ;;
+esac
+
+# If not inside a Slurm job, re-submit with correct partition/walltime
+if [ -z "$SLURM_JOB_ID" ]; then
+    echo "Submitting gpu-monitor job for $CLUSTER (partition=$PARTITION, walltime=$WALLTIME)..."
+    sbatch --partition="$PARTITION" --time="$WALLTIME" --output="$LOG_FILE" \
+        "$0" "$CLUSTER"
+    exit $?
+fi
+
+# --- Running inside Slurm from here ---
+
+# Load token
+ENV_FILE="$HOME/.gpu_monitor_env"
 source "$ENV_FILE" 2>/dev/null
 if [ -z "$GPU_MONITOR_TOKEN" ]; then
     echo "ERROR: GPU_MONITOR_TOKEN not set. Check $ENV_FILE"
@@ -28,27 +59,21 @@ if [ -n "$RUNNING" ]; then
     exit 0
 fi
 
-# Auto-resubmit before job ends (6 days 23 hours)
-RESUBMIT_AFTER=$((6 * 24 * 3600 + 23 * 3600))
 START_TIME=$(date +%s)
-
-echo "[$(date)] GPU Monitor job started: cluster=$CLUSTER, node=$(hostname)"
+echo "[$(date)] GPU Monitor started: cluster=$CLUSTER, node=$(hostname), partition=$PARTITION, walltime=$WALLTIME"
 
 while true; do
     ELAPSED=$(( $(date +%s) - START_TIME ))
     if [ $ELAPSED -ge $RESUBMIT_AFTER ]; then
         echo "[$(date)] Approaching time limit, resubmitting..."
-        sbatch "$SCRIPT_DIR/gpu_monitor_job.sh" "$CLUSTER"
+        sbatch --partition="$PARTITION" --time="$WALLTIME" --output="$LOG_FILE" \
+            "$SCRIPT_DIR/gpu_monitor_job.sh" "$CLUSTER"
         echo "[$(date)] Resubmitted. Exiting current job."
         exit 0
     fi
 
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Collecting $CLUSTER data..."
-    if [ -f "$SCRIPT_DIR/collect.py" ]; then
-        python3 "$SCRIPT_DIR/collect.py" --cluster "$CLUSTER" 2>&1
-    else
-        python3 "$SCRIPT_DIR/gpu_monitor_collect.py" --cluster "$CLUSTER" 2>&1
-    fi
+    python3 "$SCRIPT_DIR/collect.py" --cluster "$CLUSTER" 2>&1
 
     sleep $INTERVAL
 done
