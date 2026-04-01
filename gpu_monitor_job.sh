@@ -21,6 +21,13 @@ if [ -z "$GPU_MONITOR_TOKEN" ]; then
     exit 1
 fi
 
+# Prevent duplicate jobs: exit if another gpu-monitor job is already running
+RUNNING=$(squeue -u "$USER" -n gpu-monitor -t R -h -o "%i" | grep -v "^${SLURM_JOB_ID}$" | head -1)
+if [ -n "$RUNNING" ]; then
+    echo "[$(date)] Another gpu-monitor job ($RUNNING) already running. Exiting."
+    exit 0
+fi
+
 # Auto-resubmit before job ends (6 days 23 hours)
 RESUBMIT_AFTER=$((6 * 24 * 3600 + 23 * 3600))
 START_TIME=$(date +%s)
