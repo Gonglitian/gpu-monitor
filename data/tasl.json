@@ -1,6 +1,6 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-01T19:57:21Z",
+  "timestamp": "2026-04-01T19:58:25Z",
   "nodes": [
     {
       "name": "TASL",
@@ -13,14 +13,14 @@
           "user": "xzhan006",
           "gpus": 8,
           "job_name": "python",
-          "elapsed": "7-00:39:47",
+          "elapsed": "7-00:40:51",
           "time_limit": ""
         },
         {
           "user": "vla-reasoning",
-          "gpus": 6,
+          "gpus": 1,
           "job_name": "python",
-          "elapsed": "16:45",
+          "elapsed": "00:06",
           "time_limit": ""
         }
       ],
@@ -35,64 +35,59 @@
         },
         {
           "index": 1,
-          "mem_used": 15707,
+          "mem_used": 16275,
+          "mem_total": 49140,
+          "users": [
+            "xzhan006",
+            "vla-reasoning"
+          ]
+        },
+        {
+          "index": 2,
+          "mem_used": 14156,
           "mem_total": 49140,
           "users": [
             "xzhan006"
           ]
         },
         {
-          "index": 2,
-          "mem_used": 19264,
-          "mem_total": 49140,
-          "users": [
-            "xzhan006",
-            "vla-reasoning"
-          ]
-        },
-        {
           "index": 3,
-          "mem_used": 21028,
+          "mem_used": 15892,
           "mem_total": 49140,
           "users": [
-            "xzhan006",
-            "vla-reasoning"
+            "xzhan006"
           ]
         },
         {
           "index": 4,
-          "mem_used": 19395,
+          "mem_used": 14127,
           "mem_total": 49140,
           "users": [
-            "xzhan006",
-            "vla-reasoning"
+            "xzhan006"
           ]
         },
         {
           "index": 5,
-          "mem_used": 18766,
+          "mem_used": 13664,
           "mem_total": 49140,
           "users": [
-            "xzhan006",
-            "vla-reasoning"
+            "xzhan006"
           ]
         },
         {
           "index": 6,
-          "mem_used": 19304,
+          "mem_used": 14264,
           "mem_total": 49140,
           "users": [
-            "xzhan006",
-            "vla-reasoning"
+            "xzhan006"
           ]
         },
         {
           "index": 7,
-          "mem_used": 18610,
+          "mem_used": 13570,
           "mem_total": 49140,
           "users": [
-            "xzhan006",
-            "vla-reasoning"
+            "xzhan006"
           ]
         }
       ]
@@ -108,7 +103,7 @@
     },
     {
       "user": "vla-reasoning",
-      "running_gpus": 6,
+      "running_gpus": 1,
       "running_jobs": 1,
       "pending_jobs": 0
     }
@@ -7455,6 +7450,16 @@
     },
     {
       "timestamp": "2026-04-01T19:57:21Z",
+      "total": 8,
+      "used": 8,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 2
+    },
+    {
+      "timestamp": "2026-04-01T19:58:25Z",
       "total": 8,
       "used": 8,
       "free": 0,
