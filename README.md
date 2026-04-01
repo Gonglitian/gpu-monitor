@@ -17,8 +17,10 @@ Real-time GPU allocation dashboard for Slurm clusters, deployed on GitHub Pages.
 ## Architecture
 
 ```
-Server (screen daemon, every 1 min)
+Slurm Cluster (compute node, sbatch job, every 1 min)
   └─ collect.py: sinfo/squeue → JSON → GitHub API PUT
+  └─ gpu_monitor_job.sh: 30-day Slurm job, auto-resubmits before expiry
+  └─ .bashrc auto-recovery: resubmits if job dies on next login
 
 GitHub Pages (static HTML)
   └─ index.html: fetch JSON from raw.githubusercontent.com → Chart.js render
@@ -26,26 +28,46 @@ GitHub Pages (static HTML)
 
 No build step. No backend server. Data flows through GitHub as storage.
 
-## Quick Setup (one-liner)
+## Deployment Methods
+
+### Method 1: Slurm Job (recommended for HPCC/BCC)
+
+Runs as a lightweight CPU job on a compute node. Survives login node restarts, no screen/tmux needed.
+
+```bash
+# 1. Save token
+echo 'export GPU_MONITOR_TOKEN="ghp_YOUR_TOKEN"' > ~/.gpu_monitor_env && chmod 600 ~/.gpu_monitor_env
+
+# 2. Submit as Slurm job (30-day walltime, auto-resubmits)
+sbatch /path/to/gpu_monitor_job.sh hpcc
+
+# 3. (Optional) Add auto-recovery to .bashrc
+cat >> ~/.bashrc << 'EOF'
+# GPU Monitor Auto-Recovery
+if ! squeue -u "$USER" -n gpu-monitor -h 2>/dev/null | grep -q gpu-monitor; then
+    sbatch /path/to/gpu_monitor_job.sh hpcc >/dev/null 2>&1
+fi
+EOF
+```
+
+**Management:**
+```bash
+squeue -u $USER -n gpu-monitor   # Check if running
+tail -f ~/.gpu_monitor_slurm.log  # View logs
+scancel -n gpu-monitor            # Stop
+```
+
+### Method 2: Screen Daemon (fallback, or non-Slurm servers)
 
 ```bash
 curl -sL https://raw.githubusercontent.com/Gonglitian/gpu-monitor/main/setup.sh -o /tmp/gpu-monitor-setup.sh && bash /tmp/gpu-monitor-setup.sh <cluster> <github-token>
 ```
 
-Replace `<cluster>` with `hpcc` or `bcc`, and `<github-token>` with a GitHub PAT that has repo write access.
-
-### What it does
-
-1. Clones this repo to `~/.gpu-monitor/`
-2. Saves token to `~/.gpu_monitor_env`
-3. Starts a `screen` session (`gpu-monitor`) that collects data every 60s
-
-### Management
-
+**Management:**
 ```bash
-screen -r gpu-monitor     # View daemon logs
-screen -S gpu-monitor -X quit  # Stop
-cd ~/.gpu-monitor && git pull   # Update scripts
+screen -r gpu-monitor              # View daemon logs
+screen -S gpu-monitor -X quit      # Stop
+cd ~/.gpu-monitor && git pull      # Update scripts
 ```
 
 ## Files
@@ -54,15 +76,16 @@ cd ~/.gpu-monitor && git pull   # Update scripts
 |------|-------------|
 | `index.html` | Dashboard frontend (GitHub Pages) |
 | `collect.py` | Slurm data collector, pushes JSON via GitHub API |
-| `daemon.sh` | Loop wrapper, runs collect.py every 60s |
-| `setup.sh` | One-line remote setup script |
+| `daemon.sh` | Loop wrapper for screen/nohup mode |
+| `setup.sh` | One-line remote setup (screen method) |
+| `gpu_monitor_job.sh` | Slurm batch job wrapper (recommended) |
 | `data/*.json` | Auto-updated cluster data (1-min intervals, 7-day history) |
 
 ## Adding a New Cluster
 
 1. Add partition config in `collect.py` under `CLUSTER_CONFIG`
 2. Add cluster name to `CLUSTERS` array in `index.html`
-3. Run setup on the new cluster
+3. Deploy collector on the new cluster (Method 1 or 2)
 
 ## Data Format Specification
 
