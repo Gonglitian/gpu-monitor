@@ -1,22 +1,14 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-02T18:21:37Z",
+  "timestamp": "2026-04-02T18:22:39Z",
   "nodes": [
     {
       "name": "TASL",
       "gpu_model": "ADA6000",
       "total": 8,
-      "used": 4,
+      "used": 0,
       "state": "active",
-      "jobs": [
-        {
-          "user": "vla-reasoning",
-          "gpus": 4,
-          "job_name": "python",
-          "elapsed": "01:28:48",
-          "time_limit": ""
-        }
-      ],
+      "jobs": [],
       "gpu_details": [
         {
           "index": 0,
@@ -44,56 +36,41 @@
         },
         {
           "index": 4,
-          "mem_used": 4497,
+          "mem_used": 5,
           "mem_total": 49140,
-          "users": [
-            "vla-reasoning"
-          ]
+          "users": []
         },
         {
           "index": 5,
-          "mem_used": 4491,
+          "mem_used": 5,
           "mem_total": 49140,
-          "users": [
-            "vla-reasoning"
-          ]
+          "users": []
         },
         {
           "index": 6,
-          "mem_used": 4491,
+          "mem_used": 5,
           "mem_total": 49140,
-          "users": [
-            "vla-reasoning"
-          ]
+          "users": []
         },
         {
           "index": 7,
-          "mem_used": 4491,
+          "mem_used": 5,
           "mem_total": 49140,
-          "users": [
-            "vla-reasoning"
-          ]
+          "users": []
         }
       ]
     }
   ],
   "pending_jobs": [],
-  "users": [
-    {
-      "user": "vla-reasoning",
-      "running_gpus": 4,
-      "running_jobs": 1,
-      "pending_jobs": 0
-    }
-  ],
+  "users": [],
   "summary": {
     "total": 8,
-    "used": 4,
-    "free": 4,
+    "used": 0,
+    "free": 8,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
-    "active_users": 1
+    "active_users": 0
   },
   "history": [
     {
@@ -20035,6 +20012,16 @@
       "pending_jobs": 0,
       "pending_gpus": 0,
       "active_users": 1
+    },
+    {
+      "timestamp": "2026-04-02T18:22:39Z",
+      "total": 8,
+      "used": 0,
+      "free": 8,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 0
     }
   ]
 }
