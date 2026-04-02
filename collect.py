@@ -47,15 +47,22 @@ def run_cmd(cmd):
 
 
 def parse_gpu_count(gres_str):
-    """Parse GPU count from gres string like 'gres/gpu:a100:2', 'gpu:7(S:0-1)', 'gres/gpu:1'."""
+    """Parse GPU count from gres string like 'gres/gpu:a100:2', 'gpu:7(S:0-1)', 'gres/gpu:1'.
+
+    The count is always after the last colon: 'gres/gpu:a100:2' → 2, 'gres/gpu:1' → 1.
+    If the last segment is a model name like 'a100', it means count=1 (no explicit count).
+    """
     if not gres_str:
         return 0
     # Strip trailing socket info like (S:0-1)
     clean = re.sub(r"\(.*?\)", "", gres_str)
-    m = re.search(r"(\d+)$", clean)
-    if m:
-        return int(m.group(1))
-    # If no number at end (e.g. "gres/gpu:a100"), assume 1
+    # Split by colon and check the last segment
+    parts = clean.split(":")
+    last = parts[-1] if parts else ""
+    # If last segment is purely numeric, that's the count
+    if last.isdigit():
+        return int(last)
+    # Otherwise no explicit count (e.g. "gres/gpu:a100") → 1 GPU
     if "gpu" in gres_str:
         return 1
     return 0
