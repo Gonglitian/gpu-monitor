@@ -1,6 +1,6 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-02T21:45:50Z",
+  "timestamp": "2026-04-02T21:46:55Z",
   "nodes": [
     {
       "name": "TASL",
@@ -10,28 +10,27 @@
       "state": "active",
       "jobs": [
         {
-          "user": "ruijieli0814",
-          "gpus": 5,
-          "job_name": "python3",
-          "elapsed": "00:13",
-          "time_limit": ""
-        },
-        {
           "user": "xzhan006",
           "gpus": 4,
           "job_name": "python",
-          "elapsed": "03:48",
+          "elapsed": "04:53",
+          "time_limit": ""
+        },
+        {
+          "user": "ruijieli0814",
+          "gpus": 4,
+          "job_name": "python",
+          "elapsed": "19:05",
           "time_limit": ""
         }
       ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 40793,
+          "mem_used": 40330,
           "mem_total": 49140,
           "users": [
-            "xzhan006",
-            "ruijieli0814"
+            "xzhan006"
           ]
         },
         {
@@ -96,13 +95,13 @@
   "pending_jobs": [],
   "users": [
     {
-      "user": "ruijieli0814",
-      "running_gpus": 5,
+      "user": "xzhan006",
+      "running_gpus": 4,
       "running_jobs": 1,
       "pending_jobs": 0
     },
     {
-      "user": "xzhan006",
+      "user": "ruijieli0814",
       "running_gpus": 4,
       "running_jobs": 1,
       "pending_jobs": 0
@@ -21820,6 +21819,16 @@
     },
     {
       "timestamp": "2026-04-02T21:45:50Z",
+      "total": 8,
+      "used": 8,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 2
+    },
+    {
+      "timestamp": "2026-04-02T21:46:55Z",
       "total": 8,
       "used": 8,
       "free": 0,
