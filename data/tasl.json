@@ -1,19 +1,19 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-02T05:25:43Z",
+  "timestamp": "2026-04-02T05:26:46Z",
   "nodes": [
     {
       "name": "TASL",
       "gpu_model": "ADA6000",
       "total": 8,
-      "used": 3,
+      "used": 2,
       "state": "active",
       "jobs": [
         {
           "user": "vla-reasoning",
-          "gpus": 3,
+          "gpus": 2,
           "job_name": "python",
-          "elapsed": "05:09",
+          "elapsed": "06:11",
           "time_limit": ""
         }
       ],
@@ -28,11 +28,9 @@
         },
         {
           "index": 1,
-          "mem_used": 857,
+          "mem_used": 5,
           "mem_total": 49140,
-          "users": [
-            "vla-reasoning"
-          ]
+          "users": []
         },
         {
           "index": 2,
@@ -79,15 +77,15 @@
   "users": [
     {
       "user": "vla-reasoning",
-      "running_gpus": 3,
+      "running_gpus": 2,
       "running_jobs": 1,
       "pending_jobs": 0
     }
   ],
   "summary": {
     "total": 8,
-    "used": 3,
-    "free": 5,
+    "used": 2,
+    "free": 6,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
@@ -12669,6 +12667,16 @@
       "total": 8,
       "used": 3,
       "free": 5,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 1
+    },
+    {
+      "timestamp": "2026-04-02T05:26:46Z",
+      "total": 8,
+      "used": 2,
+      "free": 6,
       "down": 0,
       "pending_jobs": 0,
       "pending_gpus": 0,
