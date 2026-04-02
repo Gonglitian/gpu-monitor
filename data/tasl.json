@@ -1,45 +1,49 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-02T21:42:34Z",
+  "timestamp": "2026-04-02T21:43:38Z",
   "nodes": [
     {
       "name": "TASL",
       "gpu_model": "ADA6000",
       "total": 8,
-      "used": 5,
+      "used": 8,
       "state": "active",
       "jobs": [
+        {
+          "user": "xzhan006",
+          "gpus": 4,
+          "job_name": "python",
+          "elapsed": "01:37",
+          "time_limit": ""
+        },
         {
           "user": "ruijieli0814",
           "gpus": 4,
           "job_name": "python",
-          "elapsed": "14:45",
-          "time_limit": ""
-        },
-        {
-          "user": "xzhan006",
-          "gpus": 1,
-          "job_name": "python",
-          "elapsed": "00:33",
+          "elapsed": "15:49",
           "time_limit": ""
         }
       ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 615,
+          "mem_used": 40330,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "xzhan006"
+          ]
         },
         {
           "index": 1,
-          "mem_used": 634,
+          "mem_used": 20391,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "xzhan006"
+          ]
         },
         {
           "index": 2,
-          "mem_used": 621,
+          "mem_used": 20152,
           "mem_total": 49140,
           "users": [
             "xzhan006"
@@ -47,9 +51,11 @@
         },
         {
           "index": 3,
-          "mem_used": 563,
+          "mem_used": 20592,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "xzhan006"
+          ]
         },
         {
           "index": 4,
@@ -89,22 +95,22 @@
   "pending_jobs": [],
   "users": [
     {
-      "user": "ruijieli0814",
+      "user": "xzhan006",
       "running_gpus": 4,
       "running_jobs": 1,
       "pending_jobs": 0
     },
     {
-      "user": "xzhan006",
-      "running_gpus": 1,
+      "user": "ruijieli0814",
+      "running_gpus": 4,
       "running_jobs": 1,
       "pending_jobs": 0
     }
   ],
   "summary": {
     "total": 8,
-    "used": 5,
-    "free": 3,
+    "used": 8,
+    "free": 0,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
@@ -21786,6 +21792,16 @@
       "total": 8,
       "used": 5,
       "free": 3,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 2
+    },
+    {
+      "timestamp": "2026-04-02T21:43:38Z",
+      "total": 8,
+      "used": 8,
+      "free": 0,
       "down": 0,
       "pending_jobs": 0,
       "pending_gpus": 0,
