@@ -1,38 +1,52 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-02T01:40:55Z",
+  "timestamp": "2026-04-02T01:41:57Z",
   "nodes": [
     {
       "name": "TASL",
       "gpu_model": "ADA6000",
       "total": 8,
-      "used": 0,
+      "used": 3,
       "state": "active",
-      "jobs": [],
+      "jobs": [
+        {
+          "user": "xzhan006",
+          "gpus": 3,
+          "job_name": "python",
+          "elapsed": "02:08",
+          "time_limit": ""
+        }
+      ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 8,
+          "mem_used": 587,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "xzhan006"
+          ]
         },
         {
           "index": 1,
-          "mem_used": 8,
+          "mem_used": 161,
           "mem_total": 49140,
           "users": []
         },
         {
           "index": 2,
-          "mem_used": 8,
+          "mem_used": 589,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "xzhan006"
+          ]
         },
         {
           "index": 3,
-          "mem_used": 8,
+          "mem_used": 588,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "xzhan006"
+          ]
         },
         {
           "index": 4,
@@ -62,15 +76,22 @@
     }
   ],
   "pending_jobs": [],
-  "users": [],
+  "users": [
+    {
+      "user": "xzhan006",
+      "running_gpus": 3,
+      "running_jobs": 1,
+      "pending_jobs": 0
+    }
+  ],
   "summary": {
     "total": 8,
-    "used": 0,
-    "free": 8,
+    "used": 3,
+    "free": 5,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
-    "active_users": 0
+    "active_users": 1
   },
   "history": [
     {
@@ -10512,6 +10533,16 @@
       "pending_jobs": 0,
       "pending_gpus": 0,
       "active_users": 0
+    },
+    {
+      "timestamp": "2026-04-02T01:41:57Z",
+      "total": 8,
+      "used": 3,
+      "free": 5,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 1
     }
   ]
 }
