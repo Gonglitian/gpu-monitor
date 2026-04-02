@@ -1,61 +1,46 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-02T03:55:23Z",
+  "timestamp": "2026-04-02T03:56:29Z",
   "nodes": [
     {
       "name": "TASL",
       "gpu_model": "ADA6000",
       "total": 8,
-      "used": 8,
+      "used": 4,
       "state": "active",
       "jobs": [
-        {
-          "user": "xzhan006",
-          "gpus": 4,
-          "job_name": "python",
-          "elapsed": "21:06",
-          "time_limit": ""
-        },
         {
           "user": "vla-reasoning",
           "gpus": 4,
           "job_name": "python",
-          "elapsed": "55:59",
+          "elapsed": "57:06",
           "time_limit": ""
         }
       ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 11483,
+          "mem_used": 5,
           "mem_total": 49140,
-          "users": [
-            "xzhan006"
-          ]
+          "users": []
         },
         {
           "index": 1,
-          "mem_used": 6203,
+          "mem_used": 5,
           "mem_total": 49140,
-          "users": [
-            "xzhan006"
-          ]
+          "users": []
         },
         {
           "index": 2,
-          "mem_used": 5417,
+          "mem_used": 5,
           "mem_total": 49140,
-          "users": [
-            "xzhan006"
-          ]
+          "users": []
         },
         {
           "index": 3,
-          "mem_used": 5669,
+          "mem_used": 5,
           "mem_total": 49140,
-          "users": [
-            "xzhan006"
-          ]
+          "users": []
         },
         {
           "index": 4,
@@ -95,12 +80,6 @@
   "pending_jobs": [],
   "users": [
     {
-      "user": "xzhan006",
-      "running_gpus": 4,
-      "running_jobs": 1,
-      "pending_jobs": 0
-    },
-    {
       "user": "vla-reasoning",
       "running_gpus": 4,
       "running_jobs": 1,
@@ -109,12 +88,12 @@
   ],
   "summary": {
     "total": 8,
-    "used": 8,
-    "free": 0,
+    "used": 4,
+    "free": 4,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
-    "active_users": 2
+    "active_users": 1
   },
   "history": [
     {
@@ -11826,6 +11805,16 @@
       "pending_jobs": 0,
       "pending_gpus": 0,
       "active_users": 2
+    },
+    {
+      "timestamp": "2026-04-02T03:56:29Z",
+      "total": 8,
+      "used": 4,
+      "free": 4,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 1
     }
   ]
 }
