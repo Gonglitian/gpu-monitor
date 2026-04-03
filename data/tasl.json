@@ -1,6 +1,6 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-03T19:18:45Z",
+  "timestamp": "2026-04-03T19:19:50Z",
   "nodes": [
     {
       "name": "TASL",
@@ -13,23 +13,24 @@
           "user": "ruijieli0814",
           "gpus": 8,
           "job_name": "python",
-          "elapsed": "11:53:59",
+          "elapsed": "11:55:04",
           "time_limit": ""
         },
         {
           "user": "vla-reasoning",
-          "gpus": 4,
-          "job_name": "python",
-          "elapsed": "05:50:36",
+          "gpus": 5,
+          "job_name": "pt_main_thread",
+          "elapsed": "00:51",
           "time_limit": ""
         }
       ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 12074,
+          "mem_used": 13131,
           "mem_total": 49140,
           "users": [
+            "vla-reasoning",
             "ruijieli0814"
           ]
         },
@@ -106,7 +107,7 @@
     },
     {
       "user": "vla-reasoning",
-      "running_gpus": 4,
+      "running_gpus": 5,
       "running_jobs": 1,
       "pending_jobs": 0
     }
@@ -33633,6 +33634,16 @@
     },
     {
       "timestamp": "2026-04-03T19:18:45Z",
+      "total": 8,
+      "used": 8,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 2
+    },
+    {
+      "timestamp": "2026-04-03T19:19:50Z",
       "total": 8,
       "used": 8,
       "free": 0,
