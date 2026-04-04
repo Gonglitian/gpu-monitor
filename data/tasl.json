@@ -1,46 +1,54 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-04T08:55:15Z",
+  "timestamp": "2026-04-04T08:56:18Z",
   "nodes": [
     {
       "name": "TASL",
       "gpu_model": "ADA6000",
       "total": 8,
-      "used": 4,
+      "used": 8,
       "state": "active",
       "jobs": [
         {
           "user": "zehaowang",
-          "gpus": 4,
+          "gpus": 8,
           "job_name": "python3.11",
-          "elapsed": "02:32",
+          "elapsed": "01:15",
           "time_limit": ""
         }
       ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 8,
+          "mem_used": 17449,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "zehaowang"
+          ]
         },
         {
           "index": 1,
-          "mem_used": 6,
+          "mem_used": 17457,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "zehaowang"
+          ]
         },
         {
           "index": 2,
-          "mem_used": 5,
+          "mem_used": 17457,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "zehaowang"
+          ]
         },
         {
           "index": 3,
-          "mem_used": 5,
+          "mem_used": 17521,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "zehaowang"
+          ]
         },
         {
           "index": 4,
@@ -81,15 +89,15 @@
   "users": [
     {
       "user": "zehaowang",
-      "running_gpus": 4,
+      "running_gpus": 8,
       "running_jobs": 1,
       "pending_jobs": 0
     }
   ],
   "summary": {
     "total": 8,
-    "used": 4,
-    "free": 4,
+    "used": 8,
+    "free": 0,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
@@ -40491,6 +40499,16 @@
       "total": 8,
       "used": 4,
       "free": 4,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 1
+    },
+    {
+      "timestamp": "2026-04-04T08:56:18Z",
+      "total": 8,
+      "used": 8,
+      "free": 0,
       "down": 0,
       "pending_jobs": 0,
       "pending_gpus": 0,
