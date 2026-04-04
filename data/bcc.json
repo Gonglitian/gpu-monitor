@@ -1,22 +1,8 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-04T23:15:45Z",
+  "timestamp": "2026-04-04T23:16:46Z",
   "nodes": [],
   "pending_jobs": [
-    {
-      "user": "myan035",
-      "gpus": 1,
-      "job_name": "ldp_eval",
-      "submit_time": "2026-04-04T16:08:35",
-      "reason": "Dependency"
-    },
-    {
-      "user": "myan035",
-      "gpus": 1,
-      "job_name": "ldp_train",
-      "submit_time": "2026-04-04T16:08:35",
-      "reason": "DependencyNeverSatisfied"
-    },
     {
       "user": "rmose009",
       "gpus": 1,
@@ -62,12 +48,6 @@
   ],
   "users": [
     {
-      "user": "myan035",
-      "running_gpus": 0,
-      "running_jobs": 0,
-      "pending_jobs": 2
-    },
-    {
       "user": "rmose009",
       "running_gpus": 0,
       "running_jobs": 0,
@@ -79,8 +59,8 @@
     "used": 0,
     "free": 0,
     "down": 0,
-    "pending_jobs": 8,
-    "pending_gpus": 8,
+    "pending_jobs": 6,
+    "pending_gpus": 6,
     "active_users": 0
   },
   "history": [
@@ -4702,6 +4682,16 @@
       "down": 0,
       "pending_jobs": 8,
       "pending_gpus": 8,
+      "active_users": 0
+    },
+    {
+      "timestamp": "2026-04-04T23:16:46Z",
+      "total": 0,
+      "used": 0,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 6,
+      "pending_gpus": 6,
       "active_users": 0
     }
   ]
