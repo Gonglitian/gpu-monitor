@@ -1,6 +1,6 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-04T02:23:21Z",
+  "timestamp": "2026-04-04T02:24:25Z",
   "nodes": [
     {
       "name": "TASL",
@@ -13,25 +13,34 @@
           "user": "vla-reasoning",
           "gpus": 4,
           "job_name": "python",
-          "elapsed": "01:12:53",
+          "elapsed": "01:13:57",
+          "time_limit": ""
+        },
+        {
+          "user": "ruijieli0814",
+          "gpus": 2,
+          "job_name": "python",
+          "elapsed": "00:20",
           "time_limit": ""
         }
       ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 4451,
+          "mem_used": 9229,
           "mem_total": 49140,
           "users": [
-            "vla-reasoning"
+            "vla-reasoning",
+            "ruijieli0814"
           ]
         },
         {
           "index": 1,
-          "mem_used": 4551,
+          "mem_used": 16768,
           "mem_total": 49140,
           "users": [
-            "vla-reasoning"
+            "vla-reasoning",
+            "ruijieli0814"
           ]
         },
         {
@@ -44,7 +53,7 @@
         },
         {
           "index": 3,
-          "mem_used": 19612,
+          "mem_used": 19659,
           "mem_total": 49140,
           "users": [
             "vla-reasoning"
@@ -84,6 +93,12 @@
       "running_gpus": 4,
       "running_jobs": 1,
       "pending_jobs": 0
+    },
+    {
+      "user": "ruijieli0814",
+      "running_gpus": 2,
+      "running_jobs": 1,
+      "pending_jobs": 0
     }
   ],
   "summary": {
@@ -93,7 +108,7 @@
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
-    "active_users": 1
+    "active_users": 2
   },
   "history": [
     {
@@ -37295,6 +37310,16 @@
       "pending_jobs": 0,
       "pending_gpus": 0,
       "active_users": 1
+    },
+    {
+      "timestamp": "2026-04-04T02:24:25Z",
+      "total": 8,
+      "used": 4,
+      "free": 4,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 2
     }
   ]
 }
