@@ -1,6 +1,6 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-04T22:40:58Z",
+  "timestamp": "2026-04-04T22:42:02Z",
   "nodes": [
     {
       "name": "TASL",
@@ -13,33 +13,31 @@
           "user": "vla-reasoning",
           "gpus": 7,
           "job_name": "python3.10",
-          "elapsed": "03:59:50",
+          "elapsed": "04:00:53",
           "time_limit": ""
         },
         {
           "user": "zehaowang",
           "gpus": 4,
           "job_name": "python3.11",
-          "elapsed": "00:21",
+          "elapsed": "00:30",
           "time_limit": ""
         }
       ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 46771,
+          "mem_used": 38672,
           "mem_total": 49140,
           "users": [
-            "zehaowang",
             "vla-reasoning"
           ]
         },
         {
           "index": 1,
-          "mem_used": 48040,
+          "mem_used": 39943,
           "mem_total": 49140,
           "users": [
-            "zehaowang",
             "vla-reasoning"
           ]
         },
@@ -61,15 +59,16 @@
         },
         {
           "index": 4,
-          "mem_used": 17712,
+          "mem_used": 39468,
           "mem_total": 49140,
           "users": [
-            "vla-reasoning"
+            "vla-reasoning",
+            "zehaowang"
           ]
         },
         {
           "index": 5,
-          "mem_used": 8209,
+          "mem_used": 26727,
           "mem_total": 49140,
           "users": [
             "zehaowang"
@@ -77,19 +76,20 @@
         },
         {
           "index": 6,
-          "mem_used": 25148,
+          "mem_used": 42399,
           "mem_total": 49140,
           "users": [
-            "vla-reasoning"
+            "vla-reasoning",
+            "zehaowang"
           ]
         },
         {
           "index": 7,
-          "mem_used": 9725,
+          "mem_used": 28535,
           "mem_total": 49140,
           "users": [
-            "zehaowang",
-            "vla-reasoning"
+            "vla-reasoning",
+            "zehaowang"
           ]
         }
       ]
@@ -48102,6 +48102,16 @@
     },
     {
       "timestamp": "2026-04-04T22:40:58Z",
+      "total": 8,
+      "used": 8,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 2
+    },
+    {
+      "timestamp": "2026-04-04T22:42:02Z",
       "total": 8,
       "used": 8,
       "free": 0,
