@@ -1,33 +1,33 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-04T10:19:36Z",
+  "timestamp": "2026-04-04T10:20:41Z",
   "nodes": [
     {
       "name": "TASL",
       "gpu_model": "ADA6000",
       "total": 8,
-      "used": 6,
+      "used": 7,
       "state": "active",
       "jobs": [
         {
           "user": "vla-reasoning",
-          "gpus": 4,
+          "gpus": 5,
           "job_name": "python",
-          "elapsed": "54:21",
+          "elapsed": "55:27",
           "time_limit": ""
         },
         {
           "user": "ruijieli0814",
           "gpus": 2,
           "job_name": "python",
-          "elapsed": "34:18",
+          "elapsed": "35:24",
           "time_limit": ""
         }
       ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 5147,
+          "mem_used": 18779,
           "mem_total": 49140,
           "users": [
             "vla-reasoning"
@@ -35,7 +35,7 @@
         },
         {
           "index": 1,
-          "mem_used": 5146,
+          "mem_used": 18778,
           "mem_total": 49140,
           "users": [
             "vla-reasoning"
@@ -43,7 +43,7 @@
         },
         {
           "index": 2,
-          "mem_used": 5141,
+          "mem_used": 18773,
           "mem_total": 49140,
           "users": [
             "vla-reasoning"
@@ -51,7 +51,7 @@
         },
         {
           "index": 3,
-          "mem_used": 5221,
+          "mem_used": 18853,
           "mem_total": 49140,
           "users": [
             "vla-reasoning"
@@ -67,7 +67,7 @@
         },
         {
           "index": 5,
-          "mem_used": 35897,
+          "mem_used": 36261,
           "mem_total": 49140,
           "users": [
             "ruijieli0814"
@@ -81,9 +81,11 @@
         },
         {
           "index": 7,
-          "mem_used": 20709,
+          "mem_used": 21673,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "vla-reasoning"
+          ]
         }
       ]
     }
@@ -92,7 +94,7 @@
   "users": [
     {
       "user": "vla-reasoning",
-      "running_gpus": 4,
+      "running_gpus": 5,
       "running_jobs": 1,
       "pending_jobs": 0
     },
@@ -105,8 +107,8 @@
   ],
   "summary": {
     "total": 8,
-    "used": 6,
-    "free": 2,
+    "used": 7,
+    "free": 1,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
@@ -41298,6 +41300,16 @@
       "total": 8,
       "used": 6,
       "free": 2,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 2
+    },
+    {
+      "timestamp": "2026-04-04T10:20:41Z",
+      "total": 8,
+      "used": 7,
+      "free": 1,
       "down": 0,
       "pending_jobs": 0,
       "pending_gpus": 0,
