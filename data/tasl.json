@@ -1,65 +1,50 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-04T04:59:19Z",
+  "timestamp": "2026-04-04T05:00:23Z",
   "nodes": [
     {
       "name": "TASL",
       "gpu_model": "ADA6000",
       "total": 8,
-      "used": 6,
+      "used": 2,
       "state": "active",
       "jobs": [
-        {
-          "user": "zehaowang",
-          "gpus": 4,
-          "job_name": "python3.11",
-          "elapsed": "48:32",
-          "time_limit": ""
-        },
         {
           "user": "ruijieli0814",
           "gpus": 2,
           "job_name": "python",
-          "elapsed": "02:17",
+          "elapsed": "03:20",
           "time_limit": ""
         }
       ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 18395,
+          "mem_used": 8,
           "mem_total": 49140,
-          "users": [
-            "zehaowang"
-          ]
+          "users": []
         },
         {
           "index": 1,
-          "mem_used": 18417,
+          "mem_used": 8,
           "mem_total": 49140,
-          "users": [
-            "zehaowang"
-          ]
+          "users": []
         },
         {
           "index": 2,
-          "mem_used": 19403,
+          "mem_used": 8,
           "mem_total": 49140,
-          "users": [
-            "zehaowang"
-          ]
+          "users": []
         },
         {
           "index": 3,
-          "mem_used": 19392,
+          "mem_used": 78,
           "mem_total": 49140,
-          "users": [
-            "zehaowang"
-          ]
+          "users": []
         },
         {
           "index": 4,
-          "mem_used": 4721,
+          "mem_used": 29006,
           "mem_total": 49140,
           "users": [
             "ruijieli0814"
@@ -67,7 +52,7 @@
         },
         {
           "index": 5,
-          "mem_used": 12352,
+          "mem_used": 36498,
           "mem_total": 49140,
           "users": [
             "ruijieli0814"
@@ -75,13 +60,13 @@
         },
         {
           "index": 6,
-          "mem_used": 15659,
+          "mem_used": 20695,
           "mem_total": 49140,
           "users": []
         },
         {
           "index": 7,
-          "mem_used": 15659,
+          "mem_used": 20639,
           "mem_total": 49140,
           "users": []
         }
@@ -91,12 +76,6 @@
   "pending_jobs": [],
   "users": [
     {
-      "user": "zehaowang",
-      "running_gpus": 4,
-      "running_jobs": 1,
-      "pending_jobs": 0
-    },
-    {
       "user": "ruijieli0814",
       "running_gpus": 2,
       "running_jobs": 1,
@@ -105,12 +84,12 @@
   ],
   "summary": {
     "total": 8,
-    "used": 6,
-    "free": 2,
+    "used": 2,
+    "free": 6,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
-    "active_users": 2
+    "active_users": 1
   },
   "history": [
     {
@@ -38722,6 +38701,16 @@
       "pending_jobs": 0,
       "pending_gpus": 0,
       "active_users": 2
+    },
+    {
+      "timestamp": "2026-04-04T05:00:23Z",
+      "total": 8,
+      "used": 2,
+      "free": 6,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 1
     }
   ]
 }
