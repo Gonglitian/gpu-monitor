@@ -1,6 +1,6 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-04T22:17:21Z",
+  "timestamp": "2026-04-04T22:18:27Z",
   "nodes": [
     {
       "name": "TASL",
@@ -13,31 +13,40 @@
           "user": "vla-reasoning",
           "gpus": 8,
           "job_name": "python3.10",
-          "elapsed": "03:36:13",
+          "elapsed": "03:37:18",
+          "time_limit": ""
+        },
+        {
+          "user": "zehaowang",
+          "gpus": 4,
+          "job_name": "python3.11 <defunct>",
+          "elapsed": "00:24",
           "time_limit": ""
         },
         {
           "user": "ruijieli0814",
           "gpus": 2,
           "job_name": "python",
-          "elapsed": "41:30",
+          "elapsed": "42:36",
           "time_limit": ""
         }
       ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 38672,
+          "mem_used": 40389,
           "mem_total": 49140,
           "users": [
+            "zehaowang",
             "vla-reasoning"
           ]
         },
         {
           "index": 1,
-          "mem_used": 39943,
+          "mem_used": 43596,
           "mem_total": 49140,
           "users": [
+            "zehaowang",
             "vla-reasoning"
           ]
         },
@@ -59,20 +68,21 @@
         },
         {
           "index": 4,
-          "mem_used": 47231,
+          "mem_used": 47567,
           "mem_total": 49140,
           "users": [
-            "vla-reasoning",
-            "ruijieli0814"
+            "ruijieli0814",
+            "vla-reasoning"
           ]
         },
         {
           "index": 5,
-          "mem_used": 38092,
+          "mem_used": 39811,
           "mem_total": 49140,
           "users": [
+            "ruijieli0814",
             "vla-reasoning",
-            "ruijieli0814"
+            "zehaowang"
           ]
         },
         {
@@ -85,9 +95,10 @@
         },
         {
           "index": 7,
-          "mem_used": 22415,
+          "mem_used": 35222,
           "mem_total": 49140,
           "users": [
+            "zehaowang",
             "vla-reasoning"
           ]
         }
@@ -99,6 +110,12 @@
     {
       "user": "vla-reasoning",
       "running_gpus": 8,
+      "running_jobs": 1,
+      "pending_jobs": 0
+    },
+    {
+      "user": "zehaowang",
+      "running_gpus": 4,
       "running_jobs": 1,
       "pending_jobs": 0
     },
@@ -116,7 +133,7 @@
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
-    "active_users": 2
+    "active_users": 3
   },
   "history": [
     {
@@ -47888,6 +47905,16 @@
       "pending_jobs": 0,
       "pending_gpus": 0,
       "active_users": 2
+    },
+    {
+      "timestamp": "2026-04-04T22:18:27Z",
+      "total": 8,
+      "used": 8,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 3
     }
   ]
 }
