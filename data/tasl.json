@@ -1,26 +1,26 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-04T10:29:20Z",
+  "timestamp": "2026-04-04T10:30:25Z",
   "nodes": [
     {
       "name": "TASL",
       "gpu_model": "ADA6000",
       "total": 8,
-      "used": 7,
+      "used": 8,
       "state": "active",
       "jobs": [
         {
           "user": "vla-reasoning",
-          "gpus": 5,
+          "gpus": 8,
           "job_name": "python",
-          "elapsed": "01:04:05",
+          "elapsed": "01:05:11",
           "time_limit": ""
         },
         {
           "user": "ruijieli0814",
           "gpus": 2,
           "job_name": "python",
-          "elapsed": "44:03",
+          "elapsed": "45:08",
           "time_limit": ""
         }
       ],
@@ -59,29 +59,33 @@
         },
         {
           "index": 4,
-          "mem_used": 30052,
+          "mem_used": 31806,
           "mem_total": 49140,
           "users": [
-            "ruijieli0814"
+            "ruijieli0814",
+            "vla-reasoning"
           ]
         },
         {
           "index": 5,
-          "mem_used": 36261,
+          "mem_used": 38014,
           "mem_total": 49140,
           "users": [
-            "ruijieli0814"
+            "ruijieli0814",
+            "vla-reasoning"
           ]
         },
         {
           "index": 6,
-          "mem_used": 20765,
+          "mem_used": 18647,
           "mem_total": 49140,
-          "users": []
+          "users": [
+            "vla-reasoning"
+          ]
         },
         {
           "index": 7,
-          "mem_used": 30239,
+          "mem_used": 28766,
           "mem_total": 49140,
           "users": [
             "vla-reasoning"
@@ -94,7 +98,7 @@
   "users": [
     {
       "user": "vla-reasoning",
-      "running_gpus": 5,
+      "running_gpus": 8,
       "running_jobs": 1,
       "pending_jobs": 0
     },
@@ -107,8 +111,8 @@
   ],
   "summary": {
     "total": 8,
-    "used": 7,
-    "free": 1,
+    "used": 8,
+    "free": 0,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
@@ -41380,6 +41384,16 @@
       "total": 8,
       "used": 7,
       "free": 1,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 2
+    },
+    {
+      "timestamp": "2026-04-04T10:30:25Z",
+      "total": 8,
+      "used": 8,
+      "free": 0,
       "down": 0,
       "pending_jobs": 0,
       "pending_gpus": 0,
