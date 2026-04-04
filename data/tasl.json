@@ -1,120 +1,108 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-04T09:33:20Z",
+  "timestamp": "2026-04-04T09:34:25Z",
   "nodes": [
     {
       "name": "TASL",
       "gpu_model": "ADA6000",
       "total": 8,
-      "used": 8,
+      "used": 6,
       "state": "active",
       "jobs": [
-        {
-          "user": "zehaowang",
-          "gpus": 8,
-          "job_name": "python",
-          "elapsed": "07:17",
-          "time_limit": ""
-        },
         {
           "user": "vla-reasoning",
           "gpus": 4,
           "job_name": "python",
-          "elapsed": "08:05",
+          "elapsed": "09:10",
           "time_limit": ""
         },
         {
           "user": "ruijieli0814",
           "gpus": 4,
           "job_name": "python",
-          "elapsed": "03:08",
+          "elapsed": "04:14",
+          "time_limit": ""
+        },
+        {
+          "user": "zehaowang",
+          "gpus": 4,
+          "job_name": "python3.11",
+          "elapsed": "00:29",
           "time_limit": ""
         }
       ],
       "gpu_details": [
         {
           "index": 0,
-          "mem_used": 24884,
+          "mem_used": 40922,
           "mem_total": 49140,
           "users": [
-            "vla-reasoning",
+            "ruijieli0814",
             "zehaowang",
-            "ruijieli0814"
+            "vla-reasoning"
           ]
         },
         {
           "index": 1,
-          "mem_used": 48376,
+          "mem_used": 48012,
           "mem_total": 49140,
           "users": [
-            "vla-reasoning",
+            "ruijieli0814",
             "zehaowang",
-            "ruijieli0814"
+            "vla-reasoning"
           ]
         },
         {
           "index": 2,
-          "mem_used": 39740,
+          "mem_used": 39106,
           "mem_total": 49140,
           "users": [
-            "vla-reasoning",
-            "zehaowang"
+            "zehaowang",
+            "vla-reasoning"
           ]
         },
         {
           "index": 3,
-          "mem_used": 39592,
+          "mem_used": 39485,
           "mem_total": 49140,
           "users": [
-            "vla-reasoning",
-            "zehaowang"
+            "zehaowang",
+            "vla-reasoning"
           ]
         },
         {
           "index": 4,
-          "mem_used": 29575,
+          "mem_used": 27687,
           "mem_total": 49140,
           "users": [
-            "zehaowang",
             "ruijieli0814"
           ]
         },
         {
           "index": 5,
-          "mem_used": 29544,
+          "mem_used": 27656,
           "mem_total": 49140,
           "users": [
-            "zehaowang",
             "ruijieli0814"
           ]
         },
         {
           "index": 6,
-          "mem_used": 1896,
+          "mem_used": 8,
           "mem_total": 49140,
-          "users": [
-            "zehaowang"
-          ]
+          "users": []
         },
         {
           "index": 7,
-          "mem_used": 1590,
+          "mem_used": 8,
           "mem_total": 49140,
-          "users": [
-            "zehaowang"
-          ]
+          "users": []
         }
       ]
     }
   ],
   "pending_jobs": [],
   "users": [
-    {
-      "user": "zehaowang",
-      "running_gpus": 8,
-      "running_jobs": 1,
-      "pending_jobs": 0
-    },
     {
       "user": "vla-reasoning",
       "running_gpus": 4,
@@ -126,12 +114,18 @@
       "running_gpus": 4,
       "running_jobs": 1,
       "pending_jobs": 0
+    },
+    {
+      "user": "zehaowang",
+      "running_gpus": 4,
+      "running_jobs": 1,
+      "pending_jobs": 0
     }
   ],
   "summary": {
     "total": 8,
-    "used": 8,
-    "free": 0,
+    "used": 6,
+    "free": 2,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
@@ -40893,6 +40887,16 @@
       "total": 8,
       "used": 8,
       "free": 0,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 3
+    },
+    {
+      "timestamp": "2026-04-04T09:34:25Z",
+      "total": 8,
+      "used": 6,
+      "free": 2,
       "down": 0,
       "pending_jobs": 0,
       "pending_gpus": 0,
