@@ -1,47 +1,40 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-04T09:05:36Z",
+  "timestamp": "2026-04-04T09:06:38Z",
   "nodes": [
     {
       "name": "gpu01",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 5,
+      "used": 4,
       "state": "active",
       "jobs": [
-        {
-          "user": "vbork001",
-          "gpus": 1,
-          "job_name": "celebdf_mlflow",
-          "elapsed": "36:33",
-          "time_limit": "4:00:00"
-        },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume.sh",
-          "elapsed": "1-09:06:05",
+          "elapsed": "1-09:07:07",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-09:16:42",
+          "elapsed": "1-09:17:44",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "cons2",
-          "elapsed": "1-04:07:28",
+          "elapsed": "1-04:08:30",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "cons1",
-          "elapsed": "1-04:07:39",
+          "elapsed": "1-04:08:41",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -57,35 +50,35 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "15:43:03",
+          "elapsed": "15:44:05",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "tf_proxy",
-          "elapsed": "3:20:23",
+          "elapsed": "3:21:25",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "tf_proxy",
-          "elapsed": "3:20:23",
+          "elapsed": "3:21:25",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "tf_proxy",
-          "elapsed": "3:20:23",
+          "elapsed": "3:21:25",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "tf_proxy",
-          "elapsed": "3:20:23",
+          "elapsed": "3:21:25",
           "time_limit": "1-00:00:00"
         }
       ]
@@ -101,28 +94,28 @@
           "user": "akayabasi",
           "gpus": 4,
           "job_name": "lbp",
-          "elapsed": "1-02:06:17",
+          "elapsed": "1-02:07:19",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_3.sh",
-          "elapsed": "2-12:31:11",
+          "elapsed": "2-12:32:13",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SLENSMetadata",
-          "elapsed": "8:15:54",
+          "elapsed": "8:16:56",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "5:29:17",
+          "elapsed": "5:30:19",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -204,12 +197,6 @@
       "pending_jobs": 0
     },
     {
-      "user": "vbork001",
-      "running_gpus": 1,
-      "running_jobs": 1,
-      "pending_jobs": 0
-    },
-    {
       "user": "fniloy",
       "running_gpus": 1,
       "running_jobs": 1,
@@ -224,12 +211,12 @@
   ],
   "summary": {
     "total": 21,
-    "used": 17,
-    "free": 4,
+    "used": 16,
+    "free": 5,
     "down": 0,
     "pending_jobs": 6,
     "pending_gpus": 6,
-    "active_users": 8
+    "active_users": 7
   },
   "history": [
     {
@@ -47543,6 +47530,16 @@
       "pending_jobs": 6,
       "pending_gpus": 6,
       "active_users": 8
+    },
+    {
+      "timestamp": "2026-04-04T09:06:38Z",
+      "total": 21,
+      "used": 16,
+      "free": 5,
+      "down": 0,
+      "pending_jobs": 6,
+      "pending_gpus": 6,
+      "active_users": 7
     }
   ]
 }
