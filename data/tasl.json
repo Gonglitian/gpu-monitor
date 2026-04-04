@@ -1,6 +1,6 @@
 {
   "cluster": "tasl",
-  "timestamp": "2026-04-04T22:45:15Z",
+  "timestamp": "2026-04-04T22:46:19Z",
   "nodes": [
     {
       "name": "TASL",
@@ -13,14 +13,21 @@
           "user": "vla-reasoning",
           "gpus": 7,
           "job_name": "python3.10",
-          "elapsed": "04:04:07",
+          "elapsed": "04:05:11",
           "time_limit": ""
         },
         {
           "user": "ruijieli0814",
           "gpus": 2,
           "job_name": "python",
-          "elapsed": "01:50",
+          "elapsed": "02:54",
+          "time_limit": ""
+        },
+        {
+          "user": "zehaowang",
+          "gpus": 2,
+          "job_name": "python3.11",
+          "elapsed": "01:08",
           "time_limit": ""
         }
       ],
@@ -62,8 +69,8 @@
           "mem_used": 45889,
           "mem_total": 49140,
           "users": [
-            "vla-reasoning",
-            "ruijieli0814"
+            "ruijieli0814",
+            "vla-reasoning"
           ]
         },
         {
@@ -76,17 +83,19 @@
         },
         {
           "index": 6,
-          "mem_used": 25819,
+          "mem_used": 43074,
           "mem_total": 49140,
           "users": [
+            "zehaowang",
             "vla-reasoning"
           ]
         },
         {
           "index": 7,
-          "mem_used": 9255,
+          "mem_used": 41624,
           "mem_total": 49140,
           "users": [
+            "zehaowang",
             "vla-reasoning"
           ]
         }
@@ -106,6 +115,12 @@
       "running_gpus": 2,
       "running_jobs": 1,
       "pending_jobs": 0
+    },
+    {
+      "user": "zehaowang",
+      "running_gpus": 2,
+      "running_jobs": 1,
+      "pending_jobs": 0
     }
   ],
   "summary": {
@@ -115,7 +130,7 @@
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
-    "active_users": 2
+    "active_users": 3
   },
   "history": [
     {
@@ -48147,6 +48162,16 @@
       "pending_jobs": 0,
       "pending_gpus": 0,
       "active_users": 2
+    },
+    {
+      "timestamp": "2026-04-04T22:46:19Z",
+      "total": 8,
+      "used": 8,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 3
     }
   ]
 }
