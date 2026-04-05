@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-05T05:47:00Z",
+  "timestamp": "2026-04-05T05:48:01Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,49 +13,49 @@
           "user": "myan035",
           "gpus": 1,
           "job_name": "ldp_vae_lift",
-          "elapsed": "41:11",
+          "elapsed": "42:12",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume.sh",
-          "elapsed": "2-05:47:29",
+          "elapsed": "2-05:48:30",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "tf_int",
-          "elapsed": "9:32:58",
+          "elapsed": "9:33:59",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "tf_int",
-          "elapsed": "10:40:34",
+          "elapsed": "10:41:35",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-05:58:06",
+          "elapsed": "2-05:59:07",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "cons2",
-          "elapsed": "2-00:48:52",
+          "elapsed": "2-00:49:53",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "cons1",
-          "elapsed": "30:36",
+          "elapsed": "31:37",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -64,42 +64,49 @@
       "name": "gpu02",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 6,
+      "used": 7,
       "state": "active",
       "jobs": [
         {
           "user": "jeli",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "3:10:20",
+          "elapsed": "3:11:21",
           "time_limit": "16:00:00"
         },
         {
           "user": "myan035",
           "gpus": 1,
           "job_name": "ldp_vae_aloha",
-          "elapsed": "41:11",
+          "elapsed": "42:12",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "myan035",
           "gpus": 1,
           "job_name": "ldp_vae",
-          "elapsed": "53:37",
+          "elapsed": "54:38",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-12:24:27",
+          "elapsed": "1-12:25:28",
           "time_limit": "2-01:00:00"
+        },
+        {
+          "user": "rmose009",
+          "gpus": 1,
+          "job_name": "tf_int",
+          "elapsed": "0:03",
+          "time_limit": "1-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 2,
           "job_name": "bash",
-          "elapsed": "12:07:26",
+          "elapsed": "12:08:27",
           "time_limit": "1-00:00:00"
         }
       ]
@@ -108,62 +115,48 @@
       "name": "gpu03",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 7,
+      "used": 6,
       "state": "active",
       "jobs": [
         {
           "user": "myan035",
           "gpus": 1,
           "job_name": "ldp_vae",
-          "elapsed": "53:37",
+          "elapsed": "54:38",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SLENSMetadata",
-          "elapsed": "1-04:57:18",
+          "elapsed": "1-04:58:19",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "tf_int",
-          "elapsed": "9:32:56",
-          "time_limit": "1-00:00:00"
-        },
-        {
-          "user": "rmose009",
-          "gpus": 1,
-          "job_name": "tf_int",
-          "elapsed": "9:32:56",
+          "elapsed": "9:33:57",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 2,
           "job_name": "bash",
-          "elapsed": "7:41:57",
+          "elapsed": "7:42:58",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-02:10:41",
+          "elapsed": "1-02:11:42",
           "time_limit": "3-00:00:00"
         }
       ]
     }
   ],
   "pending_jobs": [
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "tf_int",
-      "submit_time": "2026-04-04T20:30:58",
-      "reason": "QOSMaxGRESPerUser"
-    },
     {
       "user": "rmose009",
       "gpus": 1,
@@ -218,7 +211,7 @@
       "user": "rmose009",
       "running_gpus": 4,
       "running_jobs": 4,
-      "pending_jobs": 7
+      "pending_jobs": 6
     },
     {
       "user": "jfeng080",
@@ -268,8 +261,8 @@
     "used": 20,
     "free": 1,
     "down": 0,
-    "pending_jobs": 7,
-    "pending_gpus": 7,
+    "pending_jobs": 6,
+    "pending_gpus": 6,
     "active_users": 9
   },
   "history": [
@@ -8651,6 +8644,16 @@
       "down": 0,
       "pending_jobs": 7,
       "pending_gpus": 7,
+      "active_users": 9
+    },
+    {
+      "timestamp": "2026-04-05T05:48:01Z",
+      "total": 21,
+      "used": 20,
+      "free": 1,
+      "down": 0,
+      "pending_jobs": 6,
+      "pending_gpus": 6,
       "active_users": 9
     }
   ]
