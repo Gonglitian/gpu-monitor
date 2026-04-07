@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-07T20:41:36Z",
+  "timestamp": "2026-04-07T20:42:39Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,49 +13,49 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_2.sh",
-          "elapsed": "1-20:34:15",
+          "elapsed": "1-20:35:18",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume.sh",
-          "elapsed": "1-20:34:21",
+          "elapsed": "1-20:35:24",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-03:34:44",
+          "elapsed": "1-03:35:47",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "s2cap",
-          "elapsed": "22:37:30",
+          "elapsed": "22:38:33",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "cons2",
-          "elapsed": "1-16:07:05",
+          "elapsed": "1-16:08:08",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "cons1",
-          "elapsed": "2-15:25:12",
+          "elapsed": "2-15:26:15",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-00:21:31",
+          "elapsed": "1-00:22:34",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -71,42 +71,42 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "ModelScope",
-          "elapsed": "3:46:01",
+          "elapsed": "3:47:04",
           "time_limit": "12:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_qwen_financial",
-          "elapsed": "2-08:56:39",
+          "elapsed": "2-08:57:42",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rdave009",
           "gpus": 1,
           "job_name": "exp63_kdcur",
-          "elapsed": "1-01:53:18",
+          "elapsed": "1-01:54:21",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "akayabasi",
           "gpus": 2,
           "job_name": "otp",
-          "elapsed": "14:19:32",
+          "elapsed": "14:20:35",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_3.sh",
-          "elapsed": "1-20:34:12",
+          "elapsed": "1-20:35:15",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "zhouxins",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-18:38:17",
+          "elapsed": "1-18:39:20",
           "time_limit": "2-00:00:00"
         }
       ]
@@ -122,35 +122,35 @@
           "user": "vbork001",
           "gpus": 2,
           "job_name": "celebdf_mlflow",
-          "elapsed": "3:51:56",
+          "elapsed": "3:52:59",
           "time_limit": "8:00:00"
         },
         {
           "user": "hsami",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "4:51:28",
+          "elapsed": "4:52:31",
           "time_limit": "6:00:00"
         },
         {
           "user": "rdave009",
           "gpus": 1,
           "job_name": "exp66_resid",
-          "elapsed": "1-01:48:02",
+          "elapsed": "1-01:49:05",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "22:48:30",
+          "elapsed": "22:49:33",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "37:41",
+          "elapsed": "38:44",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -158,17 +158,31 @@
   ],
   "pending_jobs": [
     {
+      "user": "vbork001",
+      "gpus": 2,
+      "job_name": "celebdf_mlflow",
+      "submit_time": "2026-04-07T13:42:33",
+      "reason": "Resources"
+    },
+    {
       "user": "hsami",
       "gpus": 2,
       "job_name": "ModelScope",
       "submit_time": "2026-04-07T13:10:01",
-      "reason": "Resources"
+      "reason": "Priority"
     },
     {
       "user": "rmose009",
       "gpus": 1,
       "job_name": "selfplay",
       "submit_time": "2026-04-07T13:21:36",
+      "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "audio_4tok",
+      "submit_time": "2026-04-07T13:41:40",
       "reason": "Priority"
     },
     {
@@ -234,7 +248,7 @@
       "user": "vbork001",
       "running_gpus": 2,
       "running_jobs": 1,
-      "pending_jobs": 0
+      "pending_jobs": 1
     },
     {
       "user": "nyismaw",
@@ -264,7 +278,7 @@
       "user": "rmose009",
       "running_gpus": 0,
       "running_jobs": 0,
-      "pending_jobs": 4
+      "pending_jobs": 5
     }
   ],
   "summary": {
@@ -272,8 +286,8 @@
     "used": 20,
     "free": 1,
     "down": 0,
-    "pending_jobs": 5,
-    "pending_gpus": 6,
+    "pending_jobs": 7,
+    "pending_gpus": 9,
     "active_users": 11
   },
   "history": [
@@ -44865,6 +44879,16 @@
       "down": 0,
       "pending_jobs": 5,
       "pending_gpus": 6,
+      "active_users": 11
+    },
+    {
+      "timestamp": "2026-04-07T20:42:39Z",
+      "total": 21,
+      "used": 20,
+      "free": 1,
+      "down": 0,
+      "pending_jobs": 7,
+      "pending_gpus": 9,
       "active_users": 11
     }
   ]
