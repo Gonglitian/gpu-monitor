@@ -1,47 +1,54 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-09T03:02:02Z",
+  "timestamp": "2026-04-09T03:03:09Z",
   "nodes": [
     {
       "name": "gpu01",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 5,
+      "used": 6,
       "state": "active",
       "jobs": [
+        {
+          "user": "myan035",
+          "gpus": 1,
+          "job_name": "ldp_debug",
+          "elapsed": "0:01",
+          "time_limit": "30:00"
+        },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2:59:56",
+          "elapsed": "3:01:03",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "pc_s1",
-          "elapsed": "23:20:45",
+          "elapsed": "23:21:52",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "s2cap",
-          "elapsed": "2-04:57:56",
+          "elapsed": "2-04:59:03",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "cons1",
-          "elapsed": "21:27:27",
+          "elapsed": "21:28:34",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "cons2",
-          "elapsed": "2-22:27:31",
+          "elapsed": "2-22:28:38",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -57,21 +64,21 @@
           "user": "rdave009",
           "gpus": 2,
           "job_name": "exp67_flt",
-          "elapsed": "20:34:37",
+          "elapsed": "20:35:44",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "6:54:37",
+          "elapsed": "6:55:44",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-00:50:16",
+          "elapsed": "1-00:51:23",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,35 +94,35 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "5:33:43",
+          "elapsed": "5:34:50",
           "time_limit": "6:00:00"
         },
         {
           "user": "akayabasi",
           "gpus": 3,
           "job_name": "otp_unb",
-          "elapsed": "15:45:07",
+          "elapsed": "15:46:14",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "vis_s1",
-          "elapsed": "23:29:56",
+          "elapsed": "23:31:03",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-05:08:56",
+          "elapsed": "2-05:10:03",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2:48:08",
+          "elapsed": "2:49:15",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -182,6 +189,12 @@
       "pending_jobs": 0
     },
     {
+      "user": "myan035",
+      "running_gpus": 1,
+      "running_jobs": 1,
+      "pending_jobs": 0
+    },
+    {
       "user": "hsami",
       "running_gpus": 1,
       "running_jobs": 1,
@@ -202,12 +215,12 @@
   ],
   "summary": {
     "total": 21,
-    "used": 16,
-    "free": 5,
+    "used": 17,
+    "free": 4,
     "down": 0,
     "pending_jobs": 3,
     "pending_gpus": 3,
-    "active_users": 8
+    "active_users": 9
   },
   "history": [
     {
@@ -12869,6 +12882,16 @@
       "pending_jobs": 3,
       "pending_gpus": 3,
       "active_users": 8
+    },
+    {
+      "timestamp": "2026-04-09T03:03:09Z",
+      "total": 21,
+      "used": 17,
+      "free": 4,
+      "down": 0,
+      "pending_jobs": 3,
+      "pending_gpus": 3,
+      "active_users": 9
     }
   ]
 }
