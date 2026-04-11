@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-11T22:42:37Z",
+  "timestamp": "2026-04-11T22:43:39Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,42 +13,42 @@
           "user": "rdave009",
           "gpus": 2,
           "job_name": "exp75_aug",
-          "elapsed": "18:31:38",
+          "elapsed": "18:32:40",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_2.sh",
-          "elapsed": "2-14:50:50",
+          "elapsed": "2-14:51:52",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_ema.sh",
-          "elapsed": "2-19:25:54",
+          "elapsed": "2-19:26:56",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "tm_v2a",
-          "elapsed": "1-00:44:31",
+          "elapsed": "1-00:45:33",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
-          "job_name": "pc_s2_uni3d",
-          "elapsed": "12:00:01",
+          "job_name": "comp_dry",
+          "elapsed": "0:09",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "s2cap",
-          "elapsed": "1-18:16:34",
+          "elapsed": "1-18:17:36",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -64,42 +64,42 @@
           "user": "rdave009",
           "gpus": 2,
           "job_name": "exp74_flt_res",
-          "elapsed": "21:41:57",
+          "elapsed": "21:42:59",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "57:15",
+          "elapsed": "58:17",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "vis_s1_1tok",
-          "elapsed": "23:34:44",
+          "elapsed": "23:35:46",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-23:23:00",
+          "elapsed": "1-23:24:02",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "abl2",
-          "elapsed": "2-16:48:31",
+          "elapsed": "2-16:49:33",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-04:10:02",
+          "elapsed": "1-04:11:04",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -115,48 +115,34 @@
           "user": "akayabasi",
           "gpus": 4,
           "job_name": "full_data",
-          "elapsed": "15:58:06",
+          "elapsed": "15:59:08",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_2_ema.sh",
-          "elapsed": "2-15:07:09",
+          "elapsed": "2-15:08:11",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "tm_v2pc",
-          "elapsed": "23:59:48",
+          "elapsed": "1-00:00:50",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "cons1",
-          "elapsed": "18:38:24",
+          "elapsed": "18:39:26",
           "time_limit": "3-00:00:00"
         }
       ]
     }
   ],
   "pending_jobs": [
-    {
-      "user": "vbork001",
-      "gpus": 1,
-      "job_name": "effort_celebdf_eval",
-      "submit_time": "2026-04-11T14:55:27",
-      "reason": "Priority"
-    },
-    {
-      "user": "vbork001",
-      "gpus": 1,
-      "job_name": "ucf_celebdf_eval",
-      "submit_time": "2026-04-11T14:55:27",
-      "reason": "Resources"
-    },
     {
       "user": "rmose009",
       "gpus": 1,
@@ -176,13 +162,6 @@
       "gpus": 1,
       "job_name": "vis_s2_1tok",
       "submit_time": "2026-04-10T13:41:57",
-      "reason": "Dependency"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "comp_dry",
-      "submit_time": "2026-04-10T08:02:55",
       "reason": "Dependency"
     },
     {
@@ -246,21 +225,21 @@
       "gpus": 1,
       "job_name": "img_pc2a_uni3d",
       "submit_time": "2026-04-09T18:22:45",
-      "reason": "Dependency"
+      "reason": "QOSMaxGRESPerUser"
     },
     {
       "user": "rmose009",
       "gpus": 1,
       "job_name": "img_pc2v_uni3d",
       "submit_time": "2026-04-09T18:22:45",
-      "reason": "Dependency"
+      "reason": "QOSMaxGRESPerUser"
     },
     {
       "user": "adutta",
       "gpus": 1,
       "job_name": "bash",
       "submit_time": "2026-04-11T13:10:51",
-      "reason": "Priority"
+      "reason": "Resources"
     }
   ],
   "users": [
@@ -274,7 +253,7 @@
       "user": "rmose009",
       "running_gpus": 4,
       "running_jobs": 4,
-      "pending_jobs": 14
+      "pending_jobs": 13
     },
     {
       "user": "akayabasi",
@@ -311,12 +290,6 @@
       "running_gpus": 1,
       "running_jobs": 1,
       "pending_jobs": 1
-    },
-    {
-      "user": "vbork001",
-      "running_gpus": 0,
-      "running_jobs": 0,
-      "pending_jobs": 2
     }
   ],
   "summary": {
@@ -324,8 +297,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 17,
-    "pending_gpus": 17,
+    "pending_jobs": 14,
+    "pending_gpus": 14,
     "active_users": 8
   },
   "history": [
@@ -51747,6 +51720,16 @@
       "down": 0,
       "pending_jobs": 17,
       "pending_gpus": 17,
+      "active_users": 8
+    },
+    {
+      "timestamp": "2026-04-11T22:43:39Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 14,
+      "pending_gpus": 14,
       "active_users": 8
     }
   ]
