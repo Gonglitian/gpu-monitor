@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-12T03:00:29Z",
+  "timestamp": "2026-04-12T03:01:30Z",
   "nodes": [],
   "pending_jobs": [
     {
@@ -37,6 +37,13 @@
       "job_name": "vis_s2_1tok",
       "submit_time": "2026-04-10T13:41:57",
       "reason": "Resources"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "img_pc2v_v2",
+      "submit_time": "2026-04-11T20:01:04",
+      "reason": "Priority"
     },
     {
       "user": "rmose009",
@@ -111,7 +118,7 @@
       "user": "rmose009",
       "running_gpus": 0,
       "running_jobs": 0,
-      "pending_jobs": 8
+      "pending_jobs": 9
     }
   ],
   "summary": {
@@ -119,8 +126,8 @@
     "used": 0,
     "free": 0,
     "down": 0,
-    "pending_jobs": 12,
-    "pending_gpus": 15,
+    "pending_jobs": 13,
+    "pending_gpus": 16,
     "active_users": 0
   },
   "history": [
@@ -4632,6 +4639,16 @@
       "down": 0,
       "pending_jobs": 12,
       "pending_gpus": 15,
+      "active_users": 0
+    },
+    {
+      "timestamp": "2026-04-12T03:01:30Z",
+      "total": 0,
+      "used": 0,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 13,
+      "pending_gpus": 16,
       "active_users": 0
     }
   ]
