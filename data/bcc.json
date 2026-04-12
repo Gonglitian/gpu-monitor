@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-12T02:25:38Z",
+  "timestamp": "2026-04-12T02:26:40Z",
   "nodes": [],
   "pending_jobs": [
     {
@@ -23,6 +23,13 @@
       "job_name": "full_data",
       "submit_time": "2026-04-11T17:46:54",
       "reason": "Resources"
+    },
+    {
+      "user": "xpan041",
+      "gpus": 1,
+      "job_name": "run_existence_molecule_resume_ema.sh",
+      "submit_time": "2026-04-11T19:26:31",
+      "reason": "QOSMaxGRESPerUser"
     },
     {
       "user": "rmose009",
@@ -95,6 +102,12 @@
       "pending_jobs": 1
     },
     {
+      "user": "xpan041",
+      "running_gpus": 0,
+      "running_jobs": 0,
+      "pending_jobs": 1
+    },
+    {
       "user": "rmose009",
       "running_gpus": 0,
       "running_jobs": 0,
@@ -106,8 +119,8 @@
     "used": 0,
     "free": 0,
     "down": 0,
-    "pending_jobs": 11,
-    "pending_gpus": 14,
+    "pending_jobs": 12,
+    "pending_gpus": 15,
     "active_users": 0
   },
   "history": [
@@ -4279,6 +4292,16 @@
       "down": 0,
       "pending_jobs": 11,
       "pending_gpus": 14,
+      "active_users": 0
+    },
+    {
+      "timestamp": "2026-04-12T02:26:40Z",
+      "total": 0,
+      "used": 0,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 12,
+      "pending_gpus": 15,
       "active_users": 0
     }
   ]
