@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-17T00:18:45Z",
+  "timestamp": "2026-04-17T00:19:54Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "ModelScope",
-          "elapsed": "11:32",
+          "elapsed": "12:41",
           "time_limit": "12:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-21:21:53",
+          "elapsed": "2-21:23:02",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_ema.sh",
-          "elapsed": "1-19:59:31",
+          "elapsed": "1-20:00:40",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "cons1",
-          "elapsed": "2-19:22:34",
+          "elapsed": "2-19:23:43",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-18:22:18",
+          "elapsed": "1-18:23:27",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_2_ema.sh",
-          "elapsed": "2-22:39:07",
+          "elapsed": "2-22:40:16",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "5:45:51",
+          "elapsed": "5:47:00",
           "time_limit": "2-23:23:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2:00:51",
+          "elapsed": "2:02:00",
           "time_limit": "2-01:00:00"
         }
       ]
@@ -87,49 +87,49 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_3_ema.sh",
-          "elapsed": "1-19:37:31",
+          "elapsed": "1-19:38:40",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-07:04:29",
+          "elapsed": "1-07:05:38",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "eval_unimodal_avqa",
-          "elapsed": "0:20",
+          "elapsed": "1:29",
           "time_limit": "2:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_3modal_warm",
-          "elapsed": "2:20:21",
+          "elapsed": "2:21:30",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "14:56:53",
+          "elapsed": "14:58:02",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-15:18:00",
+          "elapsed": "1-15:19:09",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "4:50:51",
+          "elapsed": "4:52:00",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -176,7 +176,7 @@
       "gpus": 1,
       "job_name": "eval_unimodal_avqa",
       "submit_time": "2026-04-16T15:06:16",
-      "reason": "Priority"
+      "reason": "Nodes required for job are DOWN, DRAINED or reserved for jobs in higher priority partitions"
     },
     {
       "user": "rmose009",
@@ -22682,6 +22682,16 @@
     },
     {
       "timestamp": "2026-04-17T00:18:45Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 13,
+      "pending_gpus": 22,
+      "active_users": 9
+    },
+    {
+      "timestamp": "2026-04-17T00:19:54Z",
       "total": 21,
       "used": 21,
       "free": 0,
