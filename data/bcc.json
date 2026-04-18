@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-18T13:24:26Z",
+  "timestamp": "2026-04-18T13:25:28Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "CogVideoX",
-          "elapsed": "9:50:20",
+          "elapsed": "9:51:22",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "akayabasi",
           "gpus": 4,
           "job_name": "full_data",
-          "elapsed": "1-10:15:49",
+          "elapsed": "1-10:16:51",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_2_ema.sh",
-          "elapsed": "9:10:27",
+          "elapsed": "9:11:29",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "pl2",
-          "elapsed": "1-08:28:02",
+          "elapsed": "1-08:29:04",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,35 +50,35 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_3_ema.sh",
-          "elapsed": "7:26:48",
+          "elapsed": "7:27:50",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-18:51:32",
+          "elapsed": "1-18:52:34",
           "time_limit": "2-23:23:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-15:06:32",
+          "elapsed": "1-15:07:34",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "eval_latest_ckpt",
-          "elapsed": "5:36",
+          "elapsed": "6:38",
           "time_limit": "2:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_mcq_corpus",
-          "elapsed": "1-10:02:01",
+          "elapsed": "1-10:03:03",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -94,49 +94,49 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_ema.sh",
-          "elapsed": "8:48:27",
+          "elapsed": "8:49:29",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "zhouxins",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "18:10:00",
+          "elapsed": "18:11:02",
           "time_limit": "2-00:00:00"
-        },
-        {
-          "user": "rmose009",
-          "gpus": 1,
-          "job_name": "eval_latest_ckpt",
-          "elapsed": "40:36",
-          "time_limit": "2:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "19:35:30",
+          "elapsed": "19:36:32",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
+          "job_name": "eval_latest_ckpt",
+          "elapsed": "0:08",
+          "time_limit": "2:00:00"
+        },
+        {
+          "user": "rmose009",
+          "gpus": 1,
           "job_name": "msp_mcq_corpus",
-          "elapsed": "1-10:02:01",
+          "elapsed": "1-10:03:03",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-04:02:34",
+          "elapsed": "2-04:03:36",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-17:56:32",
+          "elapsed": "1-17:57:34",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -170,13 +170,6 @@
       "job_name": "exp91_pe_sinusoidal",
       "submit_time": "2026-04-17T14:47:57",
       "reason": "Priority"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "eval_latest_ckpt",
-      "submit_time": "2026-04-17T08:13:01",
-      "reason": "QOSMaxGRESPerUser"
     },
     {
       "user": "rmose009",
@@ -344,7 +337,7 @@
       "user": "rmose009",
       "running_gpus": 4,
       "running_jobs": 4,
-      "pending_jobs": 22
+      "pending_jobs": 21
     },
     {
       "user": "xpan041",
@@ -412,8 +405,8 @@
     "used": 19,
     "free": 2,
     "down": 0,
-    "pending_jobs": 27,
-    "pending_gpus": 35,
+    "pending_jobs": 26,
+    "pending_gpus": 34,
     "active_users": 9
   },
   "history": [
@@ -43985,6 +43978,16 @@
       "down": 0,
       "pending_jobs": 27,
       "pending_gpus": 35,
+      "active_users": 9
+    },
+    {
+      "timestamp": "2026-04-18T13:25:28Z",
+      "total": 21,
+      "used": 19,
+      "free": 2,
+      "down": 0,
+      "pending_jobs": 26,
+      "pending_gpus": 34,
       "active_users": 9
     }
   ]
