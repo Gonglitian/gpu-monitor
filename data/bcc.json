@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-18T22:46:36Z",
+  "timestamp": "2026-04-18T22:47:38Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "akayabasi",
           "gpus": 4,
           "job_name": "full_data",
-          "elapsed": "1-19:37:59",
+          "elapsed": "1-19:39:01",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_2_ema.sh",
-          "elapsed": "18:32:37",
+          "elapsed": "18:33:39",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "wzhang240",
           "gpus": 1,
           "job_name": "swin_traj",
-          "elapsed": "5:07:15",
+          "elapsed": "5:08:17",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "pl2",
-          "elapsed": "1-17:50:12",
+          "elapsed": "1-17:51:14",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_3_ema.sh",
-          "elapsed": "16:48:58",
+          "elapsed": "16:50:00",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2:52:07",
+          "elapsed": "2:53:09",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1:27:14",
+          "elapsed": "1:28:16",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_mcq_corpus",
-          "elapsed": "1-19:24:11",
+          "elapsed": "1-19:25:13",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,49 +87,49 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_ema.sh",
-          "elapsed": "18:10:37",
+          "elapsed": "18:11:39",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "zhouxins",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-03:32:10",
+          "elapsed": "1-03:33:12",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "musicavqa_ft",
-          "elapsed": "1:10:14",
+          "elapsed": "1:11:16",
           "time_limit": "12:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "imagine_avqa_val",
-          "elapsed": "28:44",
+          "elapsed": "0:16",
           "time_limit": "4:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_mcq_corpus",
-          "elapsed": "1-19:24:11",
+          "elapsed": "1-19:25:13",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-13:24:44",
+          "elapsed": "2-13:25:46",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-03:18:42",
+          "elapsed": "2-03:19:44",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -156,13 +156,6 @@
       "job_name": "bash",
       "submit_time": "2026-04-17T23:25:29",
       "reason": "Priority"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "imagine_avqa_val",
-      "submit_time": "2026-04-18T14:52:01",
-      "reason": "QOSMaxGRESPerUser"
     },
     {
       "user": "rmose009",
@@ -205,6 +198,13 @@
       "job_name": "msp_mcq_3m",
       "submit_time": "2026-04-18T15:38:53",
       "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "enc_avqa_val_proxy",
+      "submit_time": "2026-04-18T14:52:01",
+      "reason": "QOSMaxGRESPerUser"
     },
     {
       "user": "rmose009",
@@ -357,13 +357,6 @@
       "user": "rmose009",
       "gpus": 1,
       "job_name": "eval_proxy_sub",
-      "submit_time": "2026-04-18T14:52:01",
-      "reason": "Dependency"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "enc_avqa_val_proxy",
       "submit_time": "2026-04-18T14:52:01",
       "reason": "Dependency"
     },
@@ -441,7 +434,7 @@
       "user": "rmose009",
       "running_gpus": 4,
       "running_jobs": 4,
-      "pending_jobs": 36
+      "pending_jobs": 35
     },
     {
       "user": "xpan041",
@@ -497,8 +490,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 41,
-    "pending_gpus": 45,
+    "pending_jobs": 40,
+    "pending_gpus": 44,
     "active_users": 10
   },
   "history": [
@@ -49430,6 +49423,16 @@
       "down": 0,
       "pending_jobs": 41,
       "pending_gpus": 45,
+      "active_users": 10
+    },
+    {
+      "timestamp": "2026-04-18T22:47:38Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 40,
+      "pending_gpus": 44,
       "active_users": 10
     }
   ]
