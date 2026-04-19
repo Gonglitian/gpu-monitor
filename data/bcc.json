@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-19T10:35:50Z",
+  "timestamp": "2026-04-19T10:36:51Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "akayabasi",
           "gpus": 4,
           "job_name": "full_data",
-          "elapsed": "2-07:27:13",
+          "elapsed": "2-07:28:14",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_2_ema.sh",
-          "elapsed": "1-06:21:51",
+          "elapsed": "1-06:22:52",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "wzhang240",
           "gpus": 1,
           "job_name": "swin_traj",
-          "elapsed": "16:56:29",
+          "elapsed": "16:57:30",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "pl2",
-          "elapsed": "2-05:39:26",
+          "elapsed": "2-05:40:27",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,29 +50,29 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_3_ema.sh",
-          "elapsed": "1-04:38:12",
+          "elapsed": "1-04:39:13",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "14:41:21",
+          "elapsed": "14:42:22",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "wzhang240",
           "gpus": 1,
           "job_name": "swin_ego",
-          "elapsed": "7:03:12",
+          "elapsed": "7:04:13",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
-          "job_name": "msp_xmodal",
-          "elapsed": "59:30",
-          "time_limit": "1-00:00:00"
+          "job_name": "eval_bridge_b1",
+          "elapsed": "0:31",
+          "time_limit": "2:00:00"
         }
       ]
     },
@@ -87,42 +87,42 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_ema.sh",
-          "elapsed": "1-05:59:51",
+          "elapsed": "1-06:00:52",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "wzhang240",
           "gpus": 2,
           "job_name": "swin_gcp",
-          "elapsed": "2:47:38",
+          "elapsed": "2:48:39",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "zhouxins",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-15:21:24",
+          "elapsed": "1-15:22:25",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_xmodal",
-          "elapsed": "41:00",
+          "elapsed": "42:01",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "eval_musicavqa",
-          "elapsed": "18:00",
+          "elapsed": "19:01",
           "time_limit": "2:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-15:07:56",
+          "elapsed": "2-15:08:57",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -135,13 +135,6 @@
       "job_name": "bash",
       "submit_time": "2026-04-17T23:25:29",
       "reason": "Resources"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "eval_bridge_b1",
-      "submit_time": "2026-04-18T15:22:55",
-      "reason": "Priority"
     },
     {
       "user": "rmose009",
@@ -167,37 +160,37 @@
     {
       "user": "rmose009",
       "gpus": 1,
-      "job_name": "eval_omni_w",
-      "submit_time": "2026-04-18T20:39:06",
-      "reason": "DependencyNeverSatisfied"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "eval_omni_w",
-      "submit_time": "2026-04-18T20:39:06",
-      "reason": "DependencyNeverSatisfied"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "eval_omni_w",
-      "submit_time": "2026-04-18T20:39:06",
-      "reason": "DependencyNeverSatisfied"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "eval_omni_w",
-      "submit_time": "2026-04-18T20:39:06",
-      "reason": "DependencyNeverSatisfied"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
       "job_name": "eval_musicavqa",
       "submit_time": "2026-04-18T20:32:29",
-      "reason": "Dependency"
+      "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "eval_omni_w",
+      "submit_time": "2026-04-18T20:39:06",
+      "reason": "DependencyNeverSatisfied"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "eval_omni_w",
+      "submit_time": "2026-04-18T20:39:06",
+      "reason": "DependencyNeverSatisfied"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "eval_omni_w",
+      "submit_time": "2026-04-18T20:39:06",
+      "reason": "DependencyNeverSatisfied"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "eval_omni_w",
+      "submit_time": "2026-04-18T20:39:06",
+      "reason": "DependencyNeverSatisfied"
     },
     {
       "user": "rmose009",
@@ -257,7 +250,7 @@
       "user": "rmose009",
       "running_gpus": 3,
       "running_jobs": 3,
-      "pending_jobs": 11
+      "pending_jobs": 10
     },
     {
       "user": "sbose",
@@ -289,8 +282,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 14,
-    "pending_gpus": 17,
+    "pending_jobs": 13,
+    "pending_gpus": 16,
     "active_users": 8
   },
   "history": [
@@ -7212,6 +7205,16 @@
       "down": 0,
       "pending_jobs": 14,
       "pending_gpus": 17,
+      "active_users": 8
+    },
+    {
+      "timestamp": "2026-04-19T10:36:51Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 13,
+      "pending_gpus": 16,
       "active_users": 8
     }
   ]
