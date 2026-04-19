@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-19T23:17:05Z",
+  "timestamp": "2026-04-19T23:18:11Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "vbork001",
           "gpus": 1,
           "job_name": "exp",
-          "elapsed": "1:36:34",
+          "elapsed": "1:37:40",
           "time_limit": "8:00:00"
         },
         {
           "user": "akayabasi",
           "gpus": 4,
           "job_name": "full_data",
-          "elapsed": "2-20:08:28",
+          "elapsed": "2-20:09:34",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_2_ema.sh",
-          "elapsed": "1-19:03:06",
+          "elapsed": "1-19:04:12",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "pl2",
-          "elapsed": "2-18:20:41",
+          "elapsed": "2-18:21:47",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "vbork001",
           "gpus": 1,
           "job_name": "unite_train",
-          "elapsed": "1:29:36",
+          "elapsed": "1:30:42",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_3_ema.sh",
-          "elapsed": "1-17:19:27",
+          "elapsed": "1-17:20:33",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-03:22:36",
+          "elapsed": "1-03:23:42",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "inftime1",
-          "elapsed": "9:20:18",
+          "elapsed": "9:21:24",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,28 +87,28 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_resume_ema.sh",
-          "elapsed": "1-18:41:06",
+          "elapsed": "1-18:42:12",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "5:08:10",
+          "elapsed": "5:09:16",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "4:02:15",
+          "elapsed": "4:03:21",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2:41:45",
+          "elapsed": "2:42:51",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -116,11 +116,18 @@
   ],
   "pending_jobs": [
     {
+      "user": "mukunz",
+      "gpus": 1,
+      "job_name": "gf3d-appswap",
+      "submit_time": "2026-04-19T16:17:55",
+      "reason": "Resources"
+    },
+    {
       "user": "hsami",
       "gpus": 1,
       "job_name": "bash",
       "submit_time": "2026-04-19T15:26:13",
-      "reason": "Resources"
+      "reason": "Priority"
     },
     {
       "user": "wzhang240",
@@ -223,6 +230,12 @@
       "pending_jobs": 0
     },
     {
+      "user": "mukunz",
+      "running_gpus": 0,
+      "running_jobs": 0,
+      "pending_jobs": 1
+    },
+    {
       "user": "hsami",
       "running_gpus": 0,
       "running_jobs": 0,
@@ -258,8 +271,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 9,
-    "pending_gpus": 10,
+    "pending_jobs": 10,
+    "pending_gpus": 11,
     "active_users": 7
   },
   "history": [
@@ -14491,6 +14504,16 @@
       "down": 0,
       "pending_jobs": 9,
       "pending_gpus": 10,
+      "active_users": 7
+    },
+    {
+      "timestamp": "2026-04-19T23:18:11Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 10,
+      "pending_gpus": 11,
       "active_users": 7
     }
   ]
