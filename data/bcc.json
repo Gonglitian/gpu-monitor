@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-20T21:25:09Z",
+  "timestamp": "2026-04-20T21:26:11Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,29 +13,29 @@
           "user": "vbork001",
           "gpus": 1,
           "job_name": "exp17",
-          "elapsed": "2:33:16",
+          "elapsed": "2:34:18",
           "time_limit": "8:00:00"
         },
         {
           "user": "akayabasi",
           "gpus": 4,
           "job_name": "full_data",
-          "elapsed": "3-18:16:32",
+          "elapsed": "3-18:17:34",
           "time_limit": "5-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_mask_molecule_ema.sh",
-          "elapsed": "21:59:44",
+          "elapsed": "22:00:46",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "eval_musicavqa",
-          "elapsed": "3:59:59",
-          "time_limit": "4:00:00"
+          "elapsed": "0:39",
+          "time_limit": "6:00:00"
         }
       ]
     },
@@ -50,28 +50,28 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_mask_molecule_2_ema.sh",
-          "elapsed": "20:46:51",
+          "elapsed": "20:47:53",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-01:30:40",
+          "elapsed": "2-01:31:42",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "eval_musicavqa",
-          "elapsed": "5:34",
+          "elapsed": "6:36",
           "time_limit": "6:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "inftime1",
-          "elapsed": "1-07:28:22",
+          "elapsed": "1-07:29:24",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,41 +87,34 @@
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-03:16:14",
+          "elapsed": "1-03:17:16",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "10:43:56",
+          "elapsed": "10:44:58",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-02:10:19",
+          "elapsed": "1-02:11:21",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-00:49:49",
+          "elapsed": "1-00:50:51",
           "time_limit": "3-00:00:00"
         }
       ]
     }
   ],
   "pending_jobs": [
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "eval_musicavqa",
-      "submit_time": "2026-04-19T20:04:05",
-      "reason": "Resources"
-    },
     {
       "user": "rmose009",
       "gpus": 1,
@@ -155,7 +148,7 @@
       "gpus": 1,
       "job_name": "musicavqa_uni",
       "submit_time": "2026-04-19T20:11:33",
-      "reason": "Priority"
+      "reason": "Resources"
     },
     {
       "user": "rmose009",
@@ -565,7 +558,7 @@
       "user": "rmose009",
       "running_gpus": 2,
       "running_jobs": 2,
-      "pending_jobs": 55
+      "pending_jobs": 54
     },
     {
       "user": "adutta",
@@ -609,8 +602,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 60,
-    "pending_gpus": 60,
+    "pending_jobs": 59,
+    "pending_gpus": 59,
     "active_users": 9
   },
   "history": [
@@ -27532,6 +27525,16 @@
       "down": 0,
       "pending_jobs": 60,
       "pending_gpus": 60,
+      "active_users": 9
+    },
+    {
+      "timestamp": "2026-04-20T21:26:11Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 59,
+      "pending_gpus": 59,
       "active_users": 9
     }
   ]
