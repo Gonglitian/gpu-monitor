@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-21T13:41:02Z",
+  "timestamp": "2026-04-21T13:42:04Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "vbork001",
           "gpus": 1,
           "job_name": "exp18",
-          "elapsed": "1:14:16",
+          "elapsed": "1:15:18",
           "time_limit": "8:00:00"
         },
         {
           "user": "akayabasi",
           "gpus": 4,
           "job_name": "full_data",
-          "elapsed": "4-10:32:25",
+          "elapsed": "4-10:33:27",
           "time_limit": "5-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_mask_molecule_ema.sh",
-          "elapsed": "1-14:15:37",
+          "elapsed": "1-14:16:39",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "super_mvqa_bridge",
-          "elapsed": "8:13:10",
+          "elapsed": "8:14:12",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_mask_molecule_2_ema.sh",
-          "elapsed": "1-13:02:44",
+          "elapsed": "1-13:03:46",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-17:46:33",
+          "elapsed": "2-17:47:35",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "9:04:23",
+          "elapsed": "9:05:25",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "inftime1",
-          "elapsed": "1-23:44:15",
+          "elapsed": "1-23:45:17",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,28 +87,28 @@
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-19:32:07",
+          "elapsed": "1-19:33:09",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-02:59:49",
+          "elapsed": "1-03:00:51",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-18:26:12",
+          "elapsed": "1-18:27:14",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-17:05:42",
+          "elapsed": "1-17:06:44",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -148,6 +148,20 @@
       "gpus": 1,
       "job_name": "batch_runner",
       "submit_time": "2026-04-20T20:02:15",
+      "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "super_mvqa_clean_ablation",
+      "submit_time": "2026-04-21T06:41:45",
+      "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "super_mvqa_clean_headline",
+      "submit_time": "2026-04-21T06:41:45",
       "reason": "Priority"
     },
     {
@@ -219,7 +233,7 @@
       "user": "rmose009",
       "running_gpus": 1,
       "running_jobs": 1,
-      "pending_jobs": 5
+      "pending_jobs": 7
     },
     {
       "user": "sbose",
@@ -245,8 +259,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 8,
-    "pending_gpus": 8,
+    "pending_jobs": 10,
+    "pending_gpus": 10,
     "active_users": 9
   },
   "history": [
@@ -36468,6 +36482,16 @@
       "down": 0,
       "pending_jobs": 8,
       "pending_gpus": 8,
+      "active_users": 9
+    },
+    {
+      "timestamp": "2026-04-21T13:42:04Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 10,
+      "pending_gpus": 10,
       "active_users": 9
     }
   ]
