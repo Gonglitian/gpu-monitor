@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-21T00:27:55Z",
+  "timestamp": "2026-04-21T00:28:56Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "vbork001",
           "gpus": 1,
           "job_name": "exp17",
-          "elapsed": "5:36:02",
+          "elapsed": "5:37:03",
           "time_limit": "8:00:00"
         },
         {
           "user": "akayabasi",
           "gpus": 4,
           "job_name": "full_data",
-          "elapsed": "3-21:19:18",
+          "elapsed": "3-21:20:19",
           "time_limit": "5-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_mask_molecule_ema.sh",
-          "elapsed": "1-01:02:30",
+          "elapsed": "1-01:03:31",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "eval_musicavqa",
-          "elapsed": "3:02:23",
+          "elapsed": "3:03:24",
           "time_limit": "6:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_mask_molecule_2_ema.sh",
-          "elapsed": "23:49:37",
+          "elapsed": "23:50:38",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-04:33:26",
+          "elapsed": "2-04:34:27",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "eval_musicavqa",
-          "elapsed": "3:08:20",
+          "elapsed": "3:09:21",
           "time_limit": "6:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "inftime1",
-          "elapsed": "1-10:31:08",
+          "elapsed": "1-10:32:09",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,28 +87,28 @@
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-06:19:00",
+          "elapsed": "1-06:20:01",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "13:46:42",
+          "elapsed": "13:47:43",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-05:13:05",
+          "elapsed": "1-05:14:06",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-03:52:35",
+          "elapsed": "1-03:53:36",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -529,6 +529,13 @@
       "reason": "Priority"
     },
     {
+      "user": "tchakraborty",
+      "gpus": 1,
+      "job_name": "gemma_gspo.sh",
+      "submit_time": "2026-04-20T17:28:26",
+      "reason": "Priority"
+    },
+    {
       "user": "adutta",
       "gpus": 1,
       "job_name": "bash",
@@ -608,6 +615,12 @@
       "running_gpus": 0,
       "running_jobs": 0,
       "pending_jobs": 1
+    },
+    {
+      "user": "tchakraborty",
+      "running_gpus": 0,
+      "running_jobs": 0,
+      "pending_jobs": 1
     }
   ],
   "summary": {
@@ -615,8 +628,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 60,
-    "pending_gpus": 60,
+    "pending_jobs": 61,
+    "pending_gpus": 61,
     "active_users": 9
   },
   "history": [
@@ -29278,6 +29291,16 @@
       "down": 0,
       "pending_jobs": 60,
       "pending_gpus": 60,
+      "active_users": 9
+    },
+    {
+      "timestamp": "2026-04-21T00:28:56Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 61,
+      "pending_gpus": 61,
       "active_users": 9
     }
   ]
