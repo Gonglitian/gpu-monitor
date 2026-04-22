@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-22T17:30:36Z",
+  "timestamp": "2026-04-22T17:31:38Z",
   "nodes": [],
   "pending_jobs": [
     {
@@ -25,6 +25,20 @@
       "reason": "Priority"
     },
     {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "super_scanqa_vpc",
+      "submit_time": "2026-04-21T07:44:18",
+      "reason": "Dependency"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "scanqa_pc_only",
+      "submit_time": "2026-04-21T07:41:23",
+      "reason": "Dependency"
+    },
+    {
       "user": "myan035",
       "gpus": 1,
       "job_name": "rg-cache",
@@ -44,20 +58,6 @@
       "job_name": "bash",
       "submit_time": "2026-04-22T00:54:20",
       "reason": "Priority"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "super_scanqa_vpc",
-      "submit_time": "2026-04-21T07:44:18",
-      "reason": "JobHeldUser"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "scanqa_pc_only",
-      "submit_time": "2026-04-21T07:41:23",
-      "reason": "JobHeldUser"
     },
     {
       "user": "rmose009",
@@ -859,6 +859,16 @@
     },
     {
       "timestamp": "2026-04-22T17:30:36Z",
+      "total": 0,
+      "used": 0,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 9,
+      "pending_gpus": 12,
+      "active_users": 0
+    },
+    {
+      "timestamp": "2026-04-22T17:31:38Z",
       "total": 0,
       "used": 0,
       "free": 0,
