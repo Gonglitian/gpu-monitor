@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-22T18:12:43Z",
+  "timestamp": "2026-04-22T18:13:46Z",
   "nodes": [],
   "pending_jobs": [
     {
@@ -25,6 +25,13 @@
       "reason": "Resources"
     },
     {
+      "user": "sbose",
+      "gpus": 1,
+      "job_name": "inftime1",
+      "submit_time": "2026-04-22T11:13:28",
+      "reason": "Priority"
+    },
+    {
       "user": "rmose009",
       "gpus": 1,
       "job_name": "super_mvqa_clean_ablation",
@@ -44,6 +51,12 @@
       "running_gpus": 0,
       "running_jobs": 0,
       "pending_jobs": 1
+    },
+    {
+      "user": "sbose",
+      "running_gpus": 0,
+      "running_jobs": 0,
+      "pending_jobs": 1
     }
   ],
   "summary": {
@@ -51,8 +64,8 @@
     "used": 0,
     "free": 0,
     "down": 0,
-    "pending_jobs": 4,
-    "pending_gpus": 7,
+    "pending_jobs": 5,
+    "pending_gpus": 8,
     "active_users": 0
   },
   "history": [
@@ -1354,6 +1367,16 @@
       "down": 0,
       "pending_jobs": 4,
       "pending_gpus": 7,
+      "active_users": 0
+    },
+    {
+      "timestamp": "2026-04-22T18:13:46Z",
+      "total": 0,
+      "used": 0,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 5,
+      "pending_gpus": 8,
       "active_users": 0
     }
   ]
