@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-25T23:45:18Z",
+  "timestamp": "2026-04-25T23:46:20Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "SDv3.5_Generate_Images",
-          "elapsed": "5:05:20",
+          "elapsed": "5:06:23",
           "time_limit": "16:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "onellm_r512_full",
-          "elapsed": "1-00:33:10",
+          "elapsed": "1-00:34:13",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "49:09",
+          "elapsed": "50:12",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "14:22:00",
+          "elapsed": "14:23:03",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_egnn_ema.sh",
-          "elapsed": "1-15:34:50",
+          "elapsed": "1-15:35:53",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "onellm_lora",
-          "elapsed": "2-01:03:42",
+          "elapsed": "2-01:04:45",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1:23:50",
+          "elapsed": "1:24:53",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "pl2",
-          "elapsed": "23:10:18",
+          "elapsed": "23:11:21",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -80,41 +80,28 @@
       "name": "gpu03",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 6,
+      "used": 5,
       "state": "active",
       "jobs": [
         {
           "user": "syin041",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "5:31:22",
+          "elapsed": "5:32:24",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "onellm_lora",
-          "elapsed": "1-19:50:30",
+          "elapsed": "1-19:51:32",
           "time_limit": "3-00:00:00"
-        },
-        {
-          "user": "rmose009",
-          "gpus": 1,
-          "job_name": "onellm_eval_pointcap",
-          "elapsed": "1:32",
-          "time_limit": "2:00:00"
         }
       ]
     }
   ],
   "pending_jobs": [],
   "users": [
-    {
-      "user": "rmose009",
-      "running_gpus": 4,
-      "running_jobs": 4,
-      "pending_jobs": 0
-    },
     {
       "user": "jzhan744",
       "running_gpus": 4,
@@ -131,6 +118,12 @@
       "user": "syin041",
       "running_gpus": 4,
       "running_jobs": 1,
+      "pending_jobs": 0
+    },
+    {
+      "user": "rmose009",
+      "running_gpus": 3,
+      "running_jobs": 3,
       "pending_jobs": 0
     },
     {
@@ -160,8 +153,8 @@
   ],
   "summary": {
     "total": 21,
-    "used": 20,
-    "free": 1,
+    "used": 19,
+    "free": 2,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
@@ -47393,6 +47386,16 @@
       "total": 21,
       "used": 20,
       "free": 1,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 8
+    },
+    {
+      "timestamp": "2026-04-25T23:46:20Z",
+      "total": 21,
+      "used": 19,
+      "free": 2,
       "down": 0,
       "pending_jobs": 0,
       "pending_gpus": 0,
