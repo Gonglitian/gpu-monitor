@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-04-28T21:32:31Z",
+  "timestamp": "2026-04-28T21:33:48Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "22:19:57",
+          "elapsed": "23:43:30",
           "time_limit": "2-01:00:00"
         },
         {
-          "user": "nyismaw",
+          "user": "rmose009",
           "gpus": 1,
-          "job_name": "bash",
-          "elapsed": "23:42:13",
-          "time_limit": "2-01:00:00"
+          "job_name": "eval_remain",
+          "elapsed": "0:00",
+          "time_limit": "6:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-22:36:23",
+          "elapsed": "2-22:37:40",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "tchakraborty",
           "gpus": 1,
           "job_name": "gspo_bash.sh",
-          "elapsed": "16:22:56",
+          "elapsed": "16:24:13",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "4:59:24",
+          "elapsed": "5:00:41",
           "time_limit": "10:00:00"
         },
         {
           "user": "mdislam",
           "gpus": 1,
           "job_name": "BUDGET_GRPO",
-          "elapsed": "1-03:30:29",
+          "elapsed": "1-03:31:46",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_mask_molecule_resume_2_ema.sh",
-          "elapsed": "2-19:49:25",
+          "elapsed": "2-19:50:42",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-23:11:04",
+          "elapsed": "2-23:12:21",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,49 +87,49 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "1:20:19",
+          "elapsed": "1:21:36",
           "time_limit": "10:00:00"
         },
         {
           "user": "mdislam",
           "gpus": 1,
           "job_name": "BUDGET_GRPO",
-          "elapsed": "1-01:39:52",
+          "elapsed": "1-01:41:09",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_mask_molecule_resume_3_ema.sh",
-          "elapsed": "2-19:49:04",
+          "elapsed": "2-19:50:21",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_egnn_ema_2.sh",
-          "elapsed": "2-19:57:40",
+          "elapsed": "2-19:58:57",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "22:03:29",
+          "elapsed": "22:04:46",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "lora_um_v2",
-          "elapsed": "48:37",
+          "elapsed": "49:54",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "eval_remain",
-          "elapsed": "18:00",
+          "elapsed": "19:17",
           "time_limit": "6:00:00"
         }
       ]
@@ -139,16 +139,9 @@
     {
       "user": "rmose009",
       "gpus": 1,
-      "job_name": "eval_remain",
-      "submit_time": "2026-04-28T13:13:49",
-      "reason": "Resources"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
       "job_name": "eval_umc_focus",
       "submit_time": "2026-04-28T14:14:31",
-      "reason": "Priority"
+      "reason": "Resources"
     },
     {
       "user": "rmose009",
@@ -186,15 +179,21 @@
       "pending_jobs": 0
     },
     {
-      "user": "nyismaw",
+      "user": "rmose009",
       "running_gpus": 3,
       "running_jobs": 3,
-      "pending_jobs": 0
+      "pending_jobs": 2
     },
     {
       "user": "xpan041",
       "running_gpus": 3,
       "running_jobs": 3,
+      "pending_jobs": 0
+    },
+    {
+      "user": "nyismaw",
+      "running_gpus": 2,
+      "running_jobs": 2,
       "pending_jobs": 0
     },
     {
@@ -208,12 +207,6 @@
       "running_gpus": 2,
       "running_jobs": 2,
       "pending_jobs": 0
-    },
-    {
-      "user": "rmose009",
-      "running_gpus": 2,
-      "running_jobs": 2,
-      "pending_jobs": 3
     },
     {
       "user": "tchakraborty",
@@ -239,8 +232,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 5,
-    "pending_gpus": 8,
+    "pending_jobs": 4,
+    "pending_gpus": 7,
     "active_users": 8
   },
   "history": [
@@ -36432,6 +36425,16 @@
       "down": 0,
       "pending_jobs": 5,
       "pending_gpus": 8,
+      "active_users": 8
+    },
+    {
+      "timestamp": "2026-04-28T21:33:48Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 4,
+      "pending_gpus": 7,
       "active_users": 8
     }
   ]
