@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-01T14:55:34Z",
+  "timestamp": "2026-05-01T14:56:36Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "mdislam",
           "gpus": 1,
           "job_name": "BUDGET_GRPO",
-          "elapsed": "1-00:24:39",
+          "elapsed": "1-00:25:41",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mdislam",
           "gpus": 1,
           "job_name": "TEXT_VIS_GRPO",
-          "elapsed": "21:03:14",
+          "elapsed": "21:04:16",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "mine_v5_gold",
-          "elapsed": "10:10:28",
+          "elapsed": "10:11:30",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-16:07:39",
+          "elapsed": "2-16:08:41",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "mine_v5_gold",
-          "elapsed": "8:49:00",
+          "elapsed": "8:50:02",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "syin041",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-18:40:32",
+          "elapsed": "1-18:41:34",
           "time_limit": "2-16:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-17:28:51",
+          "elapsed": "1-17:29:53",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-11:04:08",
+          "elapsed": "2-11:05:10",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,34 +87,41 @@
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "mine_v5_gold",
-          "elapsed": "9:11:11",
+          "elapsed": "9:12:13",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-13:17:30",
+          "elapsed": "2-13:18:32",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "pl2",
-          "elapsed": "1-12:53:02",
+          "elapsed": "1-12:54:04",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-18:01:01",
+          "elapsed": "1-18:02:03",
           "time_limit": "3-00:00:00"
         }
       ]
     }
   ],
   "pending_jobs": [
+    {
+      "user": "hsami",
+      "gpus": 1,
+      "job_name": "bash",
+      "submit_time": "2026-05-01T07:56:24",
+      "reason": "Resources"
+    },
     {
       "user": "rmose009",
       "gpus": 1,
@@ -127,7 +134,7 @@
       "gpus": 1,
       "job_name": "unimodal_splits",
       "submit_time": "2026-04-30T08:10:26",
-      "reason": "Resources"
+      "reason": "Priority"
     },
     {
       "user": "rmose009",
@@ -319,6 +326,12 @@
       "pending_jobs": 1
     },
     {
+      "user": "hsami",
+      "running_gpus": 0,
+      "running_jobs": 0,
+      "pending_jobs": 1
+    },
+    {
       "user": "rmose009",
       "running_gpus": 0,
       "running_jobs": 0,
@@ -342,8 +355,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 21,
-    "pending_gpus": 36,
+    "pending_jobs": 22,
+    "pending_gpus": 37,
     "active_users": 9
   },
   "history": [
@@ -23735,6 +23748,16 @@
       "down": 0,
       "pending_jobs": 21,
       "pending_gpus": 36,
+      "active_users": 9
+    },
+    {
+      "timestamp": "2026-05-01T14:56:36Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 22,
+      "pending_gpus": 37,
       "active_users": 9
     }
   ]
