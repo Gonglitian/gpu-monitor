@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-01T07:36:55Z",
+  "timestamp": "2026-05-01T07:37:57Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "mdislam",
           "gpus": 1,
           "job_name": "BUDGET_GRPO",
-          "elapsed": "17:06:00",
+          "elapsed": "17:07:02",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mdislam",
           "gpus": 1,
           "job_name": "TEXT_VIS_GRPO",
-          "elapsed": "13:44:35",
+          "elapsed": "13:45:37",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "mine_v5_gold",
-          "elapsed": "2:51:49",
+          "elapsed": "2:52:51",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-08:49:00",
+          "elapsed": "2-08:50:02",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "mine_v5_gold",
-          "elapsed": "1:30:21",
+          "elapsed": "1:31:23",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "syin041",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-11:21:53",
+          "elapsed": "1-11:22:55",
           "time_limit": "2-16:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-10:10:12",
+          "elapsed": "1-10:11:14",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-03:45:29",
+          "elapsed": "2-03:46:31",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,62 +87,34 @@
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "mine_v5_gold",
-          "elapsed": "1:52:32",
+          "elapsed": "1:53:34",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-05:58:51",
+          "elapsed": "2-05:59:53",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "pl2",
-          "elapsed": "1-05:34:23",
+          "elapsed": "1-05:35:25",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-10:42:22",
+          "elapsed": "1-10:43:24",
           "time_limit": "3-00:00:00"
         }
       ]
     }
   ],
   "pending_jobs": [
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "mine_v5_gold",
-      "submit_time": "2026-04-30T22:59:44",
-      "reason": "Resources"
-    },
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "mine_v5_gold",
-      "submit_time": "2026-04-30T23:27:33",
-      "reason": "Priority"
-    },
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "mine_v5_gold",
-      "submit_time": "2026-04-30T23:27:33",
-      "reason": "Priority"
-    },
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "sft_v5",
-      "submit_time": "2026-04-30T22:11:00",
-      "reason": "DependencyNeverSatisfied"
-    },
     {
       "user": "rmose009",
       "gpus": 1,
@@ -212,6 +184,34 @@
       "job_name": "mode_sweep",
       "submit_time": "2026-04-30T14:03:01",
       "reason": "Priority"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "mine_v5_gold",
+      "submit_time": "2026-04-30T22:59:44",
+      "reason": "Resources"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "mine_v5_gold",
+      "submit_time": "2026-04-30T23:27:33",
+      "reason": "Priority"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "mine_v5_gold",
+      "submit_time": "2026-04-30T23:27:33",
+      "reason": "Priority"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "sft_v5",
+      "submit_time": "2026-04-30T22:11:00",
+      "reason": "DependencyNeverSatisfied"
     },
     {
       "user": "lgong024",
@@ -19577,6 +19577,16 @@
     },
     {
       "timestamp": "2026-05-01T07:36:55Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 25,
+      "pending_gpus": 40,
+      "active_users": 9
+    },
+    {
+      "timestamp": "2026-05-01T07:37:57Z",
       "total": 21,
       "used": 21,
       "free": 0,
