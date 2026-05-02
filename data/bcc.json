@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-02T20:13:13Z",
+  "timestamp": "2026-05-02T20:14:16Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,42 +13,42 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "19:27:43",
+          "elapsed": "19:28:46",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "hsami",
           "gpus": 1,
           "job_name": "SDv3.5_Generate_Images",
-          "elapsed": "19:40:39",
+          "elapsed": "19:41:42",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "proj_only",
-          "elapsed": "1:06:42",
+          "elapsed": "1:07:45",
           "time_limit": "6:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "proj_only",
-          "elapsed": "1:10:02",
+          "elapsed": "1:11:05",
           "time_limit": "6:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "mode_sweep",
-          "elapsed": "4:12:55",
+          "elapsed": "4:13:58",
           "time_limit": "10:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "tm_splits",
-          "elapsed": "4:12:08",
+          "elapsed": "4:13:11",
           "time_limit": "10:00:00"
         }
       ]
@@ -64,28 +64,28 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "23:57:41",
+          "elapsed": "23:58:44",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "21:45:48",
+          "elapsed": "21:46:51",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "7:57:12",
+          "elapsed": "7:58:15",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "inftime1",
-          "elapsed": "7:57:12",
+          "elapsed": "7:58:15",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -101,28 +101,28 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "18:34:10",
+          "elapsed": "18:35:13",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "14:28:46",
+          "elapsed": "14:29:49",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "pl2",
-          "elapsed": "2-18:10:41",
+          "elapsed": "2-18:11:44",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-23:18:40",
+          "elapsed": "2-23:19:43",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -183,6 +183,13 @@
       "gpus": 1,
       "job_name": "proj_only",
       "submit_time": "2026-05-02T08:47:20",
+      "reason": "QOSMaxGRESPerUser"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "layer_probe",
+      "submit_time": "2026-05-02T13:14:10",
       "reason": "QOSMaxGRESPerUser"
     },
     {
@@ -254,7 +261,7 @@
       "user": "rmose009",
       "running_gpus": 4,
       "running_jobs": 4,
-      "pending_jobs": 8
+      "pending_jobs": 9
     },
     {
       "user": "yjia058",
@@ -310,8 +317,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 17,
-    "pending_gpus": 25,
+    "pending_jobs": 18,
+    "pending_gpus": 26,
     "active_users": 7
   },
   "history": [
@@ -40403,6 +40410,16 @@
       "down": 0,
       "pending_jobs": 17,
       "pending_gpus": 25,
+      "active_users": 7
+    },
+    {
+      "timestamp": "2026-05-02T20:14:16Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 18,
+      "pending_gpus": 26,
       "active_users": 7
     }
   ]
