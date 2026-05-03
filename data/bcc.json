@@ -1,16 +1,31 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-03T19:43:52Z",
+  "timestamp": "2026-05-03T19:44:53Z",
   "nodes": [],
-  "pending_jobs": [],
-  "users": [],
+  "pending_jobs": [
+    {
+      "user": "jzhan744",
+      "gpus": 4,
+      "job_name": "bash",
+      "submit_time": "2026-05-03T12:44:53",
+      "reason": "Priority"
+    }
+  ],
+  "users": [
+    {
+      "user": "jzhan744",
+      "running_gpus": 0,
+      "running_jobs": 0,
+      "pending_jobs": 1
+    }
+  ],
   "summary": {
     "total": 0,
     "used": 0,
     "free": 0,
     "down": 0,
-    "pending_jobs": 0,
-    "pending_gpus": 0,
+    "pending_jobs": 1,
+    "pending_gpus": 4,
     "active_users": 0
   },
   "history": [
@@ -2032,6 +2047,16 @@
       "down": 0,
       "pending_jobs": 0,
       "pending_gpus": 0,
+      "active_users": 0
+    },
+    {
+      "timestamp": "2026-05-03T19:44:53Z",
+      "total": 0,
+      "used": 0,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 1,
+      "pending_gpus": 4,
       "active_users": 0
     }
   ]
