@@ -1,6 +1,6 @@
 {
   "cluster": "hpcc",
-  "timestamp": "2026-05-03T18:21:44Z",
+  "timestamp": "2026-05-03T18:22:49Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -30,9 +30,17 @@
       "name": "gpu05",
       "gpu_model": "P100",
       "total": 2,
-      "used": 0,
+      "used": 1,
       "state": "active",
-      "jobs": []
+      "jobs": [
+        {
+          "user": "jzhan678",
+          "gpus": 1,
+          "job_name": "C3Naganoshort",
+          "elapsed": "0:48",
+          "time_limit": "2:00:00"
+        }
+      ]
     },
     {
       "name": "gpu06",
@@ -45,56 +53,56 @@
           "user": "bzuo002",
           "gpus": 0,
           "job_name": "dream_math500_entropy_09_wr0125",
-          "elapsed": "55:39",
+          "elapsed": "56:44",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "zhuan224",
           "gpus": 1,
           "job_name": "xLSTM200M",
-          "elapsed": "3-04:43:11",
+          "elapsed": "3-04:44:16",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "mafsh004",
           "gpus": 1,
           "job_name": "alphafold_sequential_continue",
-          "elapsed": "2-11:01:52",
+          "elapsed": "2-11:02:57",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "sjian058",
           "gpus": 1,
           "job_name": "sys-dashboard-sys-bc_desktop-hpcc",
-          "elapsed": "2-04:57:15",
+          "elapsed": "2-04:58:20",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "yzhan677",
           "gpus": 1,
           "job_name": "sys-dashboard-sys-bc_jupyter",
-          "elapsed": "2-03:25:24",
+          "elapsed": "2-03:26:29",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mafsh004",
           "gpus": 1,
           "job_name": "boltz_sequential",
-          "elapsed": "6-22:26:09",
+          "elapsed": "6-22:27:14",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "zhuan224",
           "gpus": 1,
           "job_name": "xLSTM100M",
-          "elapsed": "2:07:03",
+          "elapsed": "2:08:08",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "jzhan678",
           "gpus": 1,
           "job_name": "scHiCyclePred",
-          "elapsed": "1-02:28:52",
+          "elapsed": "1-02:29:57",
           "time_limit": "6-23:59:00"
         }
       ]
@@ -110,49 +118,49 @@
           "user": "znazi002",
           "gpus": 1,
           "job_name": "sys-dashboard-sys-bc_codeserver",
-          "elapsed": "6-18:43:06",
+          "elapsed": "6-18:44:10",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "ssafa013",
           "gpus": 2,
           "job_name": "bash",
-          "elapsed": "6-00:00:27",
+          "elapsed": "6-00:01:31",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "bzuo002",
           "gpus": 0,
           "job_name": "dream_math500_entropy_09_wr0125",
-          "elapsed": "2:41:47",
+          "elapsed": "2:42:51",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "sjian058",
           "gpus": 1,
           "job_name": "sys-dashboard-sys-bc_desktop-hpcc",
-          "elapsed": "3-04:41:10",
+          "elapsed": "3-04:42:14",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "mafsh004",
           "gpus": 1,
           "job_name": "alphafold_sequential_continue",
-          "elapsed": "2-08:02:04",
+          "elapsed": "2-08:03:08",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "zhuan224",
           "gpus": 1,
           "job_name": "xGRU200M",
-          "elapsed": "47:32",
+          "elapsed": "48:36",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "respl001",
           "gpus": 1,
           "job_name": "fq2bam_sample=NWT3",
-          "elapsed": "3:17",
+          "elapsed": "4:21",
           "time_limit": "2:00:00"
         }
       ]
@@ -168,42 +176,42 @@
           "user": "gshah010",
           "gpus": 1,
           "job_name": "sys-dashboard-sys-bc_jupyter",
-          "elapsed": "2-19:31:55",
+          "elapsed": "2-19:33:00",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "abhar061",
           "gpus": 1,
           "job_name": "dev_tunnel",
-          "elapsed": "21:52:58",
+          "elapsed": "21:54:03",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "smort020",
           "gpus": 1,
           "job_name": "sys-dashboard-sys-bc_jupyter",
-          "elapsed": "2-08:31:33",
+          "elapsed": "2-08:32:38",
           "time_limit": "2-12:00:00"
         },
         {
           "user": "jhuan381",
           "gpus": 1,
           "job_name": "sys-dashboard-sys-bc_jupyter",
-          "elapsed": "6-06:38:51",
+          "elapsed": "6-06:39:56",
           "time_limit": "6-13:38:00"
         },
         {
           "user": "zhuan224",
           "gpus": 1,
           "job_name": "mGRU50M",
-          "elapsed": "20:14:15",
+          "elapsed": "20:15:20",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "respl001",
           "gpus": 1,
           "job_name": "fq2bam_sample=HokkaidoEast2",
-          "elapsed": "12:41",
+          "elapsed": "13:46",
           "time_limit": "2:00:00"
         }
       ]
@@ -219,7 +227,7 @@
           "user": "ughosh",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "17:53",
+          "elapsed": "18:58",
           "time_limit": "2:00:00"
         }
       ]
@@ -243,14 +251,14 @@
           "user": "znazi002",
           "gpus": 1,
           "job_name": "sys-dashboard-sys-bc_codeserver",
-          "elapsed": "6-12:05:52",
+          "elapsed": "6-12:06:57",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "smort020",
           "gpus": 1,
           "job_name": "sys-dashboard-sys-bc_jupyter",
-          "elapsed": "17:09:17",
+          "elapsed": "17:10:22",
           "time_limit": "2-12:00:00"
         }
       ]
@@ -274,21 +282,21 @@
           "user": "rmose009",
           "gpus": 1,
           "job_name": "eval_anvil_8b",
-          "elapsed": "9:07",
+          "elapsed": "10:12",
           "time_limit": "8:00:00"
         },
         {
           "user": "zli538",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-16:51:28",
+          "elapsed": "1-16:52:33",
           "time_limit": "7-00:00:00"
         },
         {
           "user": "lgong024",
           "gpus": 1,
           "job_name": "blackwell-hold",
-          "elapsed": "2-20:06:08",
+          "elapsed": "2-20:07:13",
           "time_limit": "7-00:00:00"
         }
       ]
@@ -1018,6 +1026,12 @@
       "pending_jobs": 0
     },
     {
+      "user": "jzhan678",
+      "running_gpus": 2,
+      "running_jobs": 2,
+      "pending_jobs": 0
+    },
+    {
       "user": "sjian058",
       "running_gpus": 2,
       "running_jobs": 2,
@@ -1049,12 +1063,6 @@
     },
     {
       "user": "yzhan677",
-      "running_gpus": 1,
-      "running_jobs": 1,
-      "pending_jobs": 0
-    },
-    {
-      "user": "jzhan678",
       "running_gpus": 1,
       "running_jobs": 1,
       "pending_jobs": 0
@@ -1134,8 +1142,8 @@
   ],
   "summary": {
     "total": 78,
-    "used": 26,
-    "free": 36,
+    "used": 27,
+    "free": 35,
     "down": 16,
     "pending_jobs": 100,
     "pending_gpus": 114,
@@ -4587,6 +4595,16 @@
       "total": 78,
       "used": 26,
       "free": 36,
+      "down": 16,
+      "pending_jobs": 100,
+      "pending_gpus": 114,
+      "active_users": 16
+    },
+    {
+      "timestamp": "2026-05-03T18:22:49Z",
+      "total": 78,
+      "used": 27,
+      "free": 35,
       "down": 16,
       "pending_jobs": 100,
       "pending_gpus": 114,
