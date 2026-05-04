@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-04T06:21:04Z",
+  "timestamp": "2026-05-04T06:22:06Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,21 +13,21 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "1-04:20:36",
+          "elapsed": "1-04:21:38",
           "time_limit": "1-06:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_egnn_test.sh",
-          "elapsed": "4:13:43",
+          "elapsed": "4:14:45",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "10:36:10",
+          "elapsed": "10:37:12",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -43,28 +43,28 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "3:00:02",
+          "elapsed": "3:01:04",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-18:05:03",
+          "elapsed": "1-18:06:05",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "inftime1",
-          "elapsed": "1-18:05:03",
+          "elapsed": "1-18:06:05",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "12:28:10",
+          "elapsed": "12:29:12",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -79,6 +79,13 @@
     }
   ],
   "pending_jobs": [
+    {
+      "user": "nyismaw",
+      "gpus": 1,
+      "job_name": "bash",
+      "submit_time": "2026-05-03T23:21:31",
+      "reason": "Priority"
+    },
     {
       "user": "nyismaw",
       "gpus": 1,
@@ -144,7 +151,7 @@
       "user": "nyismaw",
       "running_gpus": 1,
       "running_jobs": 1,
-      "pending_jobs": 1
+      "pending_jobs": 2
     },
     {
       "user": "sbose",
@@ -170,8 +177,8 @@
     "used": 14,
     "free": 0,
     "down": 7,
-    "pending_jobs": 5,
-    "pending_gpus": 11,
+    "pending_jobs": 6,
+    "pending_gpus": 12,
     "active_users": 7
   },
   "history": [
@@ -9113,6 +9120,16 @@
       "down": 7,
       "pending_jobs": 5,
       "pending_gpus": 11,
+      "active_users": 7
+    },
+    {
+      "timestamp": "2026-05-04T06:22:06Z",
+      "total": 21,
+      "used": 14,
+      "free": 0,
+      "down": 7,
+      "pending_jobs": 6,
+      "pending_gpus": 12,
       "active_users": 7
     }
   ]
