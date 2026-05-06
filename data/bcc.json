@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-06T06:33:53Z",
+  "timestamp": "2026-05-06T06:34:58Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_egnn_test.sh",
-          "elapsed": "2-04:26:30",
+          "elapsed": "2-04:27:36",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-22:32:57",
+          "elapsed": "1-22:34:03",
           "time_limit": "2-23:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-04:58:33",
+          "elapsed": "1-04:59:39",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-10:48:57",
+          "elapsed": "2-10:50:03",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -47,31 +47,31 @@
       "state": "active",
       "jobs": [
         {
-          "user": "mchow068",
+          "user": "mukunz",
           "gpus": 1,
-          "job_name": "bash",
-          "elapsed": "6:00:01",
-          "time_limit": "6:00:00"
+          "job_name": "gf3d-qweneval",
+          "elapsed": "0:54",
+          "time_limit": "4:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "mine_v6_4b",
-          "elapsed": "15:37:29",
+          "elapsed": "15:38:34",
           "time_limit": "20:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "13:23:48",
+          "elapsed": "13:24:53",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "11:02:54",
+          "elapsed": "11:03:59",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,42 +87,42 @@
           "user": "mukunz",
           "gpus": 1,
           "job_name": "gf3d-qweneval",
-          "elapsed": "0:32",
+          "elapsed": "1:37",
           "time_limit": "4:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "mvqa_3reg_uni",
-          "elapsed": "1:21:27",
+          "elapsed": "1:22:32",
           "time_limit": "3:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-10:31:05",
+          "elapsed": "1-10:32:10",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "rkundu",
           "gpus": 2,
           "job_name": "bash",
-          "elapsed": "21:26:26",
+          "elapsed": "21:27:31",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "pl2",
-          "elapsed": "3:54:37",
+          "elapsed": "3:55:42",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "3:38:03",
+          "elapsed": "3:39:08",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -130,18 +130,11 @@
   ],
   "pending_jobs": [
     {
-      "user": "mukunz",
-      "gpus": 1,
-      "job_name": "gf3d-qweneval",
-      "submit_time": "2026-05-05T22:17:00",
-      "reason": "Resources"
-    },
-    {
       "user": "rkundu",
       "gpus": 2,
       "job_name": "bash",
       "submit_time": "2026-05-05T20:24:59",
-      "reason": "Priority"
+      "reason": "Resources"
     },
     {
       "user": "adutta",
@@ -171,6 +164,12 @@
       "pending_jobs": 0
     },
     {
+      "user": "mukunz",
+      "running_gpus": 2,
+      "running_jobs": 2,
+      "pending_jobs": 0
+    },
+    {
       "user": "rkundu",
       "running_gpus": 2,
       "running_jobs": 1,
@@ -178,12 +177,6 @@
     },
     {
       "user": "xpan041",
-      "running_gpus": 1,
-      "running_jobs": 1,
-      "pending_jobs": 0
-    },
-    {
-      "user": "mchow068",
       "running_gpus": 1,
       "running_jobs": 1,
       "pending_jobs": 0
@@ -199,12 +192,6 @@
       "running_gpus": 1,
       "running_jobs": 1,
       "pending_jobs": 0
-    },
-    {
-      "user": "mukunz",
-      "running_gpus": 1,
-      "running_jobs": 1,
-      "pending_jobs": 1
     },
     {
       "user": "rmose009",
@@ -230,9 +217,9 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 3,
-    "pending_gpus": 4,
-    "active_users": 12
+    "pending_jobs": 2,
+    "pending_gpus": 3,
+    "active_users": 11
   },
   "history": [
     {
@@ -36234,6 +36221,16 @@
       "pending_jobs": 3,
       "pending_gpus": 4,
       "active_users": 12
+    },
+    {
+      "timestamp": "2026-05-06T06:34:58Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 2,
+      "pending_gpus": 3,
+      "active_users": 11
     }
   ]
 }
