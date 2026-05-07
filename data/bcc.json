@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-07T01:25:00Z",
+  "timestamp": "2026-05-07T01:26:06Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "vbork001",
           "gpus": 1,
           "job_name": "effort_ortho_exp",
-          "elapsed": "4:34:48",
+          "elapsed": "4:35:54",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "xpan041",
           "gpus": 1,
           "job_name": "run_existence_molecule_egnn_test.sh",
-          "elapsed": "2-23:17:37",
+          "elapsed": "2-23:18:43",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "ytan",
           "gpus": 1,
           "job_name": "0.8-.5T",
-          "elapsed": "1:53:41",
+          "elapsed": "1:54:47",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "syin041",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "4:53:39",
+          "elapsed": "4:54:45",
           "time_limit": "2-20:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "ytan",
           "gpus": 1,
           "job_name": "0.8-.5T",
-          "elapsed": "1:43:41",
+          "elapsed": "1:44:47",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-08:14:55",
+          "elapsed": "1-08:16:01",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-05:54:01",
+          "elapsed": "1-05:55:07",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "18:25:31",
+          "elapsed": "18:26:37",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,35 +87,35 @@
           "user": "ytan",
           "gpus": 1,
           "job_name": "no_prob",
-          "elapsed": "1:39:12",
+          "elapsed": "1:40:17",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "6:53:49",
+          "elapsed": "6:54:54",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "rkundu",
           "gpus": 2,
           "job_name": "bash",
-          "elapsed": "18:42:35",
+          "elapsed": "18:43:40",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rkundu",
           "gpus": 2,
           "job_name": "bash",
-          "elapsed": "1-16:17:33",
+          "elapsed": "1-16:18:38",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "pl2",
-          "elapsed": "22:45:44",
+          "elapsed": "22:46:49",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -128,6 +128,13 @@
       "job_name": "bash",
       "submit_time": "2026-05-06T15:37:26",
       "reason": "Resources"
+    },
+    {
+      "user": "ygarg",
+      "gpus": 1,
+      "job_name": "bash",
+      "submit_time": "2026-05-06T18:25:57",
+      "reason": "Priority"
     }
   ],
   "users": [
@@ -196,6 +203,12 @@
       "running_gpus": 0,
       "running_jobs": 0,
       "pending_jobs": 1
+    },
+    {
+      "user": "ygarg",
+      "running_gpus": 0,
+      "running_jobs": 0,
+      "pending_jobs": 1
     }
   ],
   "summary": {
@@ -203,8 +216,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 1,
-    "pending_gpus": 4,
+    "pending_jobs": 2,
+    "pending_gpus": 5,
     "active_users": 10
   },
   "history": [
@@ -46046,6 +46059,16 @@
       "down": 0,
       "pending_jobs": 1,
       "pending_gpus": 4,
+      "active_users": 10
+    },
+    {
+      "timestamp": "2026-05-07T01:26:06Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 2,
+      "pending_gpus": 5,
       "active_users": 10
     }
   ]
