@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-08T19:30:28Z",
+  "timestamp": "2026-05-08T19:31:34Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "4:41:12",
+          "elapsed": "4:42:18",
           "time_limit": "8:00:00"
         },
         {
           "user": "jyue",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "14:32:25",
+          "elapsed": "14:33:31",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "syin041",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "19:57:51",
+          "elapsed": "19:58:57",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "21:49:24",
+          "elapsed": "21:50:30",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -43,43 +43,36 @@
       "name": "gpu02",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 6,
+      "used": 5,
       "state": "active",
       "jobs": [
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "patchgen_spatial",
-          "elapsed": "17:12",
+          "elapsed": "18:18",
           "time_limit": "2:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_sweep",
-          "elapsed": "39:22",
+          "elapsed": "40:28",
           "time_limit": "12:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "patchgen_para",
-          "elapsed": "0:37",
+          "elapsed": "1:43",
           "time_limit": "2:00:00"
         },
         {
           "user": "rdave009",
           "gpus": 2,
           "job_name": "exp121_gpu_ddp2",
-          "elapsed": "2:19:17",
+          "elapsed": "2:20:23",
           "time_limit": "2-00:00:00"
-        },
-        {
-          "user": "fniloy",
-          "gpus": 1,
-          "job_name": "bash",
-          "elapsed": "2-23:59:29",
-          "time_limit": "3-00:00:00"
         }
       ]
     },
@@ -94,21 +87,21 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "3:37:45",
+          "elapsed": "3:38:51",
           "time_limit": "10:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1:31:59",
+          "elapsed": "1:33:05",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-09:30:45",
+          "elapsed": "1-09:31:51",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -174,12 +167,6 @@
       "pending_jobs": 0
     },
     {
-      "user": "fniloy",
-      "running_gpus": 1,
-      "running_jobs": 1,
-      "pending_jobs": 0
-    },
-    {
       "user": "nyismaw",
       "running_gpus": 1,
       "running_jobs": 1,
@@ -188,12 +175,12 @@
   ],
   "summary": {
     "total": 21,
-    "used": 20,
-    "free": 1,
+    "used": 19,
+    "free": 2,
     "down": 0,
     "pending_jobs": 2,
     "pending_gpus": 2,
-    "active_users": 9
+    "active_users": 8
   },
   "history": [
     {
@@ -18895,6 +18882,16 @@
       "pending_jobs": 2,
       "pending_gpus": 2,
       "active_users": 9
+    },
+    {
+      "timestamp": "2026-05-08T19:31:34Z",
+      "total": 21,
+      "used": 19,
+      "free": 2,
+      "down": 0,
+      "pending_jobs": 2,
+      "pending_gpus": 2,
+      "active_users": 8
     }
   ]
 }
