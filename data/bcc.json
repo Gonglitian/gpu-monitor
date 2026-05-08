@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-08T03:01:31Z",
+  "timestamp": "2026-05-08T03:02:36Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_sweep",
-          "elapsed": "0:14",
+          "elapsed": "1:19",
           "time_limit": "12:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "regen_1k",
-          "elapsed": "45:00",
+          "elapsed": "46:05",
           "time_limit": "4:00:00"
         },
         {
           "user": "syin041",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "3:28:54",
+          "elapsed": "3:29:59",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "5:20:27",
+          "elapsed": "5:21:32",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "rmose009",
           "gpus": 1,
           "job_name": "regen_multiview",
-          "elapsed": "37:25",
+          "elapsed": "38:30",
           "time_limit": "8:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-09:51:26",
+          "elapsed": "2-09:52:31",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-07:30:32",
+          "elapsed": "2-07:31:37",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-20:02:02",
+          "elapsed": "1-20:03:07",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -80,28 +80,35 @@
       "name": "gpu03",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 6,
+      "used": 7,
       "state": "active",
       "jobs": [
+        {
+          "user": "rmose009",
+          "gpus": 1,
+          "job_name": "synth_smoke",
+          "elapsed": "0:23",
+          "time_limit": "3:00:00"
+        },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "8:22:05",
+          "elapsed": "8:23:11",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-08:30:19",
+          "elapsed": "1-08:31:25",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "17:01:47",
+          "elapsed": "17:02:53",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -112,7 +119,7 @@
       "user": "rmose009",
       "gpus": 1,
       "job_name": "msp_sweep",
-      "submit_time": "2026-05-07T19:26:53",
+      "submit_time": "2026-05-07T20:02:13",
       "reason": "Dependency"
     },
     {
@@ -146,6 +153,12 @@
   ],
   "users": [
     {
+      "user": "rmose009",
+      "running_gpus": 4,
+      "running_jobs": 4,
+      "pending_jobs": 5
+    },
+    {
       "user": "syin041",
       "running_gpus": 4,
       "running_jobs": 1,
@@ -162,12 +175,6 @@
       "running_gpus": 4,
       "running_jobs": 1,
       "pending_jobs": 0
-    },
-    {
-      "user": "rmose009",
-      "running_gpus": 3,
-      "running_jobs": 3,
-      "pending_jobs": 5
     },
     {
       "user": "adutta",
@@ -190,8 +197,8 @@
   ],
   "summary": {
     "total": 21,
-    "used": 20,
-    "free": 1,
+    "used": 21,
+    "free": 0,
     "down": 0,
     "pending_jobs": 5,
     "pending_gpus": 5,
@@ -9983,6 +9990,16 @@
       "total": 21,
       "used": 20,
       "free": 1,
+      "down": 0,
+      "pending_jobs": 5,
+      "pending_gpus": 5,
+      "active_users": 7
+    },
+    {
+      "timestamp": "2026-05-08T03:02:36Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
       "down": 0,
       "pending_jobs": 5,
       "pending_gpus": 5,
