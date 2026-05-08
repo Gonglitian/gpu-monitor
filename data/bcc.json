@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-08T19:12:36Z",
+  "timestamp": "2026-05-08T19:13:53Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "4:23:20",
+          "elapsed": "4:24:38",
           "time_limit": "8:00:00"
         },
         {
           "user": "jyue",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "14:14:33",
+          "elapsed": "14:15:51",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "syin041",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "19:39:59",
+          "elapsed": "19:41:17",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "21:31:32",
+          "elapsed": "21:32:50",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -49,43 +49,43 @@
         {
           "user": "rmose009",
           "gpus": 1,
+          "job_name": "patchgen_spatial",
+          "elapsed": "0:38",
+          "time_limit": "2:00:00"
+        },
+        {
+          "user": "rmose009",
+          "gpus": 1,
           "job_name": "msp_sweep",
-          "elapsed": "9:54",
+          "elapsed": "11:12",
           "time_limit": "12:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_sweep",
-          "elapsed": "21:30",
-          "time_limit": "12:00:00"
-        },
-        {
-          "user": "rmose009",
-          "gpus": 1,
-          "job_name": "msp_sweep",
-          "elapsed": "48:25",
+          "elapsed": "22:48",
           "time_limit": "12:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "regen_paragraphs",
-          "elapsed": "1:04:22",
+          "elapsed": "1:05:40",
           "time_limit": "6:00:00"
         },
         {
           "user": "rdave009",
           "gpus": 2,
           "job_name": "exp121_gpu_ddp2",
-          "elapsed": "2:01:25",
+          "elapsed": "2:02:43",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-23:41:37",
+          "elapsed": "2-23:42:55",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -101,34 +101,27 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "3:19:53",
+          "elapsed": "3:21:10",
           "time_limit": "10:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1:14:07",
+          "elapsed": "1:15:24",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-09:12:53",
+          "elapsed": "1-09:14:10",
           "time_limit": "3-00:00:00"
         }
       ]
     }
   ],
   "pending_jobs": [
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "patchgen_spatial",
-      "submit_time": "2026-05-08T11:46:58",
-      "reason": "QOSMaxGRESPerUser"
-    },
     {
       "user": "rmose009",
       "gpus": 1,
@@ -169,7 +162,7 @@
       "user": "rmose009",
       "running_gpus": 4,
       "running_jobs": 4,
-      "pending_jobs": 5
+      "pending_jobs": 4
     },
     {
       "user": "jzhan744",
@@ -219,8 +212,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 5,
-    "pending_gpus": 5,
+    "pending_jobs": 4,
+    "pending_gpus": 4,
     "active_users": 9
   },
   "history": [
@@ -18762,6 +18755,16 @@
       "down": 0,
       "pending_jobs": 5,
       "pending_gpus": 5,
+      "active_users": 9
+    },
+    {
+      "timestamp": "2026-05-08T19:13:53Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 4,
+      "pending_gpus": 4,
       "active_users": 9
     }
   ]
