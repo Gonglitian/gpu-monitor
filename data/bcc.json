@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-09T04:31:31Z",
+  "timestamp": "2026-05-09T04:32:36Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_SDB",
-          "elapsed": "5:02:25",
+          "elapsed": "5:03:31",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "26:56",
+          "elapsed": "28:02",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jyue",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "23:33:28",
+          "elapsed": "23:34:34",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "syin041",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-04:58:54",
+          "elapsed": "1-05:00:00",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,42 +50,42 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_qwen_updated_SDB",
-          "elapsed": "4:49:24",
+          "elapsed": "4:50:29",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_SDB",
-          "elapsed": "4:57:26",
+          "elapsed": "4:58:31",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "regen_mv_5k",
-          "elapsed": "8:11:13",
+          "elapsed": "8:12:18",
           "time_limit": "12:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "regen_mv_12k",
-          "elapsed": "6:55:01",
+          "elapsed": "6:56:06",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "patchgen_vlm",
-          "elapsed": "10:49",
+          "elapsed": "11:54",
           "time_limit": "2:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "8:27:57",
+          "elapsed": "8:29:02",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -101,21 +101,21 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "6:01:51",
+          "elapsed": "6:02:56",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "10:33:02",
+          "elapsed": "10:34:07",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-18:31:48",
+          "elapsed": "1-18:32:53",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -141,6 +141,13 @@
       "gpus": 1,
       "job_name": "patchgen_adv_v2",
       "submit_time": "2026-05-08T21:30:58",
+      "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "msp_sweep",
+      "submit_time": "2026-05-08T21:32:09",
       "reason": "Priority"
     },
     {
@@ -244,7 +251,7 @@
       "user": "rmose009",
       "running_gpus": 3,
       "running_jobs": 3,
-      "pending_jobs": 12
+      "pending_jobs": 13
     },
     {
       "user": "nyismaw",
@@ -282,8 +289,8 @@
     "used": 20,
     "free": 1,
     "down": 0,
-    "pending_jobs": 14,
-    "pending_gpus": 15,
+    "pending_jobs": 15,
+    "pending_gpus": 16,
     "active_users": 8
   },
   "history": [
@@ -23855,6 +23862,16 @@
       "down": 0,
       "pending_jobs": 14,
       "pending_gpus": 15,
+      "active_users": 8
+    },
+    {
+      "timestamp": "2026-05-09T04:32:36Z",
+      "total": 21,
+      "used": 20,
+      "free": 1,
+      "down": 0,
+      "pending_jobs": 15,
+      "pending_gpus": 16,
       "active_users": 8
     }
   ]
