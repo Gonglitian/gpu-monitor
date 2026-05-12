@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-12T23:16:56Z",
+  "timestamp": "2026-05-12T23:18:03Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,14 +13,14 @@
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-03:14:49",
+          "elapsed": "2-03:15:56",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 3,
           "job_name": "bash",
-          "elapsed": "1-04:16:27",
+          "elapsed": "1-04:17:34",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -33,45 +33,45 @@
       "state": "active",
       "jobs": [
         {
+          "user": "bsrik001",
+          "gpus": 1,
+          "job_name": "train diffusion-calib",
+          "elapsed": "0:06",
+          "time_limit": "12:00:00"
+        },
+        {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_SDB",
-          "elapsed": "21:59:35",
+          "elapsed": "22:00:42",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "hsami",
           "gpus": 2,
           "job_name": "Noise_Flip_Prob",
-          "elapsed": "1-20:50:02",
+          "elapsed": "1-20:51:09",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
-          "job_name": "msp_sweep",
-          "elapsed": "42:44",
-          "time_limit": "12:00:00"
+          "job_name": "clip_vqa_train100k",
+          "elapsed": "0:02",
+          "time_limit": "6:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_sweep",
-          "elapsed": "1:57:18",
-          "time_limit": "12:00:00"
-        },
-        {
-          "user": "jfeng080",
-          "gpus": 1,
-          "job_name": "hmmt_nh1_fans",
-          "elapsed": "5:07:19",
+          "elapsed": "1:58:25",
           "time_limit": "12:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-04:06:37",
+          "elapsed": "1-04:07:44",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,28 +87,28 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_SDB",
-          "elapsed": "2-01:51:36",
+          "elapsed": "2-01:52:43",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "hsami",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "5:43:05",
+          "elapsed": "5:44:12",
           "time_limit": "8:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_qwen_updated_SDB",
-          "elapsed": "22:43:04",
+          "elapsed": "22:44:11",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-18:24:28",
+          "elapsed": "1-18:25:35",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -116,32 +116,11 @@
   ],
   "pending_jobs": [
     {
-      "user": "bsrik001",
-      "gpus": 1,
-      "job_name": "test diffusion-calib",
-      "submit_time": "2026-05-12T15:34:30",
-      "reason": "Resources"
-    },
-    {
-      "user": "bsrik001",
-      "gpus": 1,
-      "job_name": "train diffusion-calib",
-      "submit_time": "2026-05-12T15:40:57",
-      "reason": "Priority"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "clip_vqa_train100k",
-      "submit_time": "2026-05-12T12:54:39",
-      "reason": "Priority"
-    },
-    {
       "user": "rmose009",
       "gpus": 1,
       "job_name": "clip_vqa_val5k",
       "submit_time": "2026-05-12T12:54:40",
-      "reason": "Priority"
+      "reason": "Resources"
     },
     {
       "user": "rmose009",
@@ -368,25 +347,25 @@
       "user": "rmose009",
       "running_gpus": 2,
       "running_jobs": 2,
-      "pending_jobs": 7
-    },
-    {
-      "user": "jfeng080",
-      "running_gpus": 1,
-      "running_jobs": 1,
-      "pending_jobs": 21
+      "pending_jobs": 6
     },
     {
       "user": "bsrik001",
-      "running_gpus": 0,
-      "running_jobs": 0,
-      "pending_jobs": 2
+      "running_gpus": 1,
+      "running_jobs": 1,
+      "pending_jobs": 0
     },
     {
       "user": "nyismaw",
       "running_gpus": 0,
       "running_jobs": 0,
       "pending_jobs": 1
+    },
+    {
+      "user": "jfeng080",
+      "running_gpus": 0,
+      "running_jobs": 0,
+      "pending_jobs": 21
     }
   ],
   "summary": {
@@ -394,8 +373,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 31,
-    "pending_gpus": 31,
+    "pending_jobs": 28,
+    "pending_gpus": 28,
     "active_users": 7
   },
   "history": [
@@ -23187,6 +23166,16 @@
       "down": 0,
       "pending_jobs": 31,
       "pending_gpus": 31,
+      "active_users": 7
+    },
+    {
+      "timestamp": "2026-05-12T23:18:03Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 28,
+      "pending_gpus": 28,
       "active_users": 7
     }
   ]
