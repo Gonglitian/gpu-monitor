@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-13T13:27:03Z",
+  "timestamp": "2026-05-13T13:28:13Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,14 +13,14 @@
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-17:24:54",
+          "elapsed": "2-17:26:04",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 3,
           "job_name": "bash",
-          "elapsed": "1-18:26:32",
+          "elapsed": "1-18:27:42",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -36,49 +36,49 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_SDB",
-          "elapsed": "1-12:09:41",
+          "elapsed": "1-12:10:51",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_FDB",
-          "elapsed": "20:55",
+          "elapsed": "22:05",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_qwen_updated_FDB",
-          "elapsed": "41:10",
+          "elapsed": "42:20",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_sweep",
-          "elapsed": "11:51:34",
+          "elapsed": "11:52:44",
           "time_limit": "12:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "q3_8b_u500",
-          "elapsed": "13:59",
+          "elapsed": "15:09",
           "time_limit": "4:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "ob_b5_pass1_k8",
-          "elapsed": "2:24:29",
+          "elapsed": "2:25:39",
           "time_limit": "10:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "m500_b3_pass1_k8",
-          "elapsed": "4:57:41",
+          "elapsed": "4:58:51",
           "time_limit": "10:00:00"
         }
       ]
@@ -94,28 +94,28 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_SDB",
-          "elapsed": "2-16:01:42",
+          "elapsed": "2-16:02:53",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "11:53:06",
+          "elapsed": "11:54:17",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-08:34:34",
+          "elapsed": "2-08:35:45",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2:13:57",
+          "elapsed": "2:15:08",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -128,13 +128,6 @@
       "job_name": "nl2sql_mistral_updated_FDB",
       "submit_time": "2026-05-13T05:12:59",
       "reason": "QOSMaxGRESPerUser"
-    },
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "amc83_notr_v2_k8",
-      "submit_time": "2026-05-13T00:21:27",
-      "reason": "Resources"
     }
   ],
   "users": [
@@ -166,7 +159,7 @@
       "user": "jfeng080",
       "running_gpus": 3,
       "running_jobs": 3,
-      "pending_jobs": 1
+      "pending_jobs": 0
     },
     {
       "user": "rmose009",
@@ -186,8 +179,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 2,
-    "pending_gpus": 2,
+    "pending_jobs": 1,
+    "pending_gpus": 1,
     "active_users": 7
   },
   "history": [
@@ -30379,6 +30372,16 @@
       "down": 0,
       "pending_jobs": 2,
       "pending_gpus": 2,
+      "active_users": 7
+    },
+    {
+      "timestamp": "2026-05-13T13:28:13Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 1,
+      "pending_gpus": 1,
       "active_users": 7
     }
   ]
