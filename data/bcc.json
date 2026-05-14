@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-14T11:02:00Z",
+  "timestamp": "2026-05-14T11:03:49Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,14 +13,14 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "10:48:37",
+          "elapsed": "10:50:32",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1:33:44",
+          "elapsed": "1:35:39",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -29,42 +29,35 @@
       "name": "gpu02",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 5,
+      "used": 4,
       "state": "active",
       "jobs": [
-        {
-          "user": "mdislam",
-          "gpus": 1,
-          "job_name": "bash",
-          "elapsed": "2:27:59",
-          "time_limit": "6:00:00"
-        },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_SDB",
-          "elapsed": "2-09:44:25",
+          "elapsed": "2-09:46:19",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_FDB",
-          "elapsed": "13:36:19",
+          "elapsed": "13:38:13",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_FDB",
-          "elapsed": "21:55:39",
+          "elapsed": "21:57:33",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "4:40:50",
+          "elapsed": "4:42:44",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -80,7 +73,7 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-09:28:00",
+          "elapsed": "1-09:29:50",
           "time_limit": "2-01:00:00"
         }
       ]
@@ -107,12 +100,6 @@
       "pending_jobs": 0
     },
     {
-      "user": "mdislam",
-      "running_gpus": 1,
-      "running_jobs": 1,
-      "pending_jobs": 0
-    },
-    {
       "user": "adutta",
       "running_gpus": 1,
       "running_jobs": 1,
@@ -121,12 +108,12 @@
   ],
   "summary": {
     "total": 21,
-    "used": 11,
-    "free": 10,
+    "used": 10,
+    "free": 11,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
-    "active_users": 5
+    "active_users": 4
   },
   "history": [
     {
@@ -38358,6 +38345,16 @@
       "pending_jobs": 0,
       "pending_gpus": 0,
       "active_users": 5
+    },
+    {
+      "timestamp": "2026-05-14T11:03:49Z",
+      "total": 21,
+      "used": 10,
+      "free": 11,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 4
     }
   ]
 }
