@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-14T21:19:53Z",
+  "timestamp": "2026-05-14T21:21:55Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "21:06:22",
+          "elapsed": "21:08:35",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "11:51:29",
+          "elapsed": "11:53:42",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "q3_m50",
-          "elapsed": "8:19",
+          "elapsed": "10:32",
           "time_limit": "8:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "r1_m50",
-          "elapsed": "8:19",
+          "elapsed": "10:32",
           "time_limit": "8:00:00"
         }
       ]
@@ -50,49 +50,49 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "FaceSwap",
-          "elapsed": "18:27",
+          "elapsed": "20:42",
           "time_limit": "6:00:00"
         },
         {
           "user": "hsami",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "6:29:28",
+          "elapsed": "6:31:43",
           "time_limit": "8:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_SDB",
-          "elapsed": "2-20:02:12",
+          "elapsed": "2-20:04:27",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_FDB",
-          "elapsed": "23:54:06",
+          "elapsed": "23:56:21",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_FDB",
-          "elapsed": "1-08:13:26",
+          "elapsed": "1-08:15:41",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_sweep",
-          "elapsed": "3:54:48",
+          "elapsed": "3:57:03",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "29:03",
+          "elapsed": "31:18",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -101,28 +101,21 @@
       "name": "gpu03",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 3,
+      "used": 2,
       "state": "active",
       "jobs": [
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-19:45:52",
+          "elapsed": "1-19:47:58",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
-          "job_name": "r1_a83",
-          "elapsed": "7:24",
-          "time_limit": "8:00:00"
-        },
-        {
-          "user": "jfeng080",
-          "gpus": 1,
           "job_name": "q3_a83",
-          "elapsed": "7:24",
+          "elapsed": "9:30",
           "time_limit": "8:00:00"
         }
       ]
@@ -138,8 +131,8 @@
     },
     {
       "user": "jfeng080",
-      "running_gpus": 4,
-      "running_jobs": 4,
+      "running_gpus": 3,
+      "running_jobs": 3,
       "pending_jobs": 0
     },
     {
@@ -175,8 +168,8 @@
   ],
   "summary": {
     "total": 21,
-    "used": 17,
-    "free": 4,
+    "used": 16,
+    "free": 5,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
@@ -41898,6 +41891,16 @@
       "total": 21,
       "used": 17,
       "free": 4,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 7
+    },
+    {
+      "timestamp": "2026-05-14T21:21:55Z",
+      "total": 21,
+      "used": 16,
+      "free": 5,
       "down": 0,
       "pending_jobs": 0,
       "pending_gpus": 0,
