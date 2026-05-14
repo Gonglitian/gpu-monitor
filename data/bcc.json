@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-14T15:27:02Z",
+  "timestamp": "2026-05-14T15:28:50Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "15:13:50",
+          "elapsed": "15:15:25",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "5:58:57",
+          "elapsed": "6:00:32",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "aime2024_brute_h0_pass1_k8",
-          "elapsed": "6:59",
+          "elapsed": "8:34",
           "time_limit": "8:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "aime2024_brute_h1_pass1_k8",
-          "elapsed": "6:59",
+          "elapsed": "8:34",
           "time_limit": "8:00:00"
         }
       ]
@@ -50,42 +50,42 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "36:50",
+          "elapsed": "38:29",
           "time_limit": "8:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_SDB",
-          "elapsed": "2-14:09:34",
+          "elapsed": "2-14:11:13",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mdislam",
           "gpus": 2,
           "job_name": "bash",
-          "elapsed": "4:21:11",
+          "elapsed": "4:22:50",
           "time_limit": "6:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_FDB",
-          "elapsed": "18:01:28",
+          "elapsed": "18:03:07",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_FDB",
-          "elapsed": "1-02:20:48",
+          "elapsed": "1-02:22:27",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "9:05:59",
+          "elapsed": "9:07:38",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -101,27 +101,35 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-13:53:05",
+          "elapsed": "1-13:54:50",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "hmmt2025feb_brute_h0_pass1_k8",
-          "elapsed": "7:12",
+          "elapsed": "8:57",
           "time_limit": "8:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "hmmt2025feb_brute_h1_pass1_k8",
-          "elapsed": "7:12",
+          "elapsed": "8:57",
           "time_limit": "8:00:00"
         }
       ]
     }
   ],
-  "pending_jobs": [],
+  "pending_jobs": [
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "r1q3_amc23",
+      "submit_time": "2026-05-14T08:27:28",
+      "reason": "QOSMaxGRESPerUser"
+    }
+  ],
   "users": [
     {
       "user": "jzhan744",
@@ -133,7 +141,7 @@
       "user": "jfeng080",
       "running_gpus": 4,
       "running_jobs": 4,
-      "pending_jobs": 0
+      "pending_jobs": 1
     },
     {
       "user": "mchow068",
@@ -171,8 +179,8 @@
     "used": 17,
     "free": 4,
     "down": 0,
-    "pending_jobs": 0,
-    "pending_gpus": 0,
+    "pending_jobs": 1,
+    "pending_gpus": 1,
     "active_users": 7
   },
   "history": [
@@ -39964,6 +39972,16 @@
       "down": 0,
       "pending_jobs": 0,
       "pending_gpus": 0,
+      "active_users": 7
+    },
+    {
+      "timestamp": "2026-05-14T15:28:50Z",
+      "total": 21,
+      "used": 17,
+      "free": 4,
+      "down": 0,
+      "pending_jobs": 1,
+      "pending_gpus": 1,
       "active_users": 7
     }
   ]
