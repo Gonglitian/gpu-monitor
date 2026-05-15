@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-15T00:40:30Z",
+  "timestamp": "2026-05-15T00:42:22Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "Validate_Flip_Prob",
-          "elapsed": "1:17:26",
+          "elapsed": "1:19:17",
           "time_limit": "16:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-00:27:08",
+          "elapsed": "1-00:28:59",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "15:12:15",
+          "elapsed": "15:14:06",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "temp",
-          "elapsed": "35:50",
+          "elapsed": "37:41",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,49 +50,49 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1:48:45",
+          "elapsed": "1:50:36",
           "time_limit": "8:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_SDB",
-          "elapsed": "2-23:22:56",
+          "elapsed": "2-23:24:47",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_FDB",
-          "elapsed": "1-03:14:50",
+          "elapsed": "1-03:16:41",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_FDB",
-          "elapsed": "1-11:34:10",
+          "elapsed": "1-11:36:01",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "msp_sweep",
-          "elapsed": "7:15:32",
+          "elapsed": "7:17:23",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "soda_seed_0",
-          "elapsed": "18:29",
+          "elapsed": "20:20",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "3:49:47",
+          "elapsed": "3:51:38",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -101,21 +101,28 @@
       "name": "gpu03",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 2,
+      "used": 3,
       "state": "active",
       "jobs": [
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-23:06:30",
+          "elapsed": "1-23:08:25",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
+          "job_name": "soda_seed_76302",
+          "elapsed": "0:07",
+          "time_limit": "3-00:00:00"
+        },
+        {
+          "user": "sbera004",
+          "gpus": 1,
           "job_name": "soda_seed_10",
-          "elapsed": "9:03",
+          "elapsed": "10:58",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -131,8 +138,8 @@
     },
     {
       "user": "sbera004",
-      "running_gpus": 3,
-      "running_jobs": 3,
+      "running_gpus": 4,
+      "running_jobs": 4,
       "pending_jobs": 0
     },
     {
@@ -168,8 +175,8 @@
   ],
   "summary": {
     "total": 21,
-    "used": 16,
-    "free": 5,
+    "used": 17,
+    "free": 4,
     "down": 0,
     "pending_jobs": 0,
     "pending_gpus": 0,
@@ -42911,6 +42918,16 @@
       "total": 21,
       "used": 16,
       "free": 5,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
+      "active_users": 7
+    },
+    {
+      "timestamp": "2026-05-15T00:42:22Z",
+      "total": 21,
+      "used": 17,
+      "free": 4,
       "down": 0,
       "pending_jobs": 0,
       "pending_gpus": 0,
