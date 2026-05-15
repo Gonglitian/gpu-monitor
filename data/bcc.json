@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-15T07:58:21Z",
+  "timestamp": "2026-05-15T08:01:10Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-07:44:36",
+          "elapsed": "1-07:47:15",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "22:29:43",
+          "elapsed": "22:32:22",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "amc83_b1_goedel",
-          "elapsed": "15:52",
+          "elapsed": "18:31",
           "time_limit": "10:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "temp",
-          "elapsed": "7:53:18",
+          "elapsed": "7:55:57",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,49 +50,49 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_FDB",
-          "elapsed": "1-10:32:28",
+          "elapsed": "1-10:35:11",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_FDB",
-          "elapsed": "1-18:51:48",
+          "elapsed": "1-18:54:31",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "hyb_olympiadbench_q3_8b",
-          "elapsed": "25:42",
+          "elapsed": "28:25",
           "time_limit": "4:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "math500_q3_8b_n1_prove",
-          "elapsed": "2:43:36",
+          "elapsed": "2:46:19",
           "time_limit": "8:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "r1q3_8b_olympiadbench_ans",
-          "elapsed": "3:02:01",
+          "elapsed": "3:04:44",
           "time_limit": "6:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "5:32:15",
+          "elapsed": "5:34:58",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "soda_seed_0",
-          "elapsed": "7:36:07",
+          "elapsed": "7:38:50",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -108,28 +108,28 @@
           "user": "hsami",
           "gpus": 1,
           "job_name": "FaceSwap",
-          "elapsed": "4:24:51",
+          "elapsed": "4:27:37",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "mdislam",
           "gpus": 2,
           "job_name": "bash",
-          "elapsed": "3:35:07",
+          "elapsed": "3:37:53",
           "time_limit": "6:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "soda_seed_76302",
-          "elapsed": "7:16:01",
+          "elapsed": "7:18:47",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "soda_seed_10",
-          "elapsed": "7:26:52",
+          "elapsed": "7:29:38",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -239,7 +239,7 @@
       "gpus": 1,
       "job_name": "amc83_n1_goedel",
       "submit_time": "2026-05-14T22:23:41",
-      "reason": "Resources"
+      "reason": "QOSMaxGRESPerUser"
     },
     {
       "user": "jfeng080",
@@ -45147,6 +45147,16 @@
     },
     {
       "timestamp": "2026-05-15T07:58:21Z",
+      "total": 21,
+      "used": 19,
+      "free": 2,
+      "down": 0,
+      "pending_jobs": 66,
+      "pending_gpus": 69,
+      "active_users": 8
+    },
+    {
+      "timestamp": "2026-05-15T08:01:10Z",
       "total": 21,
       "used": 19,
       "free": 2,
