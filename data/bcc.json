@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-16T16:03:11Z",
+  "timestamp": "2026-05-16T16:07:50Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-06:33:33",
+          "elapsed": "2-06:38:09",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "kfm_olympiadbench_r1q3_8b",
-          "elapsed": "9:28",
+          "elapsed": "14:04",
           "time_limit": "6:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "kfm_olympiadbench_q3_8b",
-          "elapsed": "10:20",
+          "elapsed": "14:56",
           "time_limit": "6:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "yolov5_soda_divproto_0",
-          "elapsed": "1-00:12:33",
+          "elapsed": "1-00:17:09",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_SDB",
-          "elapsed": "3:03:31",
+          "elapsed": "3:08:08",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "kfm_math500_q3_8b",
-          "elapsed": "13:01",
+          "elapsed": "17:38",
           "time_limit": "6:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-13:36:30",
+          "elapsed": "1-13:41:07",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "9:01:26",
+          "elapsed": "9:06:03",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,21 +87,21 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_FDB",
-          "elapsed": "2:57:57",
+          "elapsed": "3:02:35",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_qwen_updated_FDB",
-          "elapsed": "3:01:26",
+          "elapsed": "3:06:04",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "6:44:26",
+          "elapsed": "6:49:04",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -155,6 +155,216 @@
       "gpus": 1,
       "job_name": "hyb_amc83_r1q3_8b",
       "submit_time": "2026-05-16T07:49:48",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n3_q3_8b_math500",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n2_q3_8b_math500",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n1_q3_8b_math500",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n0_q3_8b_math500",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n3_r1q3_8b_olympiadbench",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n2_r1q3_8b_olympiadbench",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n1_r1q3_8b_olympiadbench",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n0_r1q3_8b_olympiadbench",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n3_q3_8b_olympiadbench",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n2_q3_8b_olympiadbench",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n1_q3_8b_olympiadbench",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n0_q3_8b_olympiadbench",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n1_r1q3_8b_hmmt2025feb",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n0_r1q3_8b_hmmt2025feb",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n1_q3_8b_hmmt2025feb",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n0_q3_8b_hmmt2025feb",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n1_q3_8b_aime2024",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n0_q3_8b_aime2024",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n1_r1q3_8b_amc83",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n0_r1q3_8b_amc83",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n1_r1q3_8b_amc23",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n0_r1q3_8b_amc23",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n1_r1q3_8b_aime2024",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n0_r1q3_8b_aime2024",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n1_q3_8b_amc83",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n0_q3_8b_amc83",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n3_r1q3_8b_math500",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n2_r1q3_8b_math500",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n1_r1q3_8b_math500",
+      "submit_time": "2026-05-16T09:06:47",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "brute_n0_r1q3_8b_math500",
+      "submit_time": "2026-05-16T09:06:47",
       "reason": "Dependency"
     },
     {
@@ -335,7 +545,7 @@
       "user": "jfeng080",
       "running_gpus": 3,
       "running_jobs": 3,
-      "pending_jobs": 29
+      "pending_jobs": 59
     },
     {
       "user": "mchow068",
@@ -361,8 +571,8 @@
     "used": 20,
     "free": 1,
     "down": 0,
-    "pending_jobs": 29,
-    "pending_gpus": 29,
+    "pending_jobs": 59,
+    "pending_gpus": 59,
     "active_users": 7
   },
   "history": [
@@ -48454,6 +48664,16 @@
       "down": 0,
       "pending_jobs": 29,
       "pending_gpus": 29,
+      "active_users": 7
+    },
+    {
+      "timestamp": "2026-05-16T16:07:50Z",
+      "total": 21,
+      "used": 20,
+      "free": 1,
+      "down": 0,
+      "pending_jobs": 59,
+      "pending_gpus": 59,
       "active_users": 7
     }
   ]
