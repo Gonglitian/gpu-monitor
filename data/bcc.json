@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-18T01:59:11Z",
+  "timestamp": "2026-05-18T02:05:14Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -21,28 +21,28 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_SDB",
-          "elapsed": "1-12:58:49",
+          "elapsed": "1-13:05:05",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "proxied_sweep",
-          "elapsed": "2:20:08",
+          "elapsed": "2:26:24",
           "time_limit": "1-23:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "proxied_sweep",
-          "elapsed": "2:20:08",
+          "elapsed": "2:26:24",
           "time_limit": "1-23:00:00"
         },
         {
           "user": "adutta",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-18:56:44",
+          "elapsed": "1-19:03:00",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -58,28 +58,28 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_llama_updated_FDB",
-          "elapsed": "1-12:53:38",
+          "elapsed": "1-12:59:52",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_qwen_updated_FDB",
-          "elapsed": "1-12:57:07",
+          "elapsed": "1-13:03:21",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-16:40:07",
+          "elapsed": "1-16:46:21",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "olympiadbench_notr_h3_pass1_nlfix_v2",
-          "elapsed": "3:35:47",
+          "elapsed": "3:42:01",
           "time_limit": "10:00:00"
         }
       ]
@@ -190,6 +190,13 @@
       "job_name": "kp_amc83_smoke",
       "submit_time": "2026-05-17T16:33:40",
       "reason": "Priority"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "olympiadbench_notr_h4_pass1_nlfix_v2_retry",
+      "submit_time": "2026-05-17T18:59:09",
+      "reason": "Priority"
     }
   ],
   "users": [
@@ -221,7 +228,7 @@
       "user": "jfeng080",
       "running_gpus": 1,
       "running_jobs": 1,
-      "pending_jobs": 5
+      "pending_jobs": 6
     },
     {
       "user": "ygarg",
@@ -247,8 +254,8 @@
     "used": 14,
     "free": 0,
     "down": 7,
-    "pending_jobs": 15,
-    "pending_gpus": 15,
+    "pending_jobs": 16,
+    "pending_gpus": 16,
     "active_users": 5
   },
   "history": [
@@ -51260,6 +51267,16 @@
       "down": 7,
       "pending_jobs": 15,
       "pending_gpus": 15,
+      "active_users": 5
+    },
+    {
+      "timestamp": "2026-05-18T02:05:14Z",
+      "total": 21,
+      "used": 14,
+      "free": 0,
+      "down": 7,
+      "pending_jobs": 16,
+      "pending_gpus": 16,
       "active_users": 5
     }
   ]
