@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-19T20:52:05Z",
+  "timestamp": "2026-05-19T20:59:02Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "aghos034",
           "gpus": 1,
           "job_name": "hyp_search",
-          "elapsed": "4:27:00",
+          "elapsed": "4:34:07",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "hyp_search",
-          "elapsed": "4:01:20",
+          "elapsed": "4:08:27",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "1:03:12",
+          "elapsed": "1:10:19",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "23:53:19",
+          "elapsed": "1-00:00:26",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "aghos034",
           "gpus": 1,
           "job_name": "card",
-          "elapsed": "17:59:39",
+          "elapsed": "18:06:40",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "card",
-          "elapsed": "4:10:43",
+          "elapsed": "4:17:44",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "5:32:23",
+          "elapsed": "5:39:24",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "math500_q3_8b_full_hyb_h2_retry",
-          "elapsed": "5:11:27",
+          "elapsed": "5:18:28",
           "time_limit": "10:00:00"
         }
       ]
@@ -87,49 +87,49 @@
           "user": "mdislam",
           "gpus": 1,
           "job_name": "llm_icl",
-          "elapsed": "47:26",
+          "elapsed": "54:28",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "3:38:09",
+          "elapsed": "3:45:11",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "11:32:17",
+          "elapsed": "11:39:19",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "11:32:17",
+          "elapsed": "11:39:19",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "fRCNN_S_divproto_76302",
-          "elapsed": "11:32:17",
+          "elapsed": "11:39:19",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "11:32:17",
+          "elapsed": "11:39:19",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "yolov5_soda_salt_21",
-          "elapsed": "4:56:43",
+          "elapsed": "5:03:45",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -169,14 +169,21 @@
       "gpus": 1,
       "job_name": "q3_sc",
       "submit_time": "2026-05-19T13:29:37",
-      "reason": "Priority"
+      "reason": "PartitionConfig"
     },
     {
       "user": "jfeng080",
       "gpus": 1,
       "job_name": "q3_sc",
       "submit_time": "2026-05-19T13:30:41",
-      "reason": "Priority"
+      "reason": "PartitionConfig"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "olympiadbench_brute_h4_nlfix",
+      "submit_time": "2026-05-17T23:12:37",
+      "reason": "PartitionConfig"
     },
     {
       "user": "jfeng080",
@@ -198,13 +205,6 @@
       "job_name": "olympiadbench_brute_h7_nlfix",
       "submit_time": "2026-05-17T23:12:37",
       "reason": "PartitionConfig"
-    },
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "olympiadbench_brute_h4_nlfix",
-      "submit_time": "2026-05-17T23:12:37",
-      "reason": "Priority"
     }
   ],
   "users": [
@@ -3681,6 +3681,16 @@
     },
     {
       "timestamp": "2026-05-19T20:52:05Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 10,
+      "pending_gpus": 10,
+      "active_users": 9
+    },
+    {
+      "timestamp": "2026-05-19T20:59:02Z",
       "total": 21,
       "used": 21,
       "free": 0,
