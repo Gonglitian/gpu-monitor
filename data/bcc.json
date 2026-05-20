@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-20T06:43:01Z",
+  "timestamp": "2026-05-20T06:49:46Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -12,29 +12,29 @@
         {
           "user": "rmose009",
           "gpus": 1,
-          "job_name": "p1eval_point_pllmqa",
-          "elapsed": "1:58:26",
-          "time_limit": "2:00:00"
+          "job_name": "permod_p2",
+          "elapsed": "4:56",
+          "time_limit": "20:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
-          "job_name": "p1eval_audio_mmau",
-          "elapsed": "1:58:27",
+          "job_name": "mmmu_r128vqa_paired",
+          "elapsed": "4:56",
           "time_limit": "2:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "10:54:20",
+          "elapsed": "11:01:07",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-09:44:27",
+          "elapsed": "1-09:51:14",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -49,29 +49,29 @@
         {
           "user": "rmose009",
           "gpus": 1,
-          "job_name": "p1eval_audio_clotho_aqa",
-          "elapsed": "1:59:39",
-          "time_limit": "2:00:00"
+          "job_name": "permod_p2",
+          "elapsed": "6:08",
+          "time_limit": "20:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "8:53:28",
+          "elapsed": "9:00:18",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "36:28",
+          "elapsed": "43:18",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "15:23:18",
+          "elapsed": "15:30:08",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,49 +87,49 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_SDB",
-          "elapsed": "8:09:11",
+          "elapsed": "8:15:59",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "permod_p2",
-          "elapsed": "58:03",
+          "elapsed": "1:04:51",
           "time_limit": "20:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "38:59",
+          "elapsed": "45:47",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "21:23:11",
+          "elapsed": "21:29:59",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "21:23:11",
+          "elapsed": "21:29:59",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "fRCNN_S_divproto_76302",
-          "elapsed": "21:23:11",
+          "elapsed": "21:29:59",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "21:23:11",
+          "elapsed": "21:29:59",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -408,6 +408,132 @@
       "job_name": "aime2024_r1q3_8b_hyb_h1_retry",
       "submit_time": "2026-05-19T16:51:00",
       "reason": "Priority"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "ob_r1q3_hyb_h2_fresh",
+      "submit_time": "2026-05-19T23:43:58",
+      "reason": "Priority"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "ob_r1q3_hyb_h3_fresh",
+      "submit_time": "2026-05-19T23:43:58",
+      "reason": "Priority"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "hmmt2025feb_k8_r1q3_8b_brute_fresh_h1",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "hmmt2025feb_k8_r1q3_8b_brute_fresh_h0",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "hmmt2025feb_k8_q3_8b_brute_fresh_h1",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "hmmt2025feb_k8_q3_8b_brute_fresh_h0",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "aime2024_k8_r1q3_8b_brute_fresh_h1",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "aime2024_k8_r1q3_8b_brute_fresh_h0",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "aime2024_k8_q3_8b_brute_fresh_h1",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "aime2024_k8_q3_8b_brute_fresh_h0",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "amc83_k8_r1q3_8b_brute_fresh_h1",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "amc83_k8_r1q3_8b_brute_fresh_h0",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "amc83_k8_q3_8b_brute_fresh_h1",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "amc83_k8_q3_8b_brute_fresh_h0",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "amc23_k8_r1q3_8b_brute_fresh_h1",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "amc23_k8_r1q3_8b_brute_fresh_h0",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "amc23_k8_q3_8b_brute_fresh_h1",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "amc23_k8_q3_8b_brute_fresh_h0",
+      "submit_time": "2026-05-19T23:49:02",
+      "reason": "Dependency"
     }
   ],
   "users": [
@@ -469,7 +595,7 @@
       "user": "jfeng080",
       "running_gpus": 0,
       "running_jobs": 0,
-      "pending_jobs": 11
+      "pending_jobs": 29
     }
   ],
   "summary": {
@@ -477,8 +603,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 39,
-    "pending_gpus": 40,
+    "pending_jobs": 57,
+    "pending_gpus": 58,
     "active_users": 8
   },
   "history": [
@@ -4740,6 +4866,16 @@
       "down": 0,
       "pending_jobs": 39,
       "pending_gpus": 40,
+      "active_users": 8
+    },
+    {
+      "timestamp": "2026-05-20T06:49:46Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 57,
+      "pending_gpus": 58,
       "active_users": 8
     }
   ]
