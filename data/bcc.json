@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-20T10:20:31Z",
+  "timestamp": "2026-05-20T10:27:31Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "rmose009",
           "gpus": 1,
           "job_name": "permod_p2",
-          "elapsed": "3:35:44",
+          "elapsed": "3:42:32",
           "time_limit": "20:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "14:31:55",
+          "elapsed": "14:38:43",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-13:22:02",
+          "elapsed": "1-13:28:50",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "amc23_k8_q3_8b_brute_fresh_h1",
-          "elapsed": "47:13",
+          "elapsed": "54:01",
           "time_limit": "8:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "rmose009",
           "gpus": 1,
           "job_name": "permod_p2",
-          "elapsed": "3:36:52",
+          "elapsed": "3:43:47",
           "time_limit": "20:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "4:14:02",
+          "elapsed": "4:20:57",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "19:00:52",
+          "elapsed": "19:07:47",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
           "job_name": "hmmt2025feb_k8_r1q3_8b_brute_fresh_h0",
-          "elapsed": "9:21",
+          "elapsed": "16:16",
           "time_limit": "8:00:00"
         }
       ]
@@ -87,55 +87,104 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_SDB",
-          "elapsed": "11:46:45",
+          "elapsed": "11:53:39",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
-          "job_name": "permod_p2",
-          "elapsed": "4:35:37",
-          "time_limit": "20:00:00"
+          "job_name": "p2eval_vision_vqav2",
+          "elapsed": "0:40",
+          "time_limit": "4:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "4:16:33",
+          "elapsed": "4:23:27",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-01:00:45",
+          "elapsed": "1-01:07:39",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-01:00:45",
+          "elapsed": "1-01:07:39",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "fRCNN_S_divproto_76302",
-          "elapsed": "1-01:00:45",
+          "elapsed": "1-01:07:39",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-01:00:45",
+          "elapsed": "1-01:07:39",
           "time_limit": "3-00:00:00"
         }
       ]
     }
   ],
   "pending_jobs": [
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "p2eval_vision_pllmqa",
+      "submit_time": "2026-05-19T17:02:08",
+      "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "p2eval_vision_nextqa",
+      "submit_time": "2026-05-19T17:02:08",
+      "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "p2eval_vision_msrvtt_qa",
+      "submit_time": "2026-05-19T17:02:08",
+      "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "p2eval_vision_msvd_qa",
+      "submit_time": "2026-05-19T17:02:08",
+      "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "p2eval_vision_mmau",
+      "submit_time": "2026-05-19T17:02:08",
+      "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "p2eval_vision_clotho_aqa",
+      "submit_time": "2026-05-19T17:02:08",
+      "reason": "Priority"
+    },
+    {
+      "user": "rmose009",
+      "gpus": 1,
+      "job_name": "p2eval_vision_mmmu",
+      "submit_time": "2026-05-19T17:02:08",
+      "reason": "Resources"
+    },
     {
       "user": "rmose009",
       "gpus": 1,
@@ -249,62 +298,6 @@
       "reason": "Dependency"
     },
     {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "p2eval_vision_pllmqa",
-      "submit_time": "2026-05-19T17:02:08",
-      "reason": "Dependency"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "p2eval_vision_nextqa",
-      "submit_time": "2026-05-19T17:02:08",
-      "reason": "Dependency"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "p2eval_vision_msrvtt_qa",
-      "submit_time": "2026-05-19T17:02:08",
-      "reason": "Dependency"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "p2eval_vision_msvd_qa",
-      "submit_time": "2026-05-19T17:02:08",
-      "reason": "Dependency"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "p2eval_vision_mmau",
-      "submit_time": "2026-05-19T17:02:08",
-      "reason": "Dependency"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "p2eval_vision_clotho_aqa",
-      "submit_time": "2026-05-19T17:02:08",
-      "reason": "Dependency"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "p2eval_vision_mmmu",
-      "submit_time": "2026-05-19T17:02:08",
-      "reason": "Dependency"
-    },
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "p2eval_vision_vqav2",
-      "submit_time": "2026-05-19T17:02:08",
-      "reason": "Dependency"
-    },
-    {
       "user": "ygarg",
       "gpus": 1,
       "job_name": "bash",
@@ -405,14 +398,14 @@
     {
       "user": "jfeng080",
       "gpus": 1,
-      "job_name": "amc83_k8_r1q3_8b_brute_fresh_h0",
+      "job_name": "amc83_k8_r1q3_8b_brute_fresh_h1",
       "submit_time": "2026-05-19T23:49:02",
       "reason": "Priority"
     },
     {
       "user": "jfeng080",
       "gpus": 1,
-      "job_name": "amc83_k8_r1q3_8b_brute_fresh_h1",
+      "job_name": "amc83_k8_r1q3_8b_brute_fresh_h0",
       "submit_time": "2026-05-19T23:49:02",
       "reason": "Priority"
     },
@@ -518,7 +511,7 @@
       "user": "rmose009",
       "running_gpus": 3,
       "running_jobs": 3,
-      "pending_jobs": 24
+      "pending_jobs": 23
     },
     {
       "user": "nyismaw",
@@ -568,8 +561,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 52,
-    "pending_gpus": 53,
+    "pending_jobs": 51,
+    "pending_gpus": 52,
     "active_users": 9
   },
   "history": [
@@ -5151,6 +5144,16 @@
       "down": 0,
       "pending_jobs": 52,
       "pending_gpus": 53,
+      "active_users": 9
+    },
+    {
+      "timestamp": "2026-05-20T10:27:31Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 51,
+      "pending_gpus": 52,
       "active_users": 9
     }
   ]
