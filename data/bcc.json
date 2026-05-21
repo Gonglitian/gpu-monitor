@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-21T06:14:56Z",
+  "timestamp": "2026-05-21T06:22:14Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,28 +13,28 @@
           "user": "aghos034",
           "gpus": 1,
           "job_name": "card",
-          "elapsed": "5:57:21",
+          "elapsed": "6:04:49",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "hyp_search",
-          "elapsed": "5:57:21",
+          "elapsed": "6:04:49",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "11:43:46",
+          "elapsed": "11:51:14",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-09:16:08",
+          "elapsed": "2-09:23:36",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -50,28 +50,28 @@
           "user": "rmose009",
           "gpus": 1,
           "job_name": "exp2_uni",
-          "elapsed": "4:18:21",
+          "elapsed": "4:25:36",
           "time_limit": "18:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
           "job_name": "e2eval_point_pllmqa",
-          "elapsed": "6:47",
+          "elapsed": "14:02",
           "time_limit": "2:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "SVAR",
-          "elapsed": "12:13:06",
+          "elapsed": "12:20:21",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-14:55:20",
+          "elapsed": "1-15:02:35",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -87,42 +87,42 @@
           "user": "mchow068",
           "gpus": 1,
           "job_name": "nl2sql_mistral_updated_SDB",
-          "elapsed": "1-07:41:07",
+          "elapsed": "1-07:48:26",
           "time_limit": "3-00:00:00"
-        },
-        {
-          "user": "rmose009",
-          "gpus": 1,
-          "job_name": "e2eval_vision_vqav2",
-          "elapsed": "24:52",
-          "time_limit": "4:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "10:32",
+          "elapsed": "17:51",
           "time_limit": "2-01:00:00"
+        },
+        {
+          "user": "jfeng080",
+          "gpus": 1,
+          "job_name": "m500notr_kimina_h0",
+          "elapsed": "0:33",
+          "time_limit": "8:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-20:55:07",
+          "elapsed": "1-21:02:26",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-20:55:07",
+          "elapsed": "1-21:02:26",
           "time_limit": "2-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-20:55:07",
+          "elapsed": "1-21:02:26",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -188,6 +188,20 @@
     {
       "user": "jfeng080",
       "gpus": 1,
+      "job_name": "m500brute_kimina_h3",
+      "submit_time": "2026-05-20T22:48:21",
+      "reason": "Priority"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "m500brute_kimina_h2",
+      "submit_time": "2026-05-20T22:48:21",
+      "reason": "Priority"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
       "job_name": "m500brute_kimina_h1",
       "submit_time": "2026-05-20T22:48:21",
       "reason": "Priority"
@@ -195,14 +209,14 @@
     {
       "user": "jfeng080",
       "gpus": 1,
-      "job_name": "m500notr_kimina_h3",
+      "job_name": "m500brute_kimina_h0",
       "submit_time": "2026-05-20T22:48:21",
       "reason": "Priority"
     },
     {
       "user": "jfeng080",
       "gpus": 1,
-      "job_name": "m500brute_kimina_h0",
+      "job_name": "m500notr_kimina_h3",
       "submit_time": "2026-05-20T22:48:21",
       "reason": "Priority"
     },
@@ -218,28 +232,7 @@
       "gpus": 1,
       "job_name": "m500notr_kimina_h1",
       "submit_time": "2026-05-20T22:48:21",
-      "reason": "Priority"
-    },
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "m500notr_kimina_h0",
-      "submit_time": "2026-05-20T22:48:21",
       "reason": "Resources"
-    },
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "m500brute_kimina_h3",
-      "submit_time": "2026-05-20T22:48:21",
-      "reason": "Priority"
-    },
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "m500brute_kimina_h2",
-      "submit_time": "2026-05-20T22:48:21",
-      "reason": "Priority"
     }
   ],
   "users": [
@@ -262,16 +255,16 @@
       "pending_jobs": 0
     },
     {
-      "user": "rmose009",
-      "running_gpus": 3,
-      "running_jobs": 3,
-      "pending_jobs": 3
-    },
-    {
       "user": "aghos034",
       "running_gpus": 2,
       "running_jobs": 2,
       "pending_jobs": 0
+    },
+    {
+      "user": "rmose009",
+      "running_gpus": 2,
+      "running_jobs": 2,
+      "pending_jobs": 3
     },
     {
       "user": "fniloy",
@@ -284,6 +277,12 @@
       "running_gpus": 1,
       "running_jobs": 1,
       "pending_jobs": 0
+    },
+    {
+      "user": "jfeng080",
+      "running_gpus": 1,
+      "running_jobs": 1,
+      "pending_jobs": 7
     },
     {
       "user": "adutta",
@@ -302,12 +301,6 @@
       "running_gpus": 0,
       "running_jobs": 0,
       "pending_jobs": 2
-    },
-    {
-      "user": "jfeng080",
-      "running_gpus": 0,
-      "running_jobs": 0,
-      "pending_jobs": 8
     }
   ],
   "summary": {
@@ -315,9 +308,9 @@
     "used": 20,
     "free": 1,
     "down": 0,
-    "pending_jobs": 16,
-    "pending_gpus": 17,
-    "active_users": 8
+    "pending_jobs": 15,
+    "pending_gpus": 16,
+    "active_users": 9
   },
   "history": [
     {
@@ -6669,6 +6662,16 @@
       "pending_jobs": 16,
       "pending_gpus": 17,
       "active_users": 8
+    },
+    {
+      "timestamp": "2026-05-21T06:22:14Z",
+      "total": 21,
+      "used": 20,
+      "free": 1,
+      "down": 0,
+      "pending_jobs": 15,
+      "pending_gpus": 16,
+      "active_users": 9
     }
   ]
 }
