@@ -1,33 +1,40 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-24T05:29:10Z",
+  "timestamp": "2026-05-24T05:35:39Z",
   "nodes": [
     {
       "name": "gpu01",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 6,
+      "used": 7,
       "state": "active",
       "jobs": [
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "12:09:58",
+          "elapsed": "12:16:28",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-19:51:07",
+          "elapsed": "1-19:57:37",
+          "time_limit": "3-00:00:00"
+        },
+        {
+          "user": "sbera004",
+          "gpus": 1,
+          "job_name": "yolov5_r_salt_0",
+          "elapsed": "2:56",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "10:45:26",
+          "elapsed": "10:51:56",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -43,28 +50,28 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "1-12:42:01",
+          "elapsed": "1-12:48:37",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "grid",
-          "elapsed": "2-05:03:43",
+          "elapsed": "2-05:10:19",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "12:12:01",
+          "elapsed": "12:18:37",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-05:38:08",
+          "elapsed": "2-05:44:44",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -73,35 +80,42 @@
       "name": "gpu03",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 5,
+      "used": 6,
       "state": "active",
       "jobs": [
         {
           "user": "hsami",
           "gpus": 2,
           "job_name": "Fooler",
-          "elapsed": "9:30:01",
+          "elapsed": "9:36:33",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "card",
-          "elapsed": "2-11:13:47",
+          "elapsed": "2-11:20:19",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "hyp_search",
-          "elapsed": "4:39:41",
+          "elapsed": "4:46:13",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-05:12:48",
+          "elapsed": "2-05:19:20",
+          "time_limit": "3-00:00:00"
+        },
+        {
+          "user": "sbera004",
+          "gpus": 1,
+          "job_name": "yolov5_r_salt_42",
+          "elapsed": "2:13",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -142,6 +156,12 @@
       "pending_jobs": 0
     },
     {
+      "user": "sbera004",
+      "running_gpus": 2,
+      "running_jobs": 2,
+      "pending_jobs": 0
+    },
+    {
       "user": "fniloy",
       "running_gpus": 2,
       "running_jobs": 2,
@@ -162,12 +182,12 @@
   ],
   "summary": {
     "total": 21,
-    "used": 16,
-    "free": 5,
+    "used": 18,
+    "free": 3,
     "down": 0,
     "pending_jobs": 1,
     "pending_gpus": 4,
-    "active_users": 6
+    "active_users": 7
   },
   "history": [
     {
@@ -12689,6 +12709,16 @@
       "pending_jobs": 1,
       "pending_gpus": 4,
       "active_users": 6
+    },
+    {
+      "timestamp": "2026-05-24T05:35:39Z",
+      "total": 21,
+      "used": 18,
+      "free": 3,
+      "down": 0,
+      "pending_jobs": 1,
+      "pending_gpus": 4,
+      "active_users": 7
     }
   ]
 }
