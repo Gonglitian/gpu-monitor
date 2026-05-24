@@ -1,33 +1,40 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-24T14:26:53Z",
+  "timestamp": "2026-05-24T14:33:44Z",
   "nodes": [
     {
       "name": "gpu01",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 6,
+      "used": 7,
       "state": "active",
       "jobs": [
+        {
+          "user": "vbork001",
+          "gpus": 1,
+          "job_name": "3dgs_p3",
+          "elapsed": "3:41",
+          "time_limit": "4:00:00"
+        },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-04:48:45",
+          "elapsed": "2-04:55:27",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "yolov5_r_salt_0",
-          "elapsed": "8:54:04",
+          "elapsed": "9:00:46",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "19:43:04",
+          "elapsed": "19:49:46",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -43,28 +50,28 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "1-21:39:43",
+          "elapsed": "1-21:46:26",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "grid",
-          "elapsed": "2-14:01:25",
+          "elapsed": "2-14:08:08",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-14:35:50",
+          "elapsed": "2-14:42:33",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "yolov5_r_salt_84",
-          "elapsed": "8:40:13",
+          "elapsed": "8:46:56",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -80,42 +87,42 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "Fooler",
-          "elapsed": "18:27:48",
+          "elapsed": "18:34:38",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "card",
-          "elapsed": "2-20:11:34",
+          "elapsed": "2-20:18:24",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "hyp_search",
-          "elapsed": "13:37:28",
+          "elapsed": "13:44:18",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-14:10:35",
+          "elapsed": "2-14:17:25",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "yolov5_r_salt_42",
-          "elapsed": "8:53:28",
+          "elapsed": "9:00:18",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "yolov5_r_salt_63",
-          "elapsed": "8:49:28",
+          "elapsed": "8:56:18",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -176,6 +183,12 @@
       "pending_jobs": 0
     },
     {
+      "user": "vbork001",
+      "running_gpus": 1,
+      "running_jobs": 1,
+      "pending_jobs": 0
+    },
+    {
       "user": "adutta",
       "running_gpus": 1,
       "running_jobs": 1,
@@ -190,12 +203,12 @@
   ],
   "summary": {
     "total": 21,
-    "used": 18,
-    "free": 3,
+    "used": 19,
+    "free": 2,
     "down": 0,
     "pending_jobs": 3,
     "pending_gpus": 6,
-    "active_users": 6
+    "active_users": 7
   },
   "history": [
     {
@@ -13497,6 +13510,16 @@
       "pending_jobs": 3,
       "pending_gpus": 6,
       "active_users": 6
+    },
+    {
+      "timestamp": "2026-05-24T14:33:44Z",
+      "total": 21,
+      "used": 19,
+      "free": 2,
+      "down": 0,
+      "pending_jobs": 3,
+      "pending_gpus": 6,
+      "active_users": 7
     }
   ]
 }
