@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-24T00:27:17Z",
+  "timestamp": "2026-05-24T00:33:51Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,21 +13,21 @@
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "7:07:47",
+          "elapsed": "7:14:30",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-14:48:56",
+          "elapsed": "1-14:55:39",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "5:43:15",
+          "elapsed": "5:49:58",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -43,42 +43,42 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "1-07:40:02",
+          "elapsed": "1-07:46:34",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "hyp_search",
-          "elapsed": "1-07:32:15",
+          "elapsed": "1-07:38:47",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "grid",
-          "elapsed": "2-00:01:44",
+          "elapsed": "2-00:08:16",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "7:10:02",
+          "elapsed": "7:16:34",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
-          "job_name": "fm500q25_tr8",
-          "elapsed": "0:32",
+          "job_name": "fm500q25_b_p8",
+          "elapsed": "0:04",
           "time_limit": "12:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-00:36:09",
+          "elapsed": "2-00:42:41",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -94,35 +94,35 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "Fooler",
-          "elapsed": "4:28:11",
+          "elapsed": "4:34:39",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "card",
-          "elapsed": "2-06:11:57",
+          "elapsed": "2-06:18:25",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
-          "job_name": "fm500q25_tr8",
-          "elapsed": "1:51",
+          "job_name": "fm500q25_b_p8",
+          "elapsed": "1:19",
           "time_limit": "12:00:00"
         },
         {
           "user": "jfeng080",
           "gpus": 1,
-          "job_name": "fm500q25_tr8",
-          "elapsed": "1:51",
+          "job_name": "fm500q25_b_p8",
+          "elapsed": "1:19",
           "time_limit": "12:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2-00:10:58",
+          "elapsed": "2-00:17:26",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -135,6 +135,13 @@
       "job_name": "bash",
       "submit_time": "2026-05-22T12:20:38",
       "reason": "Resources"
+    },
+    {
+      "user": "jfeng080",
+      "gpus": 1,
+      "job_name": "fm500q25_b_p8",
+      "submit_time": "2026-05-23T17:24:29",
+      "reason": "QOSMaxGRESPerUser"
     },
     {
       "user": "jfeng080",
@@ -170,27 +177,6 @@
       "job_name": "fm500q25_h_p8",
       "submit_time": "2026-05-23T17:24:29",
       "reason": "Dependency"
-    },
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "fm500q25_b_p8",
-      "submit_time": "2026-05-23T17:24:29",
-      "reason": "Dependency"
-    },
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "fm500q25_hyb",
-      "submit_time": "2026-05-23T17:24:29",
-      "reason": "Dependency"
-    },
-    {
-      "user": "jfeng080",
-      "gpus": 1,
-      "job_name": "fm500q25_prep",
-      "submit_time": "2026-05-23T17:24:29",
-      "reason": "Dependency"
     }
   ],
   "users": [
@@ -216,7 +202,7 @@
       "user": "jfeng080",
       "running_gpus": 3,
       "running_jobs": 3,
-      "pending_jobs": 8
+      "pending_jobs": 6
     },
     {
       "user": "nyismaw",
@@ -248,8 +234,8 @@
     "used": 19,
     "free": 2,
     "down": 0,
-    "pending_jobs": 9,
-    "pending_gpus": 12,
+    "pending_jobs": 7,
+    "pending_gpus": 10,
     "active_users": 7
   },
   "history": [
@@ -12331,6 +12317,16 @@
       "down": 0,
       "pending_jobs": 9,
       "pending_gpus": 12,
+      "active_users": 7
+    },
+    {
+      "timestamp": "2026-05-24T00:33:51Z",
+      "total": 21,
+      "used": 19,
+      "free": 2,
+      "down": 0,
+      "pending_jobs": 7,
+      "pending_gpus": 10,
       "active_users": 7
     }
   ]
