@@ -1,19 +1,26 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-25T10:04:30Z",
+  "timestamp": "2026-05-25T10:10:58Z",
   "nodes": [
     {
       "name": "gpu01",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 1,
+      "used": 5,
       "state": "active",
       "jobs": [
+        {
+          "user": "jzhan744",
+          "gpus": 4,
+          "job_name": "bash",
+          "elapsed": "3:39",
+          "time_limit": "3-00:00:00"
+        },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-15:20:39",
+          "elapsed": "1-15:27:09",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -29,14 +36,14 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "2-17:17:09",
+          "elapsed": "2-17:23:51",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "10:13:13",
+          "elapsed": "10:19:55",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -52,14 +59,14 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "Fooler",
-          "elapsed": "1-14:05:27",
+          "elapsed": "1-14:11:55",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "hyp_search",
-          "elapsed": "1-09:15:07",
+          "elapsed": "1-09:21:35",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -75,6 +82,12 @@
     }
   ],
   "users": [
+    {
+      "user": "jzhan744",
+      "running_gpus": 4,
+      "running_jobs": 1,
+      "pending_jobs": 0
+    },
     {
       "user": "hsami",
       "running_gpus": 4,
@@ -102,12 +115,12 @@
   ],
   "summary": {
     "total": 21,
-    "used": 10,
-    "free": 11,
+    "used": 14,
+    "free": 7,
     "down": 0,
     "pending_jobs": 1,
     "pending_gpus": 4,
-    "active_users": 4
+    "active_users": 5
   },
   "history": [
     {
@@ -15129,6 +15142,16 @@
       "pending_jobs": 1,
       "pending_gpus": 4,
       "active_users": 4
+    },
+    {
+      "timestamp": "2026-05-25T10:10:58Z",
+      "total": 21,
+      "used": 14,
+      "free": 7,
+      "down": 0,
+      "pending_jobs": 1,
+      "pending_gpus": 4,
+      "active_users": 5
     }
   ]
 }
