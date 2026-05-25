@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-25T04:55:02Z",
+  "timestamp": "2026-05-25T05:01:57Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,21 +13,21 @@
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "2-19:16:34",
+          "elapsed": "2-19:23:48",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbera004",
           "gpus": 1,
           "job_name": "yolov5_r_salt_3955",
-          "elapsed": "9:55:05",
+          "elapsed": "10:02:19",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "1-10:10:54",
+          "elapsed": "1-10:18:07",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -43,14 +43,14 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "PolyJuice_Image_Hype_Tuning",
-          "elapsed": "2-12:07:49",
+          "elapsed": "2-12:14:50",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "5:03:53",
+          "elapsed": "5:10:54",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -66,14 +66,14 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "Fooler",
-          "elapsed": "1-08:55:50",
+          "elapsed": "1-09:02:54",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "aghos034",
           "gpus": 1,
           "job_name": "hyp_search",
-          "elapsed": "1-04:05:30",
+          "elapsed": "1-04:12:34",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -82,10 +82,10 @@
   "pending_jobs": [
     {
       "user": "adutta",
-      "gpus": 1,
+      "gpus": 4,
       "job_name": "bash",
-      "submit_time": "2026-05-24T01:12:33",
-      "reason": "BeginTime"
+      "submit_time": "2026-05-24T21:57:48",
+      "reason": "QOSMaxGRESPerUser"
     }
   ],
   "users": [
@@ -132,7 +132,7 @@
     "free": 6,
     "down": 0,
     "pending_jobs": 1,
-    "pending_gpus": 1,
+    "pending_gpus": 4,
     "active_users": 6
   },
   "history": [
@@ -14704,6 +14704,16 @@
       "down": 0,
       "pending_jobs": 1,
       "pending_gpus": 1,
+      "active_users": 6
+    },
+    {
+      "timestamp": "2026-05-25T05:01:57Z",
+      "total": 21,
+      "used": 15,
+      "free": 6,
+      "down": 0,
+      "pending_jobs": 1,
+      "pending_gpus": 4,
       "active_users": 6
     }
   ]
