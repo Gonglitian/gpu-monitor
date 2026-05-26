@@ -1,6 +1,6 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-05-26T20:50:26Z",
+  "timestamp": "2026-05-26T20:57:25Z",
   "nodes": [
     {
       "name": "gpu01",
@@ -13,21 +13,21 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "Fooler",
-          "elapsed": "1-03:55:45",
+          "elapsed": "1-04:02:53",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "jzhan744",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-10:42:56",
+          "elapsed": "1-10:50:04",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "3:11:50",
+          "elapsed": "3:18:58",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -43,28 +43,28 @@
           "user": "aghos034",
           "gpus": 1,
           "job_name": "hyp_search",
-          "elapsed": "1-00:31:19",
+          "elapsed": "1-00:38:28",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "rmose009",
           "gpus": 1,
-          "job_name": "msp-sg4v-ext",
-          "elapsed": "7:01",
-          "time_limit": "2:00:00"
+          "job_name": "msp-rung0",
+          "elapsed": "4:48",
+          "time_limit": "1-00:00:00"
         },
         {
           "user": "dwong133",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "2:13:14",
+          "elapsed": "2:20:23",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "yjia058",
           "gpus": 4,
           "job_name": "bash",
-          "elapsed": "1-20:59:12",
+          "elapsed": "1-21:06:21",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -80,56 +80,48 @@
           "user": "hsami",
           "gpus": 2,
           "job_name": "Fooler",
-          "elapsed": "23:25:37",
+          "elapsed": "23:32:37",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "23:25:37",
+          "elapsed": "23:32:37",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "nyismaw",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "45:38",
+          "elapsed": "52:38",
           "time_limit": "2-01:00:00"
         },
         {
           "user": "jyao",
           "gpus": 1,
-          "job_name": "ges_audit",
-          "elapsed": "1:44:31",
+          "job_name": "reverse_ges",
+          "elapsed": "3:41",
           "time_limit": "1-00:00:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "3:13:34",
+          "elapsed": "3:20:34",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "adutta",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "3:14:21",
+          "elapsed": "3:21:21",
           "time_limit": "3-00:00:00"
         }
       ]
     }
   ],
-  "pending_jobs": [
-    {
-      "user": "rmose009",
-      "gpus": 1,
-      "job_name": "msp-rung0",
-      "submit_time": "2026-05-26T13:41:38",
-      "reason": "Resources"
-    }
-  ],
+  "pending_jobs": [],
   "users": [
     {
       "user": "hsami",
@@ -171,7 +163,7 @@
       "user": "rmose009",
       "running_gpus": 1,
       "running_jobs": 1,
-      "pending_jobs": 1
+      "pending_jobs": 0
     },
     {
       "user": "dwong133",
@@ -197,8 +189,8 @@
     "used": 21,
     "free": 0,
     "down": 0,
-    "pending_jobs": 1,
-    "pending_gpus": 1,
+    "pending_jobs": 0,
+    "pending_gpus": 0,
     "active_users": 10
   },
   "history": [
@@ -18290,6 +18282,16 @@
       "down": 0,
       "pending_jobs": 1,
       "pending_gpus": 1,
+      "active_users": 10
+    },
+    {
+      "timestamp": "2026-05-26T20:57:25Z",
+      "total": 21,
+      "used": 21,
+      "free": 0,
+      "down": 0,
+      "pending_jobs": 0,
+      "pending_gpus": 0,
       "active_users": 10
     }
   ]
