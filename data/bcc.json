@@ -1,26 +1,33 @@
 {
   "cluster": "bcc",
-  "timestamp": "2026-07-01T23:13:08Z",
+  "timestamp": "2026-07-01T23:14:10Z",
   "nodes": [
     {
       "name": "gpu01",
       "gpu_model": "GPU",
       "total": 7,
-      "used": 5,
+      "used": 6,
       "state": "active",
       "jobs": [
         {
           "user": "agupt195",
           "gpus": 4,
           "job_name": "cobevt_v2xsim",
-          "elapsed": "6:00",
+          "elapsed": "7:02",
           "time_limit": "3-00:00:00"
+        },
+        {
+          "user": "lgong024",
+          "gpus": 1,
+          "job_name": "af3d_real",
+          "elapsed": "0:59",
+          "time_limit": "30:00"
         },
         {
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "18:06:47",
+          "elapsed": "18:07:49",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -36,14 +43,14 @@
           "user": "fniloy",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "18:02:24",
+          "elapsed": "18:03:26",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "sbose",
           "gpus": 1,
           "job_name": "svis",
-          "elapsed": "1-19:34:52",
+          "elapsed": "1-19:35:54",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -59,21 +66,21 @@
           "user": "aghos034",
           "gpus": 1,
           "job_name": "grid_search",
-          "elapsed": "2-16:39:18",
+          "elapsed": "2-16:40:20",
           "time_limit": "3-00:00:00"
         },
         {
           "user": "hsami",
           "gpus": 1,
           "job_name": "bash",
-          "elapsed": "7:39:41",
+          "elapsed": "7:40:43",
           "time_limit": "12:00:00"
         },
         {
           "user": "adutta",
           "gpus": 2,
           "job_name": "bash",
-          "elapsed": "33:58",
+          "elapsed": "35:00",
           "time_limit": "3-00:00:00"
         }
       ]
@@ -115,6 +122,12 @@
       "pending_jobs": 0
     },
     {
+      "user": "lgong024",
+      "running_gpus": 1,
+      "running_jobs": 1,
+      "pending_jobs": 0
+    },
+    {
       "user": "sbose",
       "running_gpus": 1,
       "running_jobs": 1,
@@ -141,12 +154,12 @@
   ],
   "summary": {
     "total": 21,
-    "used": 11,
-    "free": 10,
+    "used": 12,
+    "free": 9,
     "down": 0,
     "pending_jobs": 2,
     "pending_gpus": 2,
-    "active_users": 6
+    "active_users": 7
   },
   "history": [
     {
@@ -25348,6 +25361,16 @@
       "pending_jobs": 2,
       "pending_gpus": 2,
       "active_users": 6
+    },
+    {
+      "timestamp": "2026-07-01T23:14:10Z",
+      "total": 21,
+      "used": 12,
+      "free": 9,
+      "down": 0,
+      "pending_jobs": 2,
+      "pending_gpus": 2,
+      "active_users": 7
     }
   ]
 }
